@@ -203,7 +203,9 @@ function ResetTableIndicated(ByVal databasetable)
 		strAsgMsg = strAsgMsg & strAsgTxtTable & "&nbsp;" & databasetable & "&nbsp;" & strAsgTxtCorrectlyDeleted & " <br />"
 	End If
 
-end function strAsgTable = Trim(Request.QueryString("table"))
+end function 
+
+strAsgTable = Trim(Request.QueryString("table"))
 strAsgTimerange = Trim(Request.QueryString("timerange"))
 strAsgWeekrange = Trim(Request.QueryString("weekrange"))
 'On Error Resume Next
