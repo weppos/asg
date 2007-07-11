@@ -1,0 +1,62 @@
+body, div, p {
+	font-family: Tahoma, Arial, Helvetica, sans-serif;
+	font-size: 10pt;
+	font-weight: normal;
+	color: #000000;
+}
+
+.menutitle {
+	color: #0066CC;
+	line-height: 140%;
+}
+
+a {
+	color: #0066CC;
+	text-decoration: none;
+}
+a:hover {
+	color: #0066CC;
+	text-decoration: underline;
+}
+a:visited  {
+	color: #0066CC;
+	text-decoration: none;
+}
+a:visited:hover {
+	color: #0066CC;
+	text-decoration: underline;
+}
+
+.normaltitle, h2 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 18px;
+	color: #0066CC;
+	font-weight: bold;
+	line-height: 140%;
+	text-align: center;
+	font-variant: small-caps;
+}
+
+h3 {
+	font-family: Tahoma, Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	color: #0066CC;
+	font-weight: bold;
+	line-height: 120%;
+	font-variant: small-caps;
+	padding-bottom: 5px;
+	border-bottom: 1px;
+	border-bottom-style: dashed;
+	border-bottom-color: #CCCCCC;
+}
+
+#content {
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+.advice {
+	border-style: double;
+	padding: 5px;
+	border-color: #CCCCCC;
+}

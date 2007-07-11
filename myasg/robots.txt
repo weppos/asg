@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /inclusioni/
+Disallow: /codego/
+Disallow: /images/

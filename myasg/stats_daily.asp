@@ -1,0 +1,321 @@
+<%@LANGUAGE="VBSCRIPT" CODEPAGE="1252"%>
+<% Option Explicit %>
+<!--#include file="config.asp" -->
+<%
+
+'-------------------------------------------------------------------------------'
+'	ASP Stats Generator															'
+' Copyright 2003-2006 - Carletti Simone										'
+'-------------------------------------------------------------------------------'
+'																				'
+'	Autore:																		'
+'	--------------------------													'
+'	Simone Carletti (weppos)													'
+'																				'
+'	Collaboratori 																'
+'	[che ringrazio vivamente per l'impegno ed il tempo dedicato]				'
+'	--------------------------													'
+'	@ imente 			- www.imente.it | www.imente.org						'
+'	@ ToroSeduto		- www.velaforfun.com									'
+'																				'
+'	Hanno contribuito															'
+'	[anche a loro un grazie speciale per le idee apportate]						'
+'	--------------------------													'
+'	@ Gli utenti del forum con consigli e segnalazioni							'
+'	@ subxus (suggerimento generazione grafica dei report)						'
+'																				'
+'	Verifica le proposte degli utenti, implementate o da implementare al link	'
+'	http://www.weppos.com/forum/forum_posts.asp?TID=140&PN=1					'
+'																				'
+'-------------------------------------------------------------------------------'
+'																				'
+'	Informazioni sulla Licenza													'
+'	--------------------------													'
+'	Questo è un programma gratuito; potete modificare ed adattare il codice		'
+'	(a vostro rischio) in qualsiasi sua parte nei termini delle condizioni		'
+'	della licenza che lo accompagna.											'
+'																				'
+'	Non è consentito utilizzare l'applicazione per conseguire ricavi 			'
+'	personali, distribuirla, venderla o diffonderla come una propria 			'
+'	creazione anche se modificata nel codice, senza un esplicito e scritto 		'
+'	consenso dell'autore.														'
+'																				'
+'	Potete modificare il codice sorgente (a vostro rischio) per adattarlo 		'
+'	alle vostre esigenze o integrarlo nel sito; nel caso le funzioni possano	'
+'	essere di utilità pubblica vi invitiamo a comunicarlo per poterle 			'
+'	implementare in una futura versione e per contribuire allo sviluppo 		'
+'	del programma.																'
+'																				'
+'	In nessun caso l'autore sarà responsabile di danni causati da una 			'
+'	modifica, da un uso non corretto o da un uso qualsiasi 						'
+'	dell'applicazione.															'
+'																				'
+'	Nell'utilizzo devono rimanere intatte tutte le informazioni sul 			'
+'	copyright; è possibile modificare o rimuovere unicamente le indicazioni 	'
+'	espressamente specificate.													'
+'																				'
+'	Numerose ore sono state impiegate nello sviluppo del progetto e, anche 		'
+'	se non vincolante ai fini dell'uso, sarebbe gratificante l'inserimento		'
+'	di un link all'applicazione sul vostro sito.								'
+'																				'
+'	NESSUNA GARANZIA															'
+'	------------------------- 													'
+'	Questo programma è distribuito nella speranza che possa essere utile ma 	'
+'	senza GARANZIA DI ALCUN GENERE.												'
+'	L'utente si assume tutte le responsabilità nell'uso.						'
+'																				'
+'-------------------------------------------------------------------------------'
+
+'********************************************************************************'
+'*																				*'	
+'*	VIOLAZIONE DELLA LICENZA													*'
+'*	 																			*'
+'*	L'utilizzo dell'applicazione violando le condizioni di licenza comporta la 	*'
+'*	perdita immediata della possibilità d'uso ed è PERSEGUIBILE LEGALMENTE!		*'
+'*																				*'
+'********************************************************************************'
+
+
+'// ATTENZIONE! Protezione statistiche.
+'	Modificare solo se necessario e se sicuri.
+'	Impostazioni errate possono compromettere la privacy.
+Call AllowEntry("True", "False", "False", intAsgSecurity)
+
+
+'Dichiara Variabili
+Dim mese				'Riferimento per output
+Dim giorno				'Riferimento per output
+Dim intAsgCiclo
+
+
+'Grafico
+Dim intAsgNumCol		'Numero Colonne
+Dim intAsgAltColMax		'Altezza massima in px delle colonne dipendente dalla pag
+Dim intAsgLarCol		'Larghezza delle colonne dipendente dalla pag
+
+Dim intAsgMax				'Valore massimo di pagine visitate
+Dim intAsgParte
+
+Dim intAsgTotMeseHits		'Valore totale per mese di pagine visitate
+Dim intAsgTotMeseVisits		'Valore totale per mese di accessi unici
+
+Dim intAsgValHits(31)		'Valori assunti per l'immagine
+Dim intAsgValVisits(31)		'Valori assunti per l'immagine
+
+Dim intAsgTotHits(31)		'Valore totale di pagine visitate 	| Per statistica grafica
+Dim intAsgTotVisits(31)		'Valore totale di accessi unici		| Per statistica grafica
+
+'Variabili Calendario
+Dim dtmAsgValData(31)		'Valori data progressivi
+Dim tmpAsgMonth				'Variabile d'elaborazione
+Dim tmpAsgYear				'Variabile d'elaborazione
+
+
+'Read setting variables from querystring
+mese = Request.QueryString("mese")
+'If a time period has been chosen then build the variable to query the database
+If Request.QueryString("showperiod") = strAsgTxtShow Then mese = Request.QueryString("periodmm") & "-" & Request.QueryString("periodyy")
+
+
+'If period variable is empty then set it to the current month
+If mese = "" Then mese = dtmAsgMonth & "-" & dtmAsgYear
+
+
+'Ricalcola i giorni per mese
+Call GiorniPerMese(Left(mese, 2))
+
+'Set max total column width
+intAsgNumCol = intStsGiorniPerMese + 2	'Numero colonne | 1 per ogni giorno del mese
+intAsgAltColMax = 200					'Altezza massima colonne | Rapportata alla dimensione della pagina
+intAsgLarCol = (800/intAsgNumCol)		'Larghezza per ogni colonna | Calcolata sul totale delle necessarie
+
+
+'Richiama totale
+strAsgSQL = "SELECT Sum(Hits) As SumHits, Sum(Visits) AS SumVisits FROM "&strAsgTablePrefix&"Daily WHERE Mese = '" & mese & "' "
+objAsgRs.Open strAsgSQL, objAsgConn
+If objAsgRs.EOF Then
+	intAsgTotMeseHits = 0
+	intAsgTotMeseVisits = 0
+Else
+	intAsgTotMeseHits = objAsgRs("SumHits")
+	intAsgTotMeseVisits = objAsgRs("SumVisits")
+End If
+objAsgRs.Close
+'Accertati che non siano nulli
+If intAsgTotMeseHits = 0 OR "[]" & intAsgTotMeseHits = "[]" Then intAsgTotMeseHits = 0
+If intAsgTotMeseVisits = 0 OR "[]" & intAsgTotMeseVisits = "[]" Then intAsgTotMeseVisits = 0
+
+
+'Richiama valore Massimo
+strAsgSQL = "SELECT Max(Hits) As MaxHits FROM "&strAsgTablePrefix&"Daily WHERE Mese = '" & mese & "' "
+objAsgRs.Open strAsgSQL, objAsgConn
+If objAsgRs.EOF Then
+	intAsgMax = 0
+Else
+	intAsgMax = objAsgRs("MaxHits")
+End If
+objAsgRs.Close
+
+
+'Calcola unità singola
+If intAsgMax = 0 OR "[]" & intAsgMax = "[]" Then intAsgMax = 1
+intAsgParte = intAsgAltColMax/intAsgMax
+
+
+'Richiama valori statistica
+strAsgSQL = "SELECT * FROM "&strAsgTablePrefix&"Daily WHERE Mese = '" & mese & "' ORDER BY Data"
+
+objAsgRs.Open strAsgSQL, objAsgConn
+If objAsgRs.EOF Then
+'
+Else
+
+	Do While NOT objAsgRs.EOF
+	
+		intAsgTotHits(Right("0" & Day(objAsgRs("Data")), 2)) = objAsgRs("Hits")
+		intAsgTotVisits(Right("0" & Day(objAsgRs("Data")), 2)) = objAsgRs("Visits")
+	
+	objAsgRs.MoveNext
+	Loop
+
+End If
+objAsgRs.Close
+
+
+'Prima del ciclo definisci alcune variabili temporanee
+'da utilizzare per le variabili calendario
+tmpAsgMonth = CInt(Left(mese, 2))
+tmpAsgYear = Cint(Right(Mese, 4))
+'Ripassiamo tutto per filtrare i valori nulli o vuoti
+'...contemporaneamente impostiamo i valori
+For intAsgCiclo = 1 to  (intAsgNumCol - 2)
+	
+	If "[]" & intAsgTotHits(intAsgCiclo) = "[]" Then intAsgTotHits(intAsgCiclo) = 0
+	If "[]" & intAsgTotVisits(intAsgCiclo) = "[]" Then intAsgTotVisits(intAsgCiclo) = 0
+	
+	intAsgValHits(intAsgCiclo) = FormatNumber(intAsgTotHits(intAsgCiclo)*intAsgParte, 2)
+	intAsgValVisits(intAsgCiclo) = FormatNumber(intAsgTotVisits(intAsgCiclo)*intAsgParte, 2)
+	
+	dtmAsgValData(intAsgCiclo) = CDate(DateSerial(tmpAsgYear, tmpAsgMonth, intAsgCiclo))
+	
+Next
+
+
+'Reset Server Objects
+Set objAsgRs = Nothing
+objAsgConn.Close
+Set objAsgConn = Nothing
+
+
+%>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title><%= strAsgSiteName %> | ASP Stats Generator <%= strAsgVersion %></title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta name="copyright" content="Copyright (C) 2003-2004 Carletti Simone" />
+<link href="stile.css" rel="stylesheet" type="text/css" />
+<!--#include file="includes/inc_meta.asp" -->
+
+<!-- 	ASP Stats Generator <%= strAsgVersion %> è una applicazione gratuita 
+		per il monitoraggio degli accessi e dei visitatori ai siti web 
+		creata e sviluppata da Simone Carletti.
+		
+		Puoi scaricarne una copia gratuita sul sito ufficiale http://www.weppos.com/ -->
+
+</head>
+<!--#include file="includes/header.asp" -->
+		<table width="100%" border="0" align="center" cellpadding="0" cellspacing="1">
+		  <tr align="center" valign="middle">
+			<td align="center" background="<%= strAsgSknPathImage & strAsgSknTableBarBgImage %>" bgcolor="<%= strAsgSknTableBarBgColour %>" height="20" class="bartitle">ACCESSI per GIORNO</td>
+		  </tr>
+		  <tr bgcolor="<%= strAsgSknTableLayoutBorderColour %>">
+			<td align="center" height="1"></td>
+		  </tr>
+		</table><br />
+		<table width="90%" border="0" align="center" cellpadding="1" cellspacing="1">
+		  <tr bgcolor="<%= strAsgSknTableTitleBgColour %>" align="center" class="normaltitle">
+			<td background="<%= strAsgSknPathImage & strAsgSknTableTitleBgImage %>" width="100%" height="16"><%= UCase(strAsgTxtStatsOfTheMonth) & "&nbsp;" & mese %></td>
+		  </tr>
+		  <tr class="smalltext" bgcolor="<%= strAsgSknTableContBgColour %>">
+			<td background="<%= strAsgSknPathImage & strAsgSknTableContBgImage %>" width="100%"><br />
+			<!-- Grafico -->
+			<table width="100%" border="0" cellspacing="1" cellpadding="0" align="center">
+			  <tr valign="bottom" align="center">
+				<td width="<%= intAsgLarCol * 2 %>" background="<%= strAsgSknPathImage %>layout/bg_graph_value.gif" colspan="2" nowrap>
+					<table border="0" cellpadding="0" cellspacing="0" width="100%">
+					<% For intAsgCiclo = 1 to 5 %>
+					<tr height="<%= intAsgAltColMax/5 %>" align="right"><td width="100%" class="smalltext" valign="top"><%= CLng(intAsgMax / 5) * (6 - intAsgCiclo) %></td></tr>
+					<% Next %>
+					</table>
+				</td>
+				<% For intAsgCiclo = 1 to (intAsgNumCol - 2) %>
+				<td width="<%= intAsgLarCol %>" background="<%= strAsgSknPathImage %>layout/bg_graph_cell.gif" nowrap>
+					<img src="images/bar_graph_image_visits.gif" width="5" height="<%= intAsgValVisits(intAsgCiclo) %>" alt="<%= CalcolaPercentuale(intAsgTotMeseVisits, intAsgTotVisits(intAsgCiclo)) & " --> " & intAsgTotVisits(intAsgCiclo) & "&nbsp;" & strAsgTxtVisits %>" />
+					<img src="images/bar_graph_image_hits.gif" width="5" height="<%= intAsgValHits(intAsgCiclo) %>" alt="<%= CalcolaPercentuale(intAsgTotMeseHits, intAsgTotHits(intAsgCiclo)) & " --> " & intAsgTotHits(intAsgCiclo) & "&nbsp;" & strAsgTxtHits %>" />
+				</td>
+			  	<% Next %>
+			  </tr>
+			  <tr class="smalltext" align="center">
+				<td width="<%= intAsgLarCol * 2 %>" colspan="2" align="right"><a href="stats_monthly.asp?showperiod=<%= strAsgTxtShow %>&anno=<%= Right(mese , 4) %>" title="<%= strAsgTxtShow & "&nbsp;" & aryAsgMonth(Left(mese , 2),2) %>" class="linksmalltext"><%= Left(aryAsgMonth(Left(mese , 2),2), 3) %></a></td>
+				<% 
+					For intAsgCiclo = 1 to (intAsgNumCol - 2)
+						
+						'Evidenzia le Domeniche
+						If Weekday(dtmAsgValData(intAsgCiclo)) = 1 Then
+							Response.Write(VbCrLf & "<td width=""" & intAsgLarCol & """>")
+							Response.Write("<font color=""#FF0000"" title=""" & strAsgTxtSunday & """>" & intAsgCiclo & "</font>")
+						Else
+							Response.Write(VbCrLf & "<td width=""" & intAsgLarCol & """>")
+							Response.Write(intAsgCiclo)
+						End If
+						
+						Response.Write("</td>")
+						
+			  		Next
+				%>
+			  </tr>
+<!--#include file="includes/inc_graph_legend.asp" -->
+			</table>
+			<!-- Fine Grafico -->
+			<br />
+			</td>
+		  </tr>
+		<%
+					
+		'// Row - End table spacer			
+		Call BuildTableContEndSpacer(intAsgNumCol)
+
+		'// Row - Data output panels
+		Response.Write(vbCrLf & "<tr class=""smalltext"" align=""center"" valign=""top""><td colspan=""" & intAsgNumCol & """ height=""25""><br />")
+		Call GoToPeriod("stats_daily.asp", "")
+		Response.Write(vbCrLf & "</td></tr>")
+			
+		%>
+		</table><br />
+<%
+
+'Footer
+Response.Write(vbCrLf & "		<table width=""100%"" border=""0"" align=""center"" cellpadding=""0"" cellspacing=""1"">")
+'// Row - Footer Border Line
+Call BuildFooterBorderLine()
+
+'***** START WARNING - REMOVAL or MODIFICATION IN PART or ALL OF THIS CODE WILL VIOLATE THE LICENSE AGREEMENT	******
+'***** INIZIO AVVERTENZA - RIMOZIONE o MODIFICA PARZIALE/TOTALE DEL CODICE COMPORTA VIOLAZIONE DELLA LICENZA  	******
+Response.Write(vbCrLf & "		  <tr align=""center"" valign=""middle"">")
+Response.Write(vbCrLf & "			<td align=""center"" background=""" & strAsgSknPathImage & strAsgSknTableBarBgImage & """ bgcolor=""" & strAsgSknTableBarBgColour & """ height=""20"" class=""footer"">ASP Stats Generator [" & strAsgVersion & "] - &copy; 2003-2006 <a href=""http://www.weppos.com/"" class=""linkfooter"">weppos</a>")
+If blnAsgElabTime Then Response.Write(" - " & strAsgTxtThisPageWasGeneratedIn & "&nbsp;" & FormatNumber(Timer() - startAsgElab, 4) & "&nbsp;" & strAsgTxtSeconds)
+Response.Write(						"</td>")
+Response.Write(vbCrLf & "		  </tr>")
+'***** END WARNING - REMOVAL or MODIFICATION IN PART or ALL OF THIS CODE WILL VIOLATE THE LICENSE AGREEMENT	******
+'***** FINE AVVERTENZA - RIMOZIONE o MODIFICA PARZIALE/TOTALE DEL CODICE COMPORTA VIOLAZIONE DELLA LICENZA  ******
+
+Response.Write(vbCrLf & "		</table>")
+Response.Write(vbCrLf & "	  </td></tr>")
+Response.Write(vbCrLf & "	</table>")
+Response.Write(vbCrLf & "  </td></tr>")
+Response.Write(vbCrLf & "</table>")
+
+%>
+<!--#include file="includes/footer.asp" -->
+</body></html>
