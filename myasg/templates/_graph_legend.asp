@@ -34,7 +34,7 @@
 ' * @author          Simone Carletti <weppos@weppos.net>
 ' * @copyright       2003-2007 Simone Carletti, All Rights Reserved
 ' * @license         http://www.weppos.com/asg/en/license.asp
-' * @version         SVN: $Id$
+' * @version         SVN: $Id: inc_graph_legend.asp 8 2007-08-03 12:51:40Z weppos $
 ' */
  
 '/* 
@@ -43,11 +43,13 @@
 ' */
 
 
-Response.Write(vbCrLf & "			  <tr class=""smalltext"" align=""center"">")
-Response.Write(vbCrLf & "				<td width=""100%"" colspan=""" & intAsgNumCol & """><br />")
-Response.Write("<img src=""images/bar_graph_image_visits.gif"" width=""10"" height=""8"" alt=""" & strAsgTxtVisits & """ align=""absmiddle"" />&nbsp;&nbsp;" & strAsgTxtVisits & "&nbsp;&nbsp;")
-Response.Write("<img src=""images/bar_graph_image_hits.gif"" width=""10"" height=""8"" alt=""" & strAsgTxtHits & """ align=""absmiddle"" />&nbsp;&nbsp;" & strAsgTxtHits & "")
-Response.Write("</td>")
-Response.Write(vbCrLf & "			  </tr>")
-
 %>
+<!-- SVN: $Id:$ -->
+<tr class="smalltext" align="center">
+    <td width=""100%"" colspan="<%= intAsgNumCol %>"><br />
+        <img src="images/bar_graph_image_visits.gif" width="10" height="8" alt="<%= strAsgTxtVisits %>" align="absmiddle" />
+        &nbsp;&nbsp;<%= strAsgTxtVisits %>&nbsp;&nbsp;
+        <img src="images/bar_graph_image_hits.gif" width="10" height="8" alt="<%= strAsgTxtHits %>" align="absmiddle" />
+        &nbsp;&nbsp;<%= bar_graph_image_hits %>&nbsp;&nbsp;
+    </td>
+</tr>

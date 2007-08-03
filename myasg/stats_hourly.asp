@@ -263,7 +263,7 @@ Set objAsgConn = Nothing
 				<td width="<%= intAsgLarCol %>" nowrap><%= intAsgCiclo %></td>
 			  	<% Next %>
 			  </tr>
-<!--#include file="includes/inc_graph_legend.asp" -->
+<!--#include file="templates/_graph_legend.asp" -->
 			</table>
 			<!-- Fine Grafico -->
 			<br />

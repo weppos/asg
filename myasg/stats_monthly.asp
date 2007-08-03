@@ -216,7 +216,7 @@ Next
 				<td width="<%= intAsgLarCol %>"><a href="stats_daily.asp?mese=<%= Right("0" & intAsgCiclo, 2) & "-" & anno %>" title="<%= strAsgTxtShow & "&nbsp;" & aryAsgMonth(intAsgCiclo,2) %>" class="linksmalltext"><%= Left(aryAsgMonth(intAsgCiclo,2), 3) %></a></td>
 			  	<% Next %>
 			  </tr>
-<!--#include file="includes/inc_graph_legend.asp" -->
+<!--#include file="templates/_graph_legend.asp" -->
 			</table>
 			<!-- Fine Grafico -->
 			<br />
