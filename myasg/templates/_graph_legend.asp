@@ -34,7 +34,7 @@
 ' * @author          Simone Carletti <weppos@weppos.net>
 ' * @copyright       2003-2007 Simone Carletti, All Rights Reserved
 ' * @license         http://www.weppos.com/asg/en/license.asp
-' * @version         SVN: $Id: inc_graph_legend.asp 8 2007-08-03 12:51:40Z weppos $
+' * @version         SVN: $Id$
 ' */
  
 '/* 
@@ -44,7 +44,7 @@
 
 
 %>
-<!-- SVN: $Id:$ -->
+<!-- SVN: $Id$ -->
 <tr class="smalltext" align="center">
     <td width=""100%"" colspan="<%= intAsgNumCol %>"><br />
         <img src="images/bar_graph_image_visits.gif" width="10" height="8" alt="<%= strAsgTxtVisits %>" align="absmiddle" />
