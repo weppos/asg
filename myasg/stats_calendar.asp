@@ -173,7 +173,7 @@ Set objAsgConn = Nothing
 <head>
 <title><%= strAsgSiteName %> | ASP Stats Generator <%= strAsgVersion %></title>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-<meta name="copyright" content="Copyright (C) 2003-2004 Carletti Simone" />
+<meta name="copyright" content="Copyright (C) 2003-2007 Carletti Simone, All Rights Reserved" />
 <link href="stile.css" rel="stylesheet" type="text/css" />
 <!--#include file="includes/inc_meta.asp" -->
 
