@@ -43,35 +43,34 @@
 ' */
 
 
-'// Definisce dove si trova il file per il conteggio
+' Tracking file
 Response.Write "var file='/myasg/count.asp';"
 
-'// Ricava il Referer = Pagina di Provenienza
+' Referer
 Response.Write "f='' + escape(document.referrer);"
 
-'// Ricava la pagina attuale nel sito
+' Current page
 Response.Write "u='' + escape(document.URL); "
 
-'// Ricava la risoluzione video
+' Video resolution
 Response.Write "var w=screen.width; "
 Response.Write "var h=screen.height; "
 
-'// Ricava il nome del browser per valutare la profondità di colore
+' Color depth according to browser type
 Response.Write "v=navigator.appName; "
 Response.Write "if (v != 'Netscape') {c=screen.colorDepth;}"
 Response.Write "else {c=screen.pixelDepth;}"
 
-'// Ricava Anti-Aliasing Fonts
+' Font Anti-Aliasing  property
 Response.Write "var fs = window.screen.fontSmoothingEnabled;"
 
-'// Ricava il supporto per Java abilitato
+' Java Support
 Response.Write "j=navigator.javaEnabled();"
 
-'// Passa la stringa con i valori
-'Response.Write "info='w=' + w + '&h=' + h + '&c=' + c + '&r=' + f + '&u='+ u + '&fs=' + fs + '&b=' + b + '&x=' + x;"
+' Tracking string
 Response.Write "info='w=' + w + '&h=' + h + '&c=' + c + '&r=' + f + '&u='+ u + '&fs=' + fs + '&j=' + j;"
 
-'// Richiama l'img e passa i valori
+' Write image
 Response.Write "document.open();"
 Response.Write "document.write('<img src=' + file + '?'+info+ ' border=0>');"
 Response.Write "document.close();"
