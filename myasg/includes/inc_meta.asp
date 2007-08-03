@@ -46,9 +46,16 @@
 %>
 <script language="JavaScript" type="text/javascript">
 
-//Funzione per aprire una Pop Up
-function openWin(winURL,winName,winFeatures) {
-  	window.open(winURL,winName,winFeatures);
+/**
+ * Opens a popup windows
+ *
+ * @param   winURL
+ * @param   winName
+ * @param   winFeatures
+ * @return  void
+ */
+function openWin(winURL, winName, winFeatures) {
+  	window.open(winURL, winName, winFeatures);
 }
 
 </script>
