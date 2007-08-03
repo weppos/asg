@@ -46,7 +46,7 @@
 %>
 <!-- SVN: $Id$ -->
 <tr class="smalltext" align="center">
-    <td width=""100%"" colspan="<%= intAsgNumCol %>"><br />
+    <td width="100%" colspan="<%= intAsgNumCol %>"><br />
         <img src="images/bar_graph_image_visits.gif" width="10" height="8" alt="<%= strAsgTxtVisits %>" align="absmiddle" />
         &nbsp;&nbsp;<%= strAsgTxtVisits %>&nbsp;&nbsp;
         <img src="images/bar_graph_image_hits.gif" width="10" height="8" alt="<%= strAsgTxtHits %>" align="absmiddle" />
