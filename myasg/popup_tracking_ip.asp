@@ -4,77 +4,47 @@
 <!--#include file="config.asp" -->
 <%
 
-'-------------------------------------------------------------------------------'
-'	ASP Stats Generator															'
-' Copyright 2003-2006 - Carletti Simone										'
-'-------------------------------------------------------------------------------'
-'																				'
-'	Autore:																		'
-'	--------------------------													'
-'	Simone Carletti (weppos)													'
-'																				'
-'	Collaboratori 																'
-'	[che ringrazio vivamente per l'impegno ed il tempo dedicato]				'
-'	--------------------------													'
-'	@ imente 			- www.imente.it | www.imente.org						'
-'	@ ToroSeduto		- www.velaforfun.com									'
-'																				'
-'	Hanno contribuito															'
-'	[anche a loro un grazie speciale per le idee apportate]						'
-'	--------------------------													'
-'	@ Gli utenti del forum con consigli e segnalazioni							'
-'	@ subxus (suggerimento generazione grafica dei report)						'
-'																				'
-'	Verifica le proposte degli utenti, implementate o da implementare al link	'
-'	http://www.weppos.com/forum/forum_posts.asp?TID=140&PN=1					'
-'																				'
-'-------------------------------------------------------------------------------'
-'																				'
-'	Informazioni sulla Licenza													'
-'	--------------------------													'
-'	Questo è un programma gratuito; potete modificare ed adattare il codice		'
-'	(a vostro rischio) in qualsiasi sua parte nei termini delle condizioni		'
-'	della licenza che lo accompagna.											'
-'																				'
-'	Non è consentito utilizzare l'applicazione per conseguire ricavi 			'
-'	personali, distribuirla, venderla o diffonderla come una propria 			'
-'	creazione anche se modificata nel codice, senza un esplicito e scritto 		'
-'	consenso dell'autore.														'
-'																				'
-'	Potete modificare il codice sorgente (a vostro rischio) per adattarlo 		'
-'	alle vostre esigenze o integrarlo nel sito; nel caso le funzioni possano	'
-'	essere di utilità pubblica vi invitiamo a comunicarlo per poterle 			'
-'	implementare in una futura versione e per contribuire allo sviluppo 		'
-'	del programma.																'
-'																				'
-'	In nessun caso l'autore sarà responsabile di danni causati da una 			'
-'	modifica, da un uso non corretto o da un uso qualsiasi 						'
-'	dell'applicazione.															'
-'																				'
-'	Nell'utilizzo devono rimanere intatte tutte le informazioni sul 			'
-'	copyright; è possibile modificare o rimuovere unicamente le indicazioni 	'
-'	espressamente specificate.													'
-'																				'
-'	Numerose ore sono state impiegate nello sviluppo del progetto e, anche 		'
-'	se non vincolante ai fini dell'uso, sarebbe gratificante l'inserimento		'
-'	di un link all'applicazione sul vostro sito.								'
-'																				'
-'	NESSUNA GARANZIA															'
-'	------------------------- 													'
-'	Questo programma è distribuito nella speranza che possa essere utile ma 	'
-'	senza GARANZIA DI ALCUN GENERE.												'
-'	L'utente si assume tutte le responsabilità nell'uso.						'
-'																				'
-'-------------------------------------------------------------------------------'
-
-'********************************************************************************'
-'*																				*'	
-'*	VIOLAZIONE DELLA LICENZA													*'
-'*	 																			*'
-'*	L'utilizzo dell'applicazione violando le condizioni di licenza comporta la 	*'
-'*	perdita immediata della possibilità d'uso ed è PERSEGUIBILE LEGALMENTE!		*'
-'*																				*'
-'********************************************************************************'
+'/**
+' * ASP Stats Generator - Powerful and reliable ASP website counter
+' *
+' * This file is part of the ASP Stats Generator package.
+' * (c) 2003-2007 Simone Carletti <weppos@weppos.net>, All Rights Reserved
+' *
+' * 
+' * COPYRIGHT AND LICENSE NOTICE
+' *
+' * The License allows you to download, install and use one or more free copies of this program 
+' * for private, public or commercial use.
+' * 
+' * You may not sell, repackage, redistribute or modify any part of the code or application, 
+' * or represent it as being your own work without written permission from the author.
+' * You can however modify source code (at your own risk) to adapt it to your specific needs 
+' * or to integrate it into your site. 
+' *
+' * All links and information about the copyright MUST remain unchanged; 
+' * you can modify or remove them only if expressly permitted.
+' * In particular the license allows you to change the application logo with a personal one, 
+' * but it's absolutly denied to remove copyright information,
+' * including, but not limited to, footer credits, inline credits metadata and HTML credits comments.
+' *
+' * For the full copyright and license information, please view the LICENSE.htm
+' * file that was distributed with this source code.
+' *
+' * Removal or modification of this copyright notice will violate the license contract.
+' *
+' *
+' * @category        ASP Stats Generator
+' * @package         ASP Stats Generator
+' * @author          Simone Carletti <weppos@weppos.net>
+' * @copyright       2003-2007 Simone Carletti, All Rights Reserved
+' * @license         http://www.weppos.com/asg/en/license.asp
+' * @version         SVN: $Id$
+' */
+ 
+'/* 
+' * Any disagreement of this license behaves the removal of rights to use this application.
+' * Licensor reserve the right to bring legal action in the event of a violation of this Agreement.
+' */
 
 
 '// ATTENZIONE! Protezione statistiche.
