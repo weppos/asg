@@ -1,4 +1,4 @@
-<%@LANGUAGE="VBSCRIPT" CODEPAGE="1252"%>
+<%@LANGUAGE="VBSCRIPT"%>
 <% Option Explicit %>
 <!--#include file="config.asp" -->
 <!--#include file="includes/functions_images.asp" -->
