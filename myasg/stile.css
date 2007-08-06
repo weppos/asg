@@ -47,8 +47,6 @@ input, select, textarea {
   margin: 2px;
 }
 
-
-
 .normaltext {
   font-family: Verdana, Arial, Helvetica, sans-serif;
   font-size: 8pt;
@@ -162,5 +160,11 @@ img {
 /* Text - Highlighted */
 .highlighted {
   background-color: #FFFF00;
+}
+
+/* Image Icon */
+
+.def-icon {
+    border: 1px solid #CCCCCC;
 }
 
