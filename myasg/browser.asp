@@ -247,7 +247,7 @@ Call DimPaginazioneAvanzata()
 					
 		%>		  
 		  <tr class="smalltext" bgcolor="<%= strAsgSknTableContBgColour %>">
-			<td background="<%= strAsgSknPathImage & strAsgSknTableContBgImage %>" align="center"><img src="<%= strAsgSknPathImage%>/browser.asp?icon=<%= objAsgRs("Browser") %>" alt="<%= objAsgRs("Browser") %>" /></td>
+			<td background="<%= strAsgSknPathImage & strAsgSknTableContBgImage %>" align="center"><img src="<%= strAsgSknPathImage%>/browser.asp?icon=<%= objAsgRs("Browser") %>" alt="<%= objAsgRs("Browser") %>" class="def-icon def-icon-browser" /></td>
 			<td background="<%= strAsgSknPathImage & strAsgSknTableContBgImage %>" align="left"><%= HighlightSearchKey(objAsgRs("Browser"), "Browser") %></td>
 			<td background="<%= strAsgSknPathImage & strAsgSknTableContBgImage %>" align="right"><%= objAsgRs("SumHits") & "<br />" & objAsgRs("SumVisits") %></td>
 			<td background="<%= strAsgSknPathImage & strAsgSknTableContBgImage %>">
@@ -276,9 +276,6 @@ Call DimPaginazioneAvanzata()
 		Set objAsgRs = Nothing
 		objAsgConn.Close
 		Set objAsgConn = Nothing
-				
-		'// Riga - Debug automatico icone		
-		Call BuildTableContCheckIcon(4, "browser", page)
 
 		'// Row - Data output panels
 		Response.Write(vbCrLf & "<tr class=""smalltext"" align=""center"" valign=""top""><td colspan=""4"" height=""25""><br />")

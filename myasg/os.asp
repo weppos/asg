@@ -273,9 +273,6 @@ Call DimPaginazioneAvanzata()
 		Set objAsgRs = Nothing
 		objAsgConn.Close
 		Set objAsgConn = Nothing
-				
-		'// Riga - Debug automatico icone		
-		Call BuildTableContCheckIcon(4, "os", page)
 
 		'// Row - Data output panels
 		Response.Write(vbCrLf & "<tr class=""smalltext"" align=""center"" valign=""top""><td colspan=""4"" height=""25""><br />")
