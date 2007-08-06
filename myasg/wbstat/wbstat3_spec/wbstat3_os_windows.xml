@@ -26,6 +26,7 @@
 	</s:ElementType>
 </s:Schema>
 <rs:data>
+	<z:row Name='Microsoft Windows Vista' Subtype='NT' Pattern='win(?:dows)?(?: )?(?:nt(?: )?6\.0|vista)' Major='6' Minor='0'/>
 	<z:row Name='Microsoft Windows 2003' Subtype='NT' Pattern='win(?:dows)?(?: )?(?:(?:server(?: )?)?2003|nt(?: )?5\.2)'
 		 Major='5' Minor='2'/>
 	<z:row Name='Microsoft Windows XP' Subtype='NT' Pattern='win(?:dows)?(?: )?(?:nt(?: )?5\.1|xp)' Major='5' Minor='1'/>
