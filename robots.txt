@@ -1,0 +1,6 @@
+User-agent: *
+Disallow: /database/
+Disallow: /images/
+Disallow: /includes/
+Disallow: /languages/
+Disallow: /wbstat/

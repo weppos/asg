@@ -1,0 +1,310 @@
+<xml xmlns:s='uuid:BDC6E3F0-6DA3-11d1-A2A3-00AA00C14882'
+	xmlns:dt='uuid:C2F41010-65B3-11d1-A29F-00AA00C14882'
+	xmlns:rs='urn:schemas-microsoft-com:rowset'
+	xmlns:z='#RowsetSchema'>
+<s:Schema id='RowsetSchema'>
+	<s:ElementType name='row' content='eltOnly'>
+		<s:AttributeType name='Type' rs:number='1' rs:nullable='true' rs:maydefer='true' rs:writeunknown='true'>
+			<s:datatype dt:type='ui1' dt:maxLength='1' rs:precision='3' rs:fixedlength='true'/>
+		</s:AttributeType>
+		<s:AttributeType name='Name' rs:number='2' rs:nullable='true' rs:maydefer='true' rs:writeunknown='true'>
+			<s:datatype dt:type='string' dt:maxLength='255'/>
+		</s:AttributeType>
+		<s:AttributeType name='Pattern' rs:number='3' rs:nullable='true' rs:maydefer='true' rs:writeunknown='true'>
+			<s:datatype dt:type='string' dt:maxLength='255'/>
+		</s:AttributeType>
+		<s:AttributeType name='Support' rs:number='4' rs:nullable='true' rs:maydefer='true' rs:writeunknown='true'>
+			<s:datatype dt:type='string' dt:maxLength='536870910' rs:long='true'/>
+		</s:AttributeType>
+		<s:AttributeType name='Os' rs:number='5' rs:nullable='true' rs:maydefer='true' rs:writeunknown='true'>
+			<s:datatype dt:type='string' dt:maxLength='255'/>
+		</s:AttributeType>
+		<s:AttributeType name='Engine' rs:number='6' rs:nullable='true' rs:maydefer='true' rs:writeunknown='true'>
+			<s:datatype dt:type='string' dt:maxLength='255'/>
+		</s:AttributeType>
+		<s:AttributeType name='Url' rs:number='7' rs:nullable='true' rs:maydefer='true' rs:writeunknown='true'>
+			<s:datatype dt:type='string' dt:maxLength='255'/>
+		</s:AttributeType>
+		<s:extends type='rs:rowbase'/>
+	</s:ElementType>
+</s:Schema>
+<rs:data>
+	<z:row Type='0' Name='4anything' Pattern='(4anything)' Url='http://www.4anything.com'/>
+	<z:row Type='0' Name='Abacho.com' Pattern='(abachobot)' Url='http://www.abacho.com'/>
+	<z:row Type='0' Name='ABCdatos' Pattern='(botlink)' Url='http://www.abcdatos.com/'/>
+	<z:row Type='0' Name='Alexa.com' Pattern='(ia_archiver)' Url='http://www.alexa.com'/>
+	<z:row Type='0' Name='Alltheweb' Pattern='(alltheweb)' Url='http://www.alltheweb.com'/>
+	<z:row Type='0' Name='Almaden' Pattern='(almaden)' Url='http://www.almaden.ibm.com'/>
+	<z:row Type='0' Name='Altavista' Pattern='(altavista|scooter|mercator)' Url='http://www.altavista.com'/>
+	<z:row Type='0' Name='Anzwers' Pattern='(anzwers)' Url='http://www.anzwers.co.nz/'/>
+	<z:row Type='0' Name='Ask Jeeves' Pattern='(ask(?:-|[ ])?jeeves(?:\/teoma)?)' Url='http://www.ask.com/'/>
+	<z:row Type='0' Name='Atomz' Pattern='(atomz)' Url='http://www.atomz.com/'/>
+	<z:row Type='0' Name='BaiDu' Pattern='(baiduspider)' Url='http://www.baidu.com/'/>
+	<z:row Type='0' Name='Batsch' Pattern='(batsch)' Url='http://www.batsch.com/'/>
+	<z:row Type='0' Name='DeepIndex' Pattern='(deep(?:[ ]|-)?index)' Url='http://www.deepindex.com'/>
+	<z:row Type='0' Name='Dir.com' Pattern='(pompos)' Url='http://dir.com'/>
+	<z:row Type='0' Name='Echo.fr' Pattern='(echo[!])' Url='http://www.echo.fr'/>
+	<z:row Type='0' Name='Entireweb' Pattern='(speedy(?:[ ]|-)spider)' Url='http://www.entireweb.com'/>
+	<z:row Type='0' Name='EntireWeb.com' Pattern='(entireweb)' Url='http://www.entireweb.com'/>
+	<z:row Type='0' Name='Eule' Pattern='(eule(?:[ ]|-)?(?:robot)?)' Url='http://www.eule.de/'/>
+	<z:row Type='0' Name='Euroseek' Pattern='(euroseek|arachnoidea)' Url='http://www.euroseek.com'/>
+	<z:row Type='0' Name='Exactseek' Pattern='(e(?:xact)?seek(?:[ ]|-)?crawler)' Url='http://www.exactseek.com'/>
+	<z:row Type='0' Name='Exalead' Pattern='(exabot)' Url='http://www.exalead.com'/>
+	<z:row Type='0' Name='Excalibur' Pattern='(excalibur(?:[ ]|-)?(?:internet)?(?:[ ]|-)?(?:spider)?(?:[ ]|-)?(?:v)?)'
+		 Url='http://www.excalib.com/'/>
+	<z:row Type='0' Name='Excite' Pattern='(excite|architextspider)' Url='http://www.excite.com'/>
+	<z:row Type='0' Name='FAST' Pattern='(fast(?:[ ]|-)?webcrawler)' Url='http://fast.no'/>
+	<z:row Type='0' Name='FirstGov.gov' Pattern='(firstgov\.gov)' Url='http://www.firstgov.gov/'/>
+	<z:row Type='0' Name='Galaxy' Pattern='(galaxy(?:[ ]|-|[.])?(?:bot|com))' Url='http://www.galaxy.com'/>
+	<z:row Type='0' Name='Gigablast' Pattern='(gigabot)' Url='http://www.gigablast.com/'/>
+	<z:row Type='0' Name='Google' Pattern='(google|backrub)' Url='http://www.google.com'/>
+	<z:row Type='0' Name='Il Trovatore' Pattern='(il(?:-|[ ])?trovatore)' Url='http://www.iltrovatore.it'/>
+	<z:row Type='0' Name='Infoseek' Pattern='((?:infoseek|ultraseek|marvin)(?:-|[ ])?(?:sidewinder)?)' Url='http://www.go.com'/>
+	<z:row Type='0' Name='InfoSniff' Pattern='(infosniff(?:[ ]|-)?(?:sniffer)?)' Url='http://www.infosniff.com/'/>
+	<z:row Type='0' Name='Inktomi' Pattern='(slurp(?:[.]so)?|inktomi)' Url='http://www.inktomi.com'/>
+	<z:row Type='0' Name='KolibriOnline' Pattern='(kolibri)'/>
+	<z:row Type='0' Name='Lexibot' Pattern='(lexi(?:[ ]|-)?bot|mata(?:[ ]|-)?hari)' Url='http://www.lexibot.com/'/>
+	<z:row Type='0' Name='Looksmart' Pattern='(zyborg|wisenut|grub(?:-|[ ])?(?:client)?(?:-|[ ])?|zeal|looklisting|looksmart|mantraagent)'
+		 Url='http://aboutus.looksmart.com/about.jhtml'/>
+	<z:row Type='0' Name='LWP' Pattern='(lwp(?:\:\:)?(?:\)|[ ]|-)?(?:trivial|simple)?(?:\:\:)?)'/>
+	<z:row Type='0' Name='Lycos' Pattern='(lycos|wisewire)' Url='http://www.lycos.com'/>
+	<z:row Type='0' Name='Microsoft MSN' Pattern='(msie(?:[ ]|-)?crawler|msn(?:bot)?)' Url='http://www.msn.com'/>
+	<z:row Type='0' Name='National Directory' Pattern='(nationaldirectory-(?:super|web)spider)'/>
+	<z:row Type='0' Name='Naver' Pattern='(naverrobot(?:\)|[ ]|-)?)' Url='http://www.naver.com'/>
+	<z:row Type='0' Name='Navigation Zone' Pattern='(nzbot)' Url='http://www.navigationzone.com'/>
+	<z:row Type='0' Name='NetMind' Pattern='(netmind(?:[ ]|-)?(?:minder)?)' Url='http://www.netmind.com'/>
+	<z:row Type='0' Name='NetMind-Minder' Pattern='(netmind(?:[ ]|-)?minder)'/>
+	<z:row Type='0' Name='Northernlight' Pattern='(gulliver)' Url='http://www.northernlight.com'/>
+	<z:row Type='0' Name='Nutch' Pattern='(nutch(?:[ ]|-|[.])?(?:org|crawler)?)' Url='http://www.nutch.org'/>
+	<z:row Type='0' Name='Openfind' Pattern='(openbot)' Url='http://www.openfind.com.tw'/>
+	<z:row Type='0' Name='PicoSearch' Pattern='(pico(?:[ ]|-)?search)' Url='http://www.picosearch.com'/>
+	<z:row Type='0' Name='Scrub the Web' Pattern='(scrubby)' Url='http://www.scrubtheweb.com'/>
+	<z:row Type='0' Name='Search Engine 2000' Pattern='(searchengine2000\.com)'/>
+	<z:row Type='0' Name='SearchALot.com' Pattern='(searchalot)' Url='http://www.searchalot.com'/>
+	<z:row Type='0' Name='SearchEngineWorld.com' Pattern='(search(?:[ ]|-)?engine(?:[ ]|-)?world)' Url='http://www.searchengineworld.com'/>
+	<z:row Type='0' Name='SearchHippo' Pattern='(fluffy(?:[ ]|-)?the(?:[ ]|-)?spider)' Url='http://www.searchhippo.com'/>
+	<z:row Type='0' Name='Searchspider' Pattern='(searchspider)' Url='http://www.SearchSpider.com'/>
+	<z:row Type='0' Name='Seed' Pattern='(gais(?:[ ]|-)?robot)' Url='http://www.seedsearch.com'/>
+	<z:row Type='0' Name='Slider' Pattern='(slider(?:[ ]|-|[_])?(?:search)?(?:[ ]|-|[_])?(?:v)?)' Url='http://www.slider.com/'/>
+	<z:row Type='0' Name='Slysearch' Pattern='(slysearch)' Url='http://www.slysearch.com'/>
+	<z:row Type='0' Name='SureSeeker.com' Pattern='(sureseeker\.com)' Url='http://www.sureseeker.com'/>
+	<z:row Type='0' Name='Surfsafely.com' Pattern='(surfsafely)' Url='http://surfsafely.com/'/>
+	<z:row Type='0' Name='SwissSearch' Pattern='(swisssearch|search\.ch)' Url='http://www.search.ch/'/>
+	<z:row Type='0' Name='Szukacz' Pattern='(szukacz)' Url='http://www.szukacz.pl/'/>
+	<z:row Type='0' Name='Teoma' Pattern='(teoma(?:[ ]|-)?(?:agent)?)' Url='http://www.teoma.com'/>
+	<z:row Type='0' Name='Thunderstone' Pattern='(t-h-u-n-d-e-r-s-t-o-n-e)' Url='http://www.thunderstone.com'/>
+	<z:row Type='0' Name='TurnIt' Pattern='(turnit(?:[ ]|-)?(?:bot)?)' Url='http://www.turnitin.com'/>
+	<z:row Type='0' Name='UbiCrawler' Pattern='(ubicrawler)' Url='http://ubi.imc.pi.cnr.it/projects/ubicrawler/'/>
+	<z:row Type='0' Name='W8.Net' Pattern='(w8\.net)' Url='http://w8.net'/>
+	<z:row Type='0' Name='Walhello' Pattern='(appie)' Url='http://www.walhello.com/'/>
+	<z:row Type='0' Name='Wanadoo' Pattern='(wanadoo)' Url='http://www.wanadoo.com'/>
+	<z:row Type='0' Name='WebFilter' Pattern='(web(?:[ ]|-)?filter(?:[ ]|-)?robot)'/>
+	<z:row Type='0' Name='Web-Find.com' Pattern='(webfindbot)' Url='http://www.web-find.com'/>
+	<z:row Type='0' Name='WhatUSeek' Pattern='(winona)' Url='http://www.WhatUSeek.com'/>
+	<z:row Type='0' Name='WhizBang' Pattern='(whizbang|inxight)' Url='http://www.inxight.com'/>
+	<z:row Type='0' Name='Willow Internet Crawlers' Pattern='((?:willow|twotrees)(?:[ ]|-)?(?:v)?)' Url='http://www.twotrees.com'/>
+	<z:row Type='0' Name='Yahoo' Pattern='(yahoo)' Url='http://www.yahoo.com'/>
+	<z:row Type='0' Name='Yandex' Pattern='(yandex)' Url='http://www.yandex.com'/>
+	<z:row Type='0' Name='Yuntis' Pattern='(gulper)' Url='http://yuntis.ecsl.cs.sunysb.edu'/>
+	<z:row Type='1' Name='BMC Link Validator' Pattern='(bmc(?:[ ]|-)?link(?:[ ]|-)?validator)' Url='http://www.bmc.com'/>
+	<z:row Type='1' Name='Checkbot' Pattern='(check(?:[ ]|-)?bot)' Url='http://degraaff.org/checkbot'/>
+	<z:row Type='1' Name='Cyberspyder' Pattern='(http(?:[ ]|-)?test(?:[ ]|-)?program|cyberspyder)' Url='http://www.cyberspyder.com/'/>
+	<z:row Type='1' Name='JCheckLinks' Pattern='(jchecklinks)' Url='http://www.purplefrog.com/~thoth/jchecklinks/'/>
+	<z:row Type='1' Name='Linkbot' Pattern='(link(?:[ ]|-)?bot)'/>
+	<z:row Type='1' Name='LinkSweeper' Pattern='(link(?:[ ]|-)?sweeper)'/>
+	<z:row Type='1' Name='LinkWalker' Pattern='(link(?:[ ]|-)?walker)' Url='http://www.seventwentyfour.com'/>
+	<z:row Type='1' Name='LinkWalker' Pattern='(linkwalker)' Url='http://www.linkwalker.com'/>
+	<z:row Type='1' Name='MetaGer' Pattern='(meta(?:[ ]|-)?ger(?:[ ]|-)?link(?:[ ]|-)?checker)'/>
+	<z:row Type='1' Name='Powermarks' Pattern='(powermarks)' Url='http://www.kaylon.com/power.html'/>
+	<z:row Type='1' Name='UrlCheck' Pattern='(url(?:[ ]|-)?check)'/>
+	<z:row Type='1' Name='W3C CSS Validator' Pattern='(jigsaw|w3c(?:[ ]|-|[_])?css(?:[ ]|-|[_])?(?:validator)?)'
+		 Url='http://www.w3c.org'/>
+	<z:row Type='1' Name='W3C Line Mode' Pattern='(w3c(?:[ ]|-|[_])?line(?:[ ]|-|[_])?mode)' Url='http://www.w3c.org'/>
+	<z:row Type='1' Name='W3C Validator' Pattern='(w3c(?:[ ]|-|[_])?(?:validator|checklink)?)' Url='http://www.w3c.org'/>
+	<z:row Type='1' Name='Xenu Link Sleuth' Pattern='(xenu(?:[ ]|-)?(?:link)?(?:[ ]|-)?(?:sleuth)?)' Url='http://home.snafu.de/tilman/xenulink.html'/>
+	<z:row Type='2' Name='K2pdf' Pattern='(k2pdf)' Url='http://www.k2pdf.com'/>
+	<z:row Type='2' Name='SiteSnagger' Pattern='(site(?:[ ]|-)?snagger)'/>
+	<z:row Type='2' Name='WGet' Pattern='(wget)' Url='http://www.gnu.org/directory/wget.html'/>
+	<z:row Type='2' Name='Wysigot' Pattern='(wysigot)' Url='http://www.wysigot.com'/>
+	<z:row Type='3' Name='Curl' Pattern='((?:[^y]|^)curl)' Url='http://curl.haxx.se'/>
+	<z:row Type='3' Name='GetRight' Pattern='(getright)' Url='http://www.getright.com'/>
+	<z:row Type='3' Name='Go!zilla' Pattern='(go(?:\!)?zilla)' Url='http://www.gozilla.com'/>
+	<z:row Type='3' Name='Pycurl' Pattern='(pycurl)' Url='http://pycurl.sourceforge.net'/>
+	<z:row Type='3' Name='WebZIP' Pattern='(web(?:[ ]|-)?zip)' Url='http://www.spidersoft.com'/>
+	<z:row Type='8' Name='1ClickWebSlideShow' Pattern='((?:1|one)clickwebslideshow)' Url='http://www.rudenko.com/wss'/>
+	<z:row Type='8' Name='Ad Muncher' Pattern='(ad(?:[ ]|-)?muncher)' Url='http://www.admuncher.com'/>
+	<z:row Type='8' Name='Anonymizer' Pattern='(turing(?:[ ]|-)?(?:os|machine)?)' Url='http://www.anonymizer.com/'/>
+	<z:row Type='8' Name='FavOrg' Pattern='(fav(?:[ ]|-|[.])?org)' Url='http://www.grafxfreeware.homestead.com/favorg.html'/>
+	<z:row Type='8' Name='i-MailBook' Pattern='(i(?:-)?mailbook)' Url='http://www.i-mailbook.info/'/>
+	<z:row Type='8' Name='iOpus Internet Monitoring' Pattern='(iopus(?:-I-M)?)' Url='http://www.iopus.com/'/>
+	<z:row Type='8' Name='Keyword Density' Pattern='(keyword(?:[ ]|-)?density)' Url='http://www.keyworddensity.com/'/>
+	<z:row Type='8' Name='LinksManager.com' Pattern='(linksmanager\.com)' Url='http://www.linksmanager.com'/>
+	<z:row Type='8' Name='Sam Spade' Pattern='(sam(?:[ ]|-)?spade)' Url='http://www.samspade.org'/>
+	<z:row Type='8' Name='URLMenu98' Pattern='(url(?:[ ]|-)?menu98)'/>
+	<z:row Type='8' Name='WebTrends Link Analyzer' Pattern='(web(?:[ ]|-)?trends)' Url='http://www.webtrends.com/'/>
+	<z:row Type='9' Name='Robot' Pattern='(spider|crawl|bot$)'/>
+	<z:row Type='10' Name='Opera' Pattern='(opera)' Support='(7)(x)(2,1,1,1,1,0,1,1,0)
+(6)(x)(1,1,1,1,1,0,1,1,0)
+(5)(x)(1,1,0,1,1,0,1,1,0)
+(4)(x)(1,1,0,1,1,0,1,1,0)
+(3)(5)(1,1,0,1,1,0,1,1,0)
+(x)(x)(-1,-1,-1,1,-1,-1,-1,-1,-1)'
+		 Url='http://www.opera.com'/>
+	<z:row Type='10' Name='Sega Console' Pattern='(dreamcast|planetweb|sega)' Support='(x)(x)(0,0,0,1,0,0,1,1,0)'
+		 Url='http://www.sega.com'/>
+	<z:row Type='10' Name='Xbox' Pattern='(xbox)' Support='(x)(x)(0,0,0,1,0,0,1,1,0)' Os='Xbox' Url='http://www.microsoft.com/xbox'/>
+	<z:row Type='10' Name='Amaya' Pattern='(amaya)' Support='(8)(x)(2,0,0,1,0,0,0,0,0)
+(7)(x)(1,0,0,1,0,0,0,0,0)
+(6)(x)(1,0,0,1,0,0,0,0,0)
+(5)(x)(1,0,0,1,0,0,0,0,0)
+(x)(x)(0,0,0,1,0,0,0,0,0)'
+		 Url='http://www.w3.org/Amaya/'/>
+	<z:row Type='10' Name='AmigaVoyager' Pattern='(amigavoyager)' Support='(x)(x)(0,0,0,1,0,0,0,0,0)' Os='Amiga'
+		 Url='http://v3.vapor.com/'/>
+	<z:row Type='10' Name='AOL Browser' Pattern='(aol(?:-|[ ])?(?:browser|iweng)?)' Support='(7)(x)(2,1,1,1,0,0,1,1,0)
+(x)(x)(0,1,0,1,1,0,0,0,0)'/>
+	<z:row Type='10' Name='Arachmo' Pattern='(arachmo)' Support='(x)(x)(-1,-1,-1,1,-1,-1,-1,-1,-1)'/>
+	<z:row Type='10' Name='Arachne' Pattern='(arachne)' Support='(x)(x)(-1,-1,-1,1,-1,-1,-1,-1,-1)'/>
+	<z:row Type='10' Name='Arexx' Pattern='(arexx)' Support='(x)(x)(0,1,0,1,0,0,1,0,0)' Os='Amiga'/>
+	<z:row Type='10' Name='AvantBrowser' Pattern='(avant(?:-|[ ])?browser)' Support='(x)(x)(2,1,1,1,1,1,1,1,1)'
+		 Engine='Internet Explorer' Url='http://avantbrowser.com'/>
+	<z:row Type='10' Name='Aweb' Pattern='((?:amiga(?:-|[ ])?)?aweb(?:[(].+[)])?)' Support='(3)(9)(0,0,0,1,0,0,1,0,0)
+(x)(x)(0,0,0,1,0,0,0,0,0)'
+		 Os='Amiga'/>
+	<z:row Type='10' Name='BackStreet' Pattern='(backstreet)' Support='(x)(x)(2,1,1,1,1,0,1,1,0)'/>
+	<z:row Type='10' Name='Beonex' Pattern='(beonex)' Support='(x)(x)(2,1,1,1,0,0,1,1,0)' Engine='Mozilla' Url='http://www.beonex.com/communicator'/>
+	<z:row Type='10' Name='Blazer' Pattern='(blazer)' Support='(x)(x)(-1,-1,-1,1,-1,-1,-1,-1,-1)'/>
+	<z:row Type='10' Name='Camino' Pattern='(cerberian(?:-|[ ])?drtrs)' Support='(x)(x)(-1,-1,-1,1,-1,-1,-1,-1,-1)'/>
+	<z:row Type='10' Name='Camino' Pattern='(camino)' Support='(x)(x)(2,1,1,1,0,0,1,1,0)' Url='http://www.mozilla.org/projects/camino'/>
+	<z:row Type='10' Name='Chimera' Pattern='(chimera)' Support='(x)(x)(2,1,1,1,0,0,1,1,0)' Engine='Mozilla' Url='http://www.mozilla.org/projects/chimera'/>
+	<z:row Type='10' Name='Coldfusion' Pattern='(cold(?:-|[ ])?fusion)' Support='(x)(x)(-1,-1,-1,1,-1,-1,-1,-1,-1)'/>
+	<z:row Type='10' Name='Contiki' Pattern='(contiki)' Support='(x)(x)(0,1,0,1,0,0,0,0,0)' Os='Amiga'/>
+	<z:row Type='10' Name='CrazyBrowser' Pattern='(crazy(?:-|[ ])?browser)' Support='(x)(x)(2,1,1,1,1,1,1,1,1)'
+		 Engine='Internet Explorer'/>
+	<z:row Type='10' Name='Cuam' Pattern='(cuam(?:(?:-|[ ])?ver)?)' Support='(x)(x)(2,1,1,1,1,1,1,1,1)' Engine='Internet Explorer'/>
+	<z:row Type='10' Name='CyberDog' Pattern='(cyber(?:-|[ ])?dog)' Support='(x)(x)(0,1,0,1,0,0,1,1,0)' Url='http://www.cyberdog.apple.com'/>
+	<z:row Type='10' Name='Dillo' Pattern='(dillo)' Support='(x)(x)(-1,-1,-1,1,-1,-1,-1,-1,-1)' Os='Linux' Url='http://dillo.auriga.wearlab.de/'/>
+	<z:row Type='10' Name='DocZilla' Pattern='(doczilla)' Support='(x)(x)(-1,-1,-1,1,-1,-1,-1,-1,-1)'/>
+	<z:row Type='10' Name='Emacs/W3' Pattern='(emacs(?:-|[ ]|\/)?w3)' Support='(x)(x)(1,1,0,1,0,0,0,0,0)' Url='http://www.cs.indiana.edu/elisp/w3/docs.html'/>
+	<z:row Type='10' Name='Enigma' Pattern='(enigma)' Support='(x)(x)(-1,-1,-1,1,-1,-1,-1,-1,-1)'/>
+	<z:row Type='10' Name='Epsilon' Pattern='(epsilon)' Support='(x)(x)(-1,-1,-1,1,-1,-1,-1,-1,-1)'/>
+	<z:row Type='10' Name='EZW' Pattern='(ezw)' Support='(x)(x)(-1,-1,-1,1,-1,-1,-1,-1,-1)'/>
+	<z:row Type='10' Name='Firebird' Pattern='(firebird(?:(?:-|[ ])?browser)?)' Support='(x)(x)(2,1,1,1,0,0,1,1,0)'
+		 Engine='Mozilla' Url='http://www.mozilla.org/projects/firebird'/>
+	<z:row Type='10' Name='Firefox' Pattern='(firefox(?:(?:-|[ ])?browser)?)' Support='(x)(x)(2,1,1,1,0,0,1,1,0)'
+		 Engine='Mozilla' Url='http://www.mozilla.org/projects/firefox'/>
+	<z:row Type='10' Name='FrontPage' Pattern='((?:ms)?(?:-|[ ])?frontpage(?:-|[ ])?(?:express)?)' Support='(x)(x)(0,1,0,1,1,1,1,1,1)'/>
+	<z:row Type='10' Name='Galeon' Pattern='(galeon)' Support='(x)(x)(2,1,1,1,0,0,1,1,0)' Os='Linux'/>
+	<z:row Type='10' Name='HotJava' Pattern='(hot(?:-|[ ])?java)' Support='(3)(x)(0,1,1,1,0,0,1,1,0)
+(x)(x)(-1,-1,-1,1,-1,-1,-1,-1,-1)'/>
+	<z:row Type='10' Name='IBM WebExplorer' Pattern='((?:ibm)?(?:-|[ ])?web(?:-|[ ])?explorer)' Support='(x)(x)(0,1,0,1,0,0,0,0,0)'/>
+	<z:row Type='10' Name='iBrowse' Pattern='(ibrowse)' Support='(x)(x)(0,1,0,1,0,0,1,0,0)' Os='Amiga'/>
+	<z:row Type='10' Name='iCab' Pattern='(icab)' Support='(x)(x)(1,1,0,1,0,0,1,0,0)'/>
+	<z:row Type='10' Name='I-Opener' Pattern='(i(?:-|[ ])?opener|netpliance)' Support='(x)(x)(0,1,0,1,0,0,1,0,0)'
+		 Url='http://www.netpliance.com'/>
+	<z:row Type='10' Name='JAVA' Pattern='(java)' Support='(x)(x)(-1,-1,-1,1,-1,-1,-1,-1,-1)' Os='JAVA' Engine='JAVA'/>
+	<z:row Type='10' Name='K-Meleon' Pattern='(k(?:-|[ ])?meleon)' Support='(x)(x)(2,1,1,1,0,0,1,1,0)' Engine='Mozilla'/>
+	<z:row Type='10' Name='Konqueror' Pattern='(konq)' Support='(2)(2)(2,1,0,1,1,0,1,1,1)
+(x)(x)(2,1,0,1,1,0,1,1,0)'
+		 Os='Linux'/>
+	<z:row Type='10' Name='Lachesis' Pattern='(lachesis)' Support='(x)(x)(-1,-1,-1,1,-1,-1,-1,-1,-1)'/>
+	<z:row Type='10' Name='Liberate TV' Pattern='(liberate(?:-|[ ])?(?:dtv)?)' Support='(x)(x)(0,1,0,1,0,0,1,0,0)'
+		 Os='TV' Url='http://www.liberate.com'/>
+	<z:row Type='10' Name='Links' Pattern='((?:e)?links(?:-|[ ])?(?:\()?)' Support='(x)(x)(-1,-1,-1,1,-1,-1,-1,-1,-1)'/>
+	<z:row Type='10' Name='Lotus Notes' Pattern='(lotus(?:-|[ ])?notes)' Support='(x)(x)(-1,-1,-1,1,-1,-1,-1,-1,-1)'/>
+	<z:row Type='10' Name='Lycoris Desktop/LX' Pattern='(lycoris|desktop\/lx)' Support='(x)(x)(0,0,0,1,0,0,0,0,0)'
+		 Engine='Mozilla' Url='http://www.lycoris.com/'/>
+	<z:row Type='10' Name='Lynx' Pattern='(lynx)' Support='(x)(x)(0,1,0,1,0,0,0,0,0)' Os='Unix'/>
+	<z:row Type='10' Name='Megite' Pattern='(megite)' Support='(x)(x)(-1,-1,-1,1,-1,-1,-1,-1,-1)'/>
+	<z:row Type='10' Name='Mosaic' Pattern='((?:ncsa)?(?:-|[ ])?mosaic(?:[ ]for[ ]amiga)?)' Support='(3)(x)(2,1,0,1,1,0,0,0,0)
+(2)(x)(2,0,0,1,1,0,0,0,0)
+(1)(x)(0,0,0,0,0,0,0,0,0)'
+		 Os='Windows'/>
+	<z:row Type='10' Name='MSN Explorer' Pattern='(msn(?:-|[ ])?(?:explorer)?)' Support='(x)(x)(2,1,1,1,1,1,1,1,1)'
+		 Engine='Internet Explorer'/>
+	<z:row Type='10' Name='MultiZilla' Pattern='(multizilla(?:-|[ ]|\/)?(?:v)?)' Support='(x)(x)(-1,-1,-1,1,-1,-1,-1,-1,-1)'/>
+	<z:row Type='10' Name='MyIE2' Pattern='(myie(?:-|[ ])?2)' Support='(x)(x)(2,1,1,1,1,1,1,1,1)' Engine='Internet Explorer'/>
+	<z:row Type='10' Name='Nautilus' Pattern='(nautilus)' Support='(x)(x)(2,1,1,1,0,0,1,1,0)'/>
+	<z:row Type='10' Name='NCBrowser' Pattern='(ncbrowser)' Support='(x)(x)(-1,1,-1,1,-1,0,1,1,0)'/>
+	<z:row Type='10' Name='Neoplanet' Pattern='(neoplanet(?:2)?)' Support='(x)(x)(2,1,1,1,1,1,1,1,1)' Engine='Internet Explorer'/>
+	<z:row Type='10' Name='NetCaptor' Pattern='(netcaptor)' Support='(7)(x)(1,1,1,1,1,1,1,1,1)
+(x)(x)(-1,-1,-1,1,-1,-1,-1,-1,-1)'
+		 Engine='Internet Explorer' Url='http://www.netcaptor.com'/>
+	<z:row Type='10' Name='NetPositive' Pattern='(netpositive|zonesurf)' Support='(x)(x)(-1,1,-1,1,-1,0,1,1,0)'/>
+	<z:row Type='10' Name='Nutscrape' Pattern='(nutscrape)' Support='(x)(x)(-1,-1,-1,1,-1,-1,-1,-1,-1)'/>
+	<z:row Type='10' Name='OffByOne' Pattern='(offbyone)' Support='(x)(x)(0,1,0,1,1,0,0,0,0)' Url='http://www.offbyone.com'/>
+	<z:row Type='10' Name='OmniWeb' Pattern='(omniweb)' Support='(x)(x)(0,1,0,1,0,0,1,1,0)'/>
+	<z:row Type='10' Name='Phaseout' Pattern='(phaseout)' Support='(x)(x)(2,1,1,1,1,1,1,1,1)' Engine='Internet Explorer'/>
+	<z:row Type='10' Name='Phoenix' Pattern='(phoenix)' Support='(x)(x)(2,1,1,1,0,0,1,1,0)' Engine='Mozilla' Url='http://www.mozilla.org/projects/phoenix'/>
+	<z:row Type='10' Name='Planetweb' Pattern='(planetweb)' Support='(x)(x)(0,1,0,1,1,0,1,0,0)'/>
+	<z:row Type='10' Name='Pocket Internet Explorer' Pattern='(pocket(?:-|[ ])?internet(?:-|[ ])?explorer|mspie)'
+		 Support='(x)(x)(0,0,0,1,1,0,0,0,0)' Os='Microsoft Windows CE' Engine='Internet Explorer'/>
+	<z:row Type='10' Name='PowerTV' Pattern='(power(?:-|[ ])?tv)' Support='(x)(x)(0,1,0,1,0,0,1,0,0)' Os='TV' Url='http://www.powertv.com/'/>
+	<z:row Type='10' Name='Prodigy Web Browser' Pattern='(prodigy(?:-|[ ])?(?:web(?:-|[ ])?browser|wb)?)' Support='(x)(x)(0,0,0,0,0,0,0,0,0)'/>
+	<z:row Type='10' Name='QNX Voyager' Pattern='(qnx(?:-|[ ])?voyager)' Support='(x)(x)(0,1,1,1,1,1,0,0,0)'/>
+	<z:row Type='10' Name='Safari' Pattern='(safari|applewebkit)' Support='(x)(x)(2,1,1,1,1,0,1,1,0)' Os='Mac'/>
+	<z:row Type='10' Name='Safe Explorer' Pattern='(safeexploerer)' Support='(x)(x)(-1,-1,-1,1,-1,-1,-1,-1,-1)'/>
+	<z:row Type='10' Name='SmartExplorer' Pattern='(smart(?:-|[ ])?explorer)' Support='(x)(x)(2,1,1,1,1,1,1,1,1)'
+		 Engine='Internet Explorer'/>
+	<z:row Type='10' Name='sUbrowser' Pattern='(subrowser(?:_|-|[ ])?)' Support='(x)(x)(-1,-1,-1,1,-1,-1,-1,-1,-1)'/>
+	<z:row Type='10' Name='Tango' Pattern='(tango|sextant)' Support='(x)(x)(0,1,0,1,0,0,1,1,0)' Url='http://www.translation.net/tango.html'/>
+	<z:row Type='10' Name='TeaCup' Pattern='(tea(?:-|[ ])?cup)' Support='(x)(x)(-1,-1,-1,1,-1,-1,-1,-1,-1)'/>
+	<z:row Type='10' Name='TurboBrowser' Pattern='(turbo(?:-|[ ])?browser)' Support='(x)(x)(-1,-1,-1,1,-1,-1,-1,-1,-1)'/>
+	<z:row Type='10' Name='WebCapture' Pattern='(web(?:-|[ ])?capture)' Support='(x)(x)(-1,-1,-1,1,-1,-1,-1,-1,-1)'/>
+	<z:row Type='10' Name='WEBCapture' Pattern='(web(?:-|[ ])?capture)' Support='(x)(x)(-1,-1,-1,1,-1,-1,-1,-1,-1)'/>
+	<z:row Type='10' Name='WEBCopier' Pattern='(web(?:-|[ ])?copier)' Support='(x)(x)(-1,-1,-1,1,-1,-1,-1,-1,-1)'/>
+	<z:row Type='10' Name='WebDownloader' Pattern='(web(?:-|[ ])?downloader)' Support='(x)(x)(-1,-1,-1,1,-1,-1,-1,-1,-1)'/>
+	<z:row Type='10' Name='WEBStripper' Pattern='(web(?:-|[ ])?stripper)' Support='(x)(x)(-1,-1,-1,1,-1,-1,-1,-1,-1)'/>
+	<z:row Type='10' Name='WEBTv' Pattern='(web(?:-|[ ])?tv)' Support='(2)(5)(1,1,0,1,0,0,1,0,0)
+(x)(x)(0,1,0,1,0,0,1,0,0)'
+		 Os='TV'/>
+	<z:row Type='10' Name='WebWasher' Pattern='(web(?:-|[ ])?washer)' Support='(x)(x)(-1,-1,-1,1,-1,-1,-1,-1,-1)'/>
+	<z:row Type='10' Name='Yoda' Pattern='(yoda)' Support='(x)(x)(-1,-1,-1,1,-1,-1,-1,-1,-1)'/>
+	<z:row Type='10' Name='Alpha' Pattern='(alpha)' Support='(x)(x)(-1,-1,-1,1,-1,-1,-1,-1,-1)' Os='Amiga'/>
+	<z:row Type='10' Name='Internet Explorer' Pattern='(msie|internet(?:-|[ ])?explorer)' Support='(6)(x)(2,1,1,1,1,1,1,1,1)
+(5)(x)(2,1,1,1,1,1,1,1,1)
+(4)(x)(1,1,1,1,1,1,1,1,1)
+(3)(x)(1,1,0,1,1,1,1,1,1)
+(2)(x)(0,0,0,1,0,0,0,0,0)
+(1)(x)(0,0,0,1,0,0,0,0,0)'
+		 Engine='Internet Explorer' Url='http://www.microsoft.com'/>
+	<z:row Type='10' Name='Netscape' Pattern='(netscape(?:6)?)' Engine='Mozilla' Url='http://www.netscape.com'/>
+	<z:row Type='15' Name='Netgem' Pattern='(netgem)' Support='(x)(x)(-1,-1,-1,1,-1,-1,-1,-1,-1)'/>
+	<z:row Type='15' Name='Winamp' Pattern='(winamp)' Support='(x)(x)(-1,-1,-1,1,-1,-1,-1,-1,-1)'/>
+	<z:row Type='15' Name='Microsoft NetShow' Pattern='(netshow)' Support='(x)(x)(0,1,0,1,1,0,1,0,1)'/>
+	<z:row Type='15' Name='Microsoft Windows Media Player' Pattern='((?:windows)?(?:-|[ ])?media(?:-|[ ])?player|nsplayer)'
+		 Support='(x)(x)(0,1,0,1,1,0,1,0,1)'/>
+	<z:row Type='15' Name='Quicktime' Pattern='(quicktime|qtver)' Support='(x)(x)(-1,-1,-1,1,-1,-1,-1,-1,-1)'/>
+	<z:row Type='20' Name='AKAV' Pattern='(alav(?:-|[ ])?(?:up)?)' Support='(x)(x)(-1,-1,-1,1,-1,-1,-1,-1,-1)'/>
+	<z:row Type='20' Name='AvantGo' Pattern='(avant(?:-|[ ])?go)' Support='(x)(x)(-1,-1,-1,1,-1,-1,-1,-1,-1)' Url='http://www.avantgo.com'/>
+	<z:row Type='20' Name='ccWAP-Browser' Pattern='(ccwap(?:-|[ ])?browser)' Support='(x)(x)(-1,-1,-1,1,-1,-1,-1,-1,-1)'/>
+	<z:row Type='20' Name='Conduits' Pattern='(conduits(?:-|[ ])?(?:palmbrowser)?)' Support='(x)(x)(-1,-1,-1,1,-1,-1,-1,-1,-1)'/>
+	<z:row Type='20' Name='Doris' Pattern='(doris)' Support='(x)(x)(-1,-1,-1,1,-1,-1,-1,-1,-1)' Url='http://www.anygraaf.fi/browser/browsere.htm'/>
+	<z:row Type='20' Name='Elaine' Pattern='(elaine)' Support='(x)(x)(-1,-1,-1,1,-1,-1,-1,-1,-1)'/>
+	<z:row Type='20' Name='EzWAPBrowser' Pattern='(ezwapbrowser)' Support='(x)(x)(-1,-1,-1,1,-1,-1,-1,-1,-1)'/>
+	<z:row Type='20' Name='Fetchpage' Pattern='(fetchpage(?:\.cgi)?)' Support='(x)(x)(-1,-1,-1,1,-1,-1,-1,-1,-1)'/>
+	<z:row Type='20' Name='Google WAP' Pattern='(google(?:-|[ ])?wap(?:-|[ ])?(?:proxy)?)' Support='(x)(x)(-1,-1,-1,1,-1,-1,-1,-1,-1)'/>
+	<z:row Type='20' Name='iBrowser' Pattern='(ibrowser)' Support='(x)(x)(-1,-1,-1,1,-1,-1,-1,-1,-1)'/>
+	<z:row Type='20' Name='iPanel' Pattern='(ipanel)' Support='(x)(x)(-1,-1,-1,1,-1,-1,-1,-1,-1)'/>
+	<z:row Type='20' Name='iSiloX' Pattern='(isilox)' Support='(x)(x)(-1,-1,-1,1,-1,-1,-1,-1,-1)' Url='http://www.isilo.com/'/>
+	<z:row Type='20' Name='KBrowser' Pattern='(kbrowser)' Support='(x)(x)(-1,-1,-1,1,-1,-1,-1,-1,-1)'/>
+	<z:row Type='20' Name='Klondike' Pattern='(klondike)' Support='(x)(x)(-1,-1,-1,1,-1,-1,-1,-1,-1)'/>
+	<z:row Type='20' Name='Materna' Pattern='(materna(?:-|[ ])?wappreview)' Support='(x)(x)(-1,-1,-1,1,-1,-1,-1,-1,-1)'/>
+	<z:row Type='20' Name='Mitsu' Pattern='(mitsu)' Support='(x)(x)(-1,-1,-1,1,-1,-1,-1,-1,-1)'/>
+	<z:row Type='20' Name='Palm Wapper' Pattern='((?:aur)?(?:-|[ ])?palm(?:-|[ ])?wapper)' Support='(x)(x)(-1,-1,-1,1,-1,-1,-1,-1,-1)'/>
+	<z:row Type='20' Name='ReqwirelessWeb' Pattern='(reqwirelessweb)' Support='(x)(x)(-1,-1,-1,1,-1,-1,-1,-1,-1)'
+		 Url='http://reqwireless.com/'/>
+	<z:row Type='20' Name='UP.Browser' Pattern='(up\.browser)' Support='(x)(x)(-1,-1,-1,1,-1,-1,-1,-1,-1)'/>
+	<z:row Type='20' Name='Wapalizer' Pattern='(wapalizer)' Support='(x)(x)(-1,-1,-1,1,-1,-1,-1,-1,-1)'/>
+	<z:row Type='20' Name='WapBrowser' Pattern='(wapbrowser)' Support='(x)(x)(-1,-1,-1,1,-1,-1,-1,-1,-1)'/>
+	<z:row Type='20' Name='WapIDE-SDK' Pattern='(wapide(?:-|[ ])?sdk)' Support='(x)(x)(-1,-1,-1,1,-1,-1,-1,-1,-1)'/>
+	<z:row Type='20' Name='WAPJAG Virtual' Pattern='(wapjag(?:-|[ ])?virtual(?:-|[ ])?wap)' Support='(x)(x)(-1,-1,-1,1,-1,-1,-1,-1,-1)'/>
+	<z:row Type='20' Name='WAPman' Pattern='(wapman)' Support='(x)(x)(-1,-1,-1,1,-1,-1,-1,-1,-1)'/>
+	<z:row Type='20' Name='Wapper' Pattern='(wapper)' Support='(x)(x)(-1,-1,-1,1,-1,-1,-1,-1,-1)'/>
+	<z:row Type='20' Name='Waptor' Pattern='(waptor)' Support='(x)(x)(-1,-1,-1,1,-1,-1,-1,-1,-1)'/>
+	<z:row Type='20' Name='Wapview' Pattern='(wapview)' Support='(x)(x)(-1,-1,-1,1,-1,-1,-1,-1,-1)'/>
+	<z:row Type='20' Name='WinWap' Pattern='(winwap)' Support='(x)(x)(-1,-1,-1,1,-1,-1,-1,-1,-1)'/>
+	<z:row Type='20' Name='YourWap.com' Pattern='(yourwap)' Support='(x)(x)(-1,-1,-1,1,-1,-1,-1,-1,-1)'/>
+	<z:row Type='20' Name='Zetor' Pattern='(zetor)' Support='(x)(x)(-1,-1,-1,1,-1,-1,-1,-1,-1)'/>
+</rs:data>
+</xml>

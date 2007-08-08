@@ -1,0 +1,58 @@
+<xml xmlns:s='uuid:BDC6E3F0-6DA3-11d1-A2A3-00AA00C14882'
+	xmlns:dt='uuid:C2F41010-65B3-11d1-A29F-00AA00C14882'
+	xmlns:rs='urn:schemas-microsoft-com:rowset'
+	xmlns:z='#RowsetSchema'>
+<s:Schema id='RowsetSchema'>
+	<s:ElementType name='row' content='eltOnly'>
+		<s:AttributeType name='Name' rs:number='1' rs:nullable='true' rs:maydefer='true' rs:writeunknown='true'>
+			<s:datatype dt:type='string' dt:maxLength='255'/>
+		</s:AttributeType>
+		<s:AttributeType name='Pattern' rs:number='2' rs:nullable='true' rs:maydefer='true' rs:writeunknown='true'>
+			<s:datatype dt:type='string' dt:maxLength='255'/>
+		</s:AttributeType>
+		<s:AttributeType name='Type' rs:number='3' rs:nullable='true' rs:maydefer='true' rs:writeunknown='true'>
+			<s:datatype dt:type='int' dt:maxLength='4' rs:precision='10' rs:fixedlength='true'/>
+		</s:AttributeType>
+		<s:extends type='rs:rowbase'/>
+	</s:ElementType>
+</s:Schema>
+<rs:data>
+	<z:row Name='Windows' Pattern='(win)' Type='0'/>
+	<z:row Name='Commodore' Pattern='(commodore)' Type='0'/>
+	<z:row Name='BeOS' Pattern='(beos)' Type='0'/>
+	<z:row Name='Mac' Pattern='(mac(?: )?os|p(?:ower)?pc)' Type='0'/>
+	<z:row Name='Macintosh' Pattern='(mac|apple)' Type='0'/>
+	<z:row Name='Linux' Pattern='(linux)' Type='0'/>
+	<z:row Name='Sun OS' Pattern='(sun(?:-|[ ])?(?:os)?)' Type='0'/>
+	<z:row Name='OS/2' Pattern='(os(?: )?(?:\/)?(?: )?2)' Type='0'/>
+	<z:row Name='RiscOS' Pattern='(risc(?:-|[ ])?os)' Type='0'/>
+	<z:row Name='Amiga' Pattern='(amiga(?:-|[ ])?(?:os)?)' Type='0'/>
+	<z:row Name='Atari' Pattern='(atari)' Type='0'/>
+	<z:row Name='DOS' Pattern='(dos)' Type='0'/>
+	<z:row Name='Nokia Mobile' Pattern='(nokia(?:-|[ ])?(?:\w*))' Type='1'/>
+	<z:row Name='SonyEricsson Mobile' Pattern='(sony(?:-|[ ]|\/)?(?:ericsson)?(?:-|[ ])?(?:\w*))' Type='1'/>
+	<z:row Name='Motorola Mobile' Pattern='(mot(?:orola)?)' Type='1'/>
+	<z:row Name='Alcatel Mobile' Pattern='(alcatel)' Type='1'/>
+	<z:row Name='Panasonic Mobile' Pattern='(panasonic)' Type='1'/>
+	<z:row Name='Philips Palm' Pattern='(philips)' Type='1'/>
+	<z:row Name='Psion Palm' Pattern='(psion)' Type='1'/>
+	<z:row Name='Sega Console' Pattern='(dreamcast|sega)' Type='1'/>
+	<z:row Name='FreeBSD' Pattern='(free(?:-|[ ])?bsd)' Type='0'/>
+	<z:row Name='OpenBSD' Pattern='(open(?:-|[ ])?bsd)' Type='0'/>
+	<z:row Name='NetBSD' Pattern='(net(?:-|[ ])?bsd)' Type='0'/>
+	<z:row Name='BSD' Pattern='(bsd)' Type='0'/>
+	<z:row Name='GNU Hurd' Pattern='(gnu(?:-|[ ])?hurd)' Type='0'/>
+	<z:row Name='IRIX' Pattern='(irix)' Type='0'/>
+	<z:row Name='HP-UX' Pattern='(hp(?:-|[ ])?ux)' Type='0'/>
+	<z:row Name='SCO' Pattern='(sco|unix_sv)' Type='0'/>
+	<z:row Name='AIX' Pattern='(aix)' Type='0'/>
+	<z:row Name='Reliant' Pattern='(reliant)' Type='0'/>
+	<z:row Name='DEC' Pattern='(dec|ultrix|osf1)' Type='0'/>
+	<z:row Name='Sinix' Pattern='(sinix)' Type='0'/>
+	<z:row Name='VMS' Pattern='(vms|vax)' Type='0'/>
+	<z:row Name='UnixWare' Pattern='(unixware|unix_system_v)' Type='0'/>
+	<z:row Name='Mpras' Pattern='(mpras|ncr)' Type='0'/>
+	<z:row Name='Symbian' Pattern='(symbian)' Type='0'/>
+	<z:row Name='UNIX' Pattern='(unix|x11)' Type='0'/>
+</rs:data>
+</xml>
