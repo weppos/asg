@@ -49,7 +49,7 @@ Response.Buffer = True
 
 'Deve essere attivata l'opzione sottostante, nel caso che ci sia il CDate Error 
 '1040 è la session per l'Italia
-Session.LCID = 1040
+'Session.LCID = 1040
 
 'Non salvare in cache
 Response.Expires = -1
@@ -198,9 +198,9 @@ startAsgElab = Timer()
 
 'Variabili debug e sviluppo
 Dim strAsgVersion
-strAsgVersion = "2.1.3"
+strAsgVersion = "2.1.4-dev"
 Dim dtmAsgUpdate
-dtmAsgUpdate = "20060622"
+dtmAsgUpdate = "20070809"
 Const blnAsgDebugMode = False
 
 
