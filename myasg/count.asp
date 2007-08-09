@@ -232,8 +232,7 @@ Sub Log()
 		
 		If blnMonitEngine AND strAsgReferer <> "(unknown)" Then
 			
-			%><!--include virtual="/myasg/includes/inc_search_engines.asp" -->	
-			<!--#include file="includes/inc_search_engines.asp" --><%			
+			%><!--#include file="includes/inc_search_engines.asp" --><%			
 			
 			'Ciclo
 			For intLoop = 1 to UBound(aryEngine)

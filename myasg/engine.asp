@@ -254,7 +254,7 @@ Call DimPaginazioneAvanzataDettagli()
 					
 		%>		  
 		  <tr class="smalltext" bgcolor="<%= strAsgSknTableContBgColour %>">
-			<td background="<%= strAsgSknPathImage & strAsgSknTableContBgImage %>" align="center"><img src="images/engine.asp?icon=<%= objAsgRs("Engine") %>" alt="<%= objAsgRs("Engine") %>" /></td>
+			<td background="<%= strAsgSknPathImage & strAsgSknTableContBgImage %>" align="center"><img src="images/engine.asp?icon=<%= objAsgRs("Engine") %>" alt="<%= objAsgRs("Engine") %>" class="def-icon def-icon-searchengine" /></td>
 			<td background="<%= strAsgSknPathImage & strAsgSknTableContBgImage %>" align="left"><%
 											
 				'Write an anchor
@@ -391,9 +391,6 @@ Call DimPaginazioneAvanzataDettagli()
 		Set objAsgRs = Nothing
 		objAsgConn.Close
 		Set objAsgConn = Nothing
-				
-		'// Riga - Debug automatico icone		
-		Call BuildTableContCheckIcon(5, "engine", page)
 
 		'// Row - Data output panels
 		Response.Write(vbCrLf & "<tr class=""smalltext"" align=""center"" valign=""top""><td colspan=""5"" height=""25""><br />")
