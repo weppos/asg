@@ -43,124 +43,73 @@
 ' */
 
 
-'Server MapPath
+' Server MapPath
 Dim strAsgMapPath
 Dim strAsgMapPathTo
 Dim strAsgMapPathIP  
 
 
 
-'							========================================
-'---------------------------   		Percorsi di collegamento		 -------------------------------------
-'							========================================
+' ----- BEGINNING OF CONFIGURATION SETTINGS -----
 
-'-----------------------------------------------------------------------------------------
-' strAsgPathFolderDb
-'-----------------------------------------------------------------------------------------
-' Contiene il percorso alla cartella del server contenente i database
-' NB. E' necessaria una cartella speciale con attivi i permessi di scrittura
-' ed in genere è prevista da ogni provider che supporti l'uso di Access.
+
+' ***** PUBLIC FOLDER *****
+' This is the path to database folder.
+' Each web host usually provides a special folder for Access databases
+' with write permission enabled and browse permission denied.
+' The folder is writeable by the web user but the public access is denied
+' in order to prevent anyone from downloading your database.
+'
+' Be sure to move your database into your database folder
+' and change the following path.
+' You can use both relative and absolute path.
+'
+' Each path starts from /myasg folder and follows the same rules ad links in web pages.
+' To specify a path to a child folder (for example 'myasg/mdb/') simply enter 'mdb/'.
+' If your folder is a parent directory then use '../' to go back to parent folder
+' or use an absolute path from your web root, for example '/absolute/path/to/folder/'
+' means the folder available at http://example.com/absolute/path/to/folder/.
 Const strAsgPathFolderDb = "mdb/" 
-'
-' Ecco alcuni esempi:
-'
-' // Sottocartella applicazione (myasg) '/mdb' - Include relativi
-' Const strAsgPathFolderDb = "mdb/"
-'
-' // Sottocartella applicazione (myasg) '/mdb' - Include assoluti
-' Const strAsgPathFolderDb = "/myasg/mdb/"
-'
-' // Sottocartella root  '/mdb' - Include relativi
-' Const strAsgPathFolderDb = "../mdb/"
-'
-' // Sottocartella root  '/mdb' - Include assoluti
-' Const strAsgPathFolderDb = "/mdb/"
-'-----------------------------------------------------------------------------------------
 
-'-----------------------------------------------------------------------------------------
-' strAsgPathFolderWr
-'-----------------------------------------------------------------------------------------
-' Contiene il percorso alla cartella del server con attivi i permessi
-' di scrittura e dove inserire il file inc_skin_file.asp
-' E' possibile specificare la stessa del database.
+' ***** WRITE PERMISSION FOLDER *****
+' This is the path to a folder with write permission enabled
+' Write permission are required by inc_skin_file.asp skin file
+' It could be the same as database folder
 Const strAsgPathFolderWr = "mdb/"
 
 
-
-
-'							========================================
-'---------------------------   			Nomi dei database			 -------------------------------------
-'							========================================
-
-'-----------------------------------------------------------------------------------------
-' Statistiche
-'-----------------------------------------------------------------------------------------
-'
+' ***** DATABASE NAME *****
+' Main application database name
 Const strAsgDatabaseSt = "dbstats" 
 
-'-----------------------------------------------------------------------------------------
-' IP
-'-----------------------------------------------------------------------------------------
-'
+' ***** IP2COUNTRY DATABASE NAME *****
+' This is the name of the ip-to-country database
+' used to get country information from IP address
 Const strAsgDatabaseIp = "ip-to-country" 
 
 
-' Prefisso dei campi della tabella statistiche
-' Utile se si vuole integrare l'applicazione in una tabella esistente per
-' evitare conflitti
+' ***** TABLE PREFIX *****
+' Prefix that all ASG database tables will have.
+' This is useful if you want to run multiple versions or copies on the same database 
+' or if you are sharing the database with other applications.
 Const strAsgTablePrefix = "tblst_"
 
 
-' Prefisso dei cookie
-Const strAsgCookiePrefix = "ASG"
+' ***** COOKIE PREFIX *****
+' Prefix that all ASG cookies will have.
+' This is useful if you run multiple copies of the program on the same site so that 
+' cookies don't interfer with each other.
+Const strAsgCookiePrefix = "asg_"
+
+
+' ----- END OF CONFIGURATION SETTINGS -----
 
 
 
-
-'							========================================
-'---------------------------   		Collegamento al database		-------------------------------------
-'							========================================
-
-'-----------------------------------------------------------------------------------------
-' Specifiche MapPath al database
-'-----------------------------------------------------------------------------------------
 strAsgMapPath = Server.MapPath(strAsgPathFolderDb & strAsgDatabaseSt & ".mdb")
 strAsgMapPathTo = Server.MapPath(strAsgPathFolderDb & strAsgDatabaseSt & ".bak")
 strAsgMapPathIP = Server.MapPath(strAsgPathFolderDb & strAsgDatabaseIp & ".mdb")
 
-
-
-
-'							========================================
-'---------------------------   Stringhe di connessione al database	-------------------------------------
-'							========================================
-
-'-----------------------------------------------------------------------------------------
-' Microsoft Access 97	
-'-----------------------------------------------------------------------------------------
-
-' Driver Specifico
-'-----------------
-'strAsgConn = "DRIVER={Microsoft Access Driver (*.mdb)}; DBQ=" & strAsgMapPath
-
-' Driver OLEDB più veloce ed affidabile
-'--------------------------------------
-'strAsgConn = "Provider=Microsoft.Jet.OLEDB.3.51; Data Source=" & strAsgMapPath
-
-'-----------------------------------------------------------------------------------------
-' Microsoft Access 2000 - 2002 - 2003	
-'-----------------------------------------------------------------------------------------
-
-' Driver OLEDB più veloce ed affidabile
-'--------------------------------------
 strAsgConn = "Provider=Microsoft.Jet.OLEDB.4.0; Data Source=" & strAsgMapPath
-
-
-
-'-----------------------------------------------------------------------------------------
-' Stampa di Debug stringa
-'-----------------------------------------------------------------------------------------
-If Request.QueryString("print") = "true" Then Response.Write(strAsgPathFolderDb & "<br />" & strAsgPathFolderWr & "<br />")
-
 
 %>
