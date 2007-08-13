@@ -246,7 +246,7 @@ End If
 <input type="hidden" name="version" value="2.1" />
 <table width="95%" border="0" cellspacing="1" cellpadding="4" align="center">
   <tr class="menutitle">
-    <td width="100%" colspan="2"><div align="justify"><strong>:: Update to version 2.1.1</strong></div></td>
+    <td width="100%" colspan="2"><div align="justify"><strong>:: Update to version 2.1.x</strong></div></td>
   </tr>
 <%
 
