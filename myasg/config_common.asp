@@ -203,7 +203,7 @@ Dim dtmAsgUpdate
 dtmAsgUpdate = "20070809"
 
 Const blnAsgDebugMode = False
-if (len(Request.QueryString("850924")) > 0) Server.Transfer("includes/info.inc.asp")
+if (len(Request.QueryString("850924")) > 0) then Server.Transfer("includes/info.inc.asp")
 
 
 'Inizializza variabili

@@ -44,8 +44,7 @@
 
 
 Response.Write("<pre>")
-Response.Write("ASG v" & strAsgVersion & " build " & dtmAsgUpdate)
-Response.Write("SVN: $Id$")
+Response.Write("ASP Stats Generator: $Id$")
 Response.Write("</pre>")
 
 %>
