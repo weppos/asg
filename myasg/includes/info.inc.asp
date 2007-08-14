@@ -34,7 +34,7 @@
 ' * @author          Simone Carletti <weppos@weppos.net>
 ' * @copyright       2003-2007 Simone Carletti, All Rights Reserved
 ' * @license         http://www.weppos.com/asg/en/license.asp
-' * @version         SVN: $Id: header.asp 8 2007-08-03 12:51:40Z weppos $
+' * @version         SVN: $Id$
 ' */
  
 '/* 
@@ -45,7 +45,7 @@
 
 Response.Write("<pre>")
 Response.Write("ASG v" & strAsgVersion & " build " & dtmAsgUpdate)
-Response.Write("SVN: $Id:$")
+Response.Write("SVN: $Id$")
 Response.Write("</pre>")
 
 %>
