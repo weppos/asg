@@ -1,0 +1,46 @@
+<xml xmlns:s='uuid:BDC6E3F0-6DA3-11d1-A2A3-00AA00C14882'
+	xmlns:dt='uuid:C2F41010-65B3-11d1-A29F-00AA00C14882'
+	xmlns:rs='urn:schemas-microsoft-com:rowset'
+	xmlns:z='#RowsetSchema'>
+<s:Schema id='RowsetSchema'>
+	<s:ElementType name='row' content='eltOnly'>
+		<s:AttributeType name='Name' rs:number='1' rs:nullable='true' rs:maydefer='true' rs:writeunknown='true'>
+			<s:datatype dt:type='string' dt:maxLength='255'/>
+		</s:AttributeType>
+		<s:AttributeType name='Subtype' rs:number='2' rs:nullable='true' rs:maydefer='true' rs:writeunknown='true'>
+			<s:datatype dt:type='string' dt:maxLength='255'/>
+		</s:AttributeType>
+		<s:AttributeType name='Pattern' rs:number='3' rs:nullable='true' rs:maydefer='true' rs:writeunknown='true'>
+			<s:datatype dt:type='string' dt:maxLength='255'/>
+		</s:AttributeType>
+		<s:AttributeType name='Major' rs:number='4' rs:nullable='true' rs:maydefer='true' rs:writeunknown='true'>
+			<s:datatype dt:type='string' dt:maxLength='255'/>
+		</s:AttributeType>
+		<s:AttributeType name='Minor' rs:number='5' rs:nullable='true' rs:maydefer='true' rs:writeunknown='true'>
+			<s:datatype dt:type='string' dt:maxLength='255'/>
+		</s:AttributeType>
+		<s:AttributeType name='Rest' rs:number='6' rs:nullable='true' rs:maydefer='true' rs:writeunknown='true'>
+			<s:datatype dt:type='string' dt:maxLength='255'/>
+		</s:AttributeType>
+		<s:extends type='rs:rowbase'/>
+	</s:ElementType>
+</s:Schema>
+<rs:data>
+	<z:row Name='Microsoft Windows 2003' Subtype='NT' Pattern='win(?:dows)?(?: )?(?:(?:server(?: )?)?2003|nt(?: )?5\.2)'
+		 Major='5' Minor='2'/>
+	<z:row Name='Microsoft Windows XP' Subtype='NT' Pattern='win(?:dows)?(?: )?(?:nt(?: )?5\.1|xp)' Major='5' Minor='1'/>
+	<z:row Name='Microsoft Windows Vista' Subtype='NT' Pattern='win(?:dows)?(?: )?(?:nt(?: )?6\.0|vista)' Major='6' Minor='0'/>
+	<z:row Name='Microsoft Windows 2000' Subtype='NT' Pattern='win(?:dows)?(?: )?(?:(?:2000|2k)|nt(?: )?5\.0)' Major='5'
+		 Minor='0'/>
+	<z:row Name='Microsoft Windows ME' Subtype='9x' Pattern='win(?:dows)?(?: )?(?:9x 4\.9|me)' Major='4' Minor='9'/>
+	<z:row Name='Microsoft Windows 98' Subtype='9x' Pattern='win(?:dows)?(?: )?98' Major='4' Minor='1'/>
+	<z:row Name='Microsoft Windows 95' Subtype='9x' Pattern='win(?:dows)?(?: )?95' Major='4' Minor='0'/>
+	<z:row Name='Microsoft Windows 95' Subtype='9x' Pattern='win(?:dows)?(?: )?9x' Major='4' Minor='0'/>
+	<z:row Name='Microsoft Windows 95' Subtype='9x' Pattern='win(?:dows)?(?: )?32' Major='4' Minor='0'/>
+	<z:row Name='Microsoft Windows 95' Subtype='9x' Pattern='win(?:dows)?(?: )?95\/nt4' Major='4' Minor='0'/>
+	<z:row Name='Microsoft Windows NT 3.11' Subtype='NT' Pattern='win(?:dows)?(?: )?nt(?: )?3' Major='3' Minor='11'/>
+	<z:row Name='Microsoft Windows NT 4' Subtype='NT' Pattern='win(?:dows)?(?: )?nt' Major='4' Minor='0'/>
+	<z:row Name='Microsoft Windows 3.1' Subtype='9x' Pattern='win(?:dows)?(?: )?(?:3\.1|16)' Major='3' Minor='1'/>
+	<z:row Name='Microsoft Windows CE' Subtype='CE' Pattern='win(?:dows)?(?: )?ce'/>
+</rs:data>
+</xml>

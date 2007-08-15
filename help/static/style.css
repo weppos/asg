@@ -1,0 +1,126 @@
+html,
+body {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    background-color: #F9F9F9;
+    font: 10pt 'Trebuchet MS', Tahoma, Arial, Helvetica, sans-serif;
+}
+
+
+/* layout */
+
+#container {
+    width: 80%;
+    margin: 10px auto;
+}
+
+/* links */
+
+a,
+a:visited {
+    color: #0066CC;
+    text-decoration: none;
+}
+a:hover,
+a:visited:hover {
+    color: #FF4400;
+    text-decoration: none;
+}
+
+
+/* container */
+
+#container {
+    border: 1px solid #999999;
+    background-color: #FFF;
+}
+
+/* content */
+
+#content {
+    padding: 10px;
+}
+
+h1 {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #000;
+    font-size: 30px;
+    font-weight: bold;
+    margin: 0px;
+}
+
+h2 {
+    background: #e6e5eb url(http://forums.weppos.com/images/layout/gradient_tcat.jpg) repeat-x top left;
+    color: #22229C;
+    font: bold 14pt tahoma, verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+    padding: 5px;
+}
+h2 a:link {
+    color: #22229C;
+    text-decoration: underline;
+}
+h2 a:visited {
+    color: #22229C;
+    text-decoration: underline;
+}
+.h2 a:hover, .h2 a:active {
+    color: #FF4400;
+    text-decoration: underline;
+}
+
+h3 {
+    background: #fbd25e url(http://forums.weppos.com/images/layout/gradient_thead.jpg) repeat-x top left;
+    color: #0066CC;
+    font: bold 9pt tahoma, verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+    padding: 5px;
+}
+h3 a:link {
+    color: #0066CC;
+    text-decoration: none;
+}
+.h3 a:visited {
+    color: #0066CC;
+    text-decoration: none;
+}
+h3 a:hover, h3 a:active {
+    color: #22229C;
+    text-decoration: underline;
+}
+
+
+/* footer */
+
+/* -----     credits      -----  */
+
+#credits {
+    clear: both;
+    margin: 15px auto;
+    text-align: center;
+}
+
+#credits p {
+    color: #888;
+    font: 0.85em 'Trebuchet MS', Tahoma, Arial, Helvetica, sans-serif;
+    margin: 5px 0px;
+    line-height: 120%;
+}
+
+#credits #copyright {
+    color: #646464;
+    font-size: 0.9em;
+    margin: 10px 0px;
+}
+
+#credits a,
+#credits a:visited {
+    color: #444;
+    text-decoration: none;
+}
+#credits a:hover,
+#credits a:visited:hover {
+    color: #000;
+    text-decoration: none;
+}

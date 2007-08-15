@@ -1,0 +1,187 @@
+<%@LANGUAGE="VBSCRIPT"%>
+<% Option Explicit %>
+<!--include virtual="/myasg/config.asp" -->
+<!--#include file="config.asp" -->
+<%
+
+'/**
+' * ASP Stats Generator - Powerful and reliable ASP website counter
+' *
+' * This file is part of the ASP Stats Generator package.
+' * (c) 2003-2007 Simone Carletti <weppos@weppos.net>, All Rights Reserved
+' *
+' * 
+' * COPYRIGHT AND LICENSE NOTICE
+' *
+' * The License allows you to download, install and use one or more free copies of this program 
+' * for private, public or commercial use.
+' * 
+' * You may not sell, repackage, redistribute or modify any part of the code or application, 
+' * or represent it as being your own work without written permission from the author.
+' * You can however modify source code (at your own risk) to adapt it to your specific needs 
+' * or to integrate it into your site. 
+' *
+' * All links and information about the copyright MUST remain unchanged; 
+' * you can modify or remove them only if expressly permitted.
+' * In particular the license allows you to change the application logo with a personal one, 
+' * but it's absolutly denied to remove copyright information,
+' * including, but not limited to, footer credits, inline credits metadata and HTML credits comments.
+' *
+' * For the full copyright and license information, please view the LICENSE.htm
+' * file that was distributed with this source code.
+' *
+' * Removal or modification of this copyright notice will violate the license contract.
+' *
+' *
+' * @category        ASP Stats Generator
+' * @package         ASP Stats Generator
+' * @author          Simone Carletti <weppos@weppos.net>
+' * @copyright       2003-2007 Simone Carletti, All Rights Reserved
+' * @license         http://www.weppos.com/asg/en/license.asp
+' * @version         SVN: $Id$
+' */
+ 
+'/* 
+' * Any disagreement of this license behaves the removal of rights to use this application.
+' * Licensor reserve the right to bring legal action in the event of a violation of this Agreement.
+' */
+
+
+'Reset Server Objects
+Set objAsgRs = Nothing
+objAsgConn.Close
+Set objAsgConn = Nothing
+
+'Verifica Password
+If Request.Form("Login") = strAsgTxtLogin Then
+
+	Dim strAsgPassword
+	Dim blnAsgErrore
+	
+	blnAsgErrore = False
+	
+	strAsgPassword = Trim(Request.Form("Password"))
+	strAsgPassword = CleanInput(strAsgPassword)
+
+	'Verifica
+	If LCase(strAsgPassword) = LCase(strAsgSitePsw) Then
+	
+		'1° Versione --> Uso variabili di sessione
+		'prossima implementazione cookie
+		
+		Session("AsgLogin") = "Logged"
+		
+	Else
+
+		blnAsgErrore = True
+		Session.Contents.Remove("AsgLogin")
+		
+	End If
+
+End If
+
+'Logout
+If Request.QueryString("Logout") = "True" Then Session.Contents.Remove("AsgLogin")
+
+%>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title><%= strAsgSiteName %> | ASP Stats Generator <%= strAsgVersion %></title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta name="copyright" content="Copyright (C) 2003-2007 Carletti Simone, All Rights Reserved" />
+<%	If Session("AsgLogin") = "Logged" AND Len(Request.QueryString("backto")) > 0 Then %>
+<meta http-equiv="Refresh" content="3;url=<%= Request.QueryString("backto") %>">
+<%	ElseIf Session("AsgLogin") = "Logged" AND NOT Len(Request.QueryString("backto")) > 0 Then %>
+<meta http-equiv="Refresh" content="3;url=statistiche.asp">
+<%	End If %>
+<link href="stile.css" rel="stylesheet" type="text/css" />
+
+<!-- 	ASP Stats Generator <%= strAsgVersion %> è una applicazione gratuita 
+		per il monitoraggio degli accessi e dei visitatori ai siti web 
+		creata e sviluppata da Simone Carletti.
+		
+		Puoi scaricarne una copia gratuita sul sito ufficiale http://www.weppos.com/ -->
+
+</head>
+<!--include virtual="/myasg/includes/header.asp" -->
+<!--#include file="includes/header.asp" -->
+		<form action="login.asp?backto=<%= Server.URLEncode(Request.QueryString("backto")) %>" name="frmLogin" method="post">
+		<table width="100%" border="0" align="center" cellpadding="0" cellspacing="1">
+		  <tr bgcolor="<%= strAsgSknTableBarBgColour %>" valign="middle">
+			<td background="<%= strAsgSknPathImage & strAsgSknTableBarBgImage %>" align="center" height="20" class="bartitle"><%= UCase(strAsgTxtLogin) %></td>
+		  </tr>
+		  <tr bgcolor="<%= strAsgSknTableLayoutBorderColour %>">
+			<td align="center" height="1"></td>
+		  </tr>
+		</table><br />
+		<table width="90%" border="0" align="center" cellpadding="1" cellspacing="1">
+		<% If Session("AsgLogin") <> "Logged" Then %>
+		  <tr bgcolor="<%= strAsgSknTableTitleBgColour %>" class="normaltitle">
+			<td background="<%= strAsgSknPathImage & strAsgSknTableTitleBgImage %>" colspan="2" align="center" height="16"><%= UCase(strAsgTxtEntryPassword) %></td>
+		  </tr>
+			  <% If blnAsgErrore Then %>
+		  <tr class="smalltext" bgcolor="<%= strAsgSknTableContBgColour %>">
+			<td background="<%= strAsgSknPathImage & strAsgSknTableContBgImage %>" colspan="2" align="center" height="16"><br /><strong><%= strAsgTxtWrongPassword %></strong><br /><br /></td>		  
+		  </tr>
+			  <% End If %>
+		  <tr class="smalltext" bgcolor="<%= strAsgSknTableContBgColour %>">
+			<td background="<%= strAsgSknPathImage & strAsgSknTableContBgImage %>" width="50%" align="right"><%= strAsgTxtTypePassword %>: &nbsp;&nbsp;</td>
+			<td background="<%= strAsgSknPathImage & strAsgSknTableContBgImage %>" width="50%" align="left">&nbsp;<input type="password" name="Password" value="" size="20" maxlength="20" /></td>
+		  </tr><%
+				
+		'// Row - End table spacer			
+		Call BuildTableContEndSpacer(2)
+
+		  %><tr class="normaltitle">
+			<td colspan="2" align="center"><script>document.frmLogin.Password.focus()</script><br />
+				<input type="hidden" name="Login" value="<%= strAsgTxtLogin %>" />
+				<input type="submit" name="submit" value="<%= strAsgTxtLogin %>" />
+			</td>
+		  </tr>
+		<% Else %>
+		  <tr class="normaltitle" bgcolor="<%= strAsgSknTableTitleBgColour %>">
+			<td background="<%= strAsgSknPathImage & strAsgSknTableTitleBgImage %>" colspan="2" align="center" height="16"><%= UCase(strAsgTxtEntryAllowed) %></td>
+		  </tr>
+		  <tr class="smalltext" bgcolor="<%= strAsgSknTableContBgColour %>">
+			<td background="<%= strAsgSknPathImage & strAsgSknTableContBgImage %>" align="center" colspan="2"><br />
+				<%= strAsgTxtLoginCompleted & "<br />" & strAsgTxtEntryAllowed %><br /><br />
+				<%= strAsgTxtGoingToBeRedirected  %><br />
+				<a href="<% If Len(Request.QueryString("backto")) > 0 Then Response.Write(Request.QueryString("backto")) Else Response.Write("statistiche.asp") %>" title="<%= strAsgTxtGoToPage %>" class="linksmalltext"><%= strAsgTxtClickToRedirect %></a><br /><br />
+				<a href="login.asp?Logout=True" title="<%= strAsgTxtLogout %>" class="linksmalltext"><%= strAsgTxtClickToLogout %></a><br /><br />
+			</td>
+		  </tr><%
+				
+		'// Row - End table spacer			
+		Call BuildTableContEndSpacer(2)
+
+		   End If %>
+		</table>
+		</form>
+<%
+
+' Footer
+Response.Write(vbCrLf & "<table width=""100%"" border=""0"" align=""center"" cellpadding=""0"" cellspacing=""1"">")
+'// Row - Footer Border Line
+Call BuildFooterBorderLine()
+
+' ***** START WARNING - REMOVAL or MODIFICATION IN PART or ALL OF THIS CODE WILL VIOLATE THE LICENSE AGREEMENT	******
+' ***** INIZIO AVVERTENZA - RIMOZIONE o MODIFICA PARZIALE/TOTALE DEL CODICE COMPORTA VIOLAZIONE DELLA LICENZA  	******
+Response.Write("<tr align=""center"" valign=""middle"">")
+Response.Write("<td align=""center"" background=""" & strAsgSknPathImage & strAsgSknTableBarBgImage & """ bgcolor=""" & strAsgSknTableBarBgColour & """ height=""20"" class=""footer""><a href=""http://www.asp-stats.com/"" class=""linkfooter"" title=""ASP Stats Generator Homepage"">ASP Stats Generator</a> [" & strAsgVersion & "] - &copy; 2003-2007 <a href=""http://www.weppos.com/"" class=""linkfooter"" title=""Weppos.com Homepage"">weppos</a>")
+If blnAsgElabTime Then Response.Write(" - " & strAsgTxtThisPageWasGeneratedIn & "&nbsp;" & FormatNumber(Timer() - startAsgElab, 4) & "&nbsp;" & strAsgTxtSeconds)
+Response.Write("</td>")
+Response.Write("</tr>")
+' ***** END WARNING - REMOVAL or MODIFICATION IN PART or ALL OF THIS CODE WILL VIOLATE THE LICENSE AGREEMENT	******
+' ***** FINE AVVERTENZA - RIMOZIONE o MODIFICA PARZIALE/TOTALE DEL CODICE COMPORTA VIOLAZIONE DELLA LICENZA  ******
+
+Response.Write("</table>")
+Response.Write("</td></tr>")
+Response.Write("</table>")
+Response.Write("</td></tr>")
+Response.Write("</table>")
+
+%>
+<!-- footer -->
+<!--#include file="includes/footer.asp" -->
+</body></html>
