@@ -7,7 +7,7 @@
 ' * ASP Stats Generator - Powerful and reliable ASP website counter
 ' *
 ' * This file is part of the ASP Stats Generator package.
-' * (c) 2003-2007 Simone Carletti <weppos@weppos.net>, All Rights Reserved
+' * (c) 2003-2008 Simone Carletti <weppos@weppos.net>, All Rights Reserved
 ' *
 ' * 
 ' * COPYRIGHT AND LICENSE NOTICE
@@ -205,7 +205,7 @@ Set objAsgConn = Nothing
 <head>
 <title><%= strAsgSiteName %> | ASP Stats Generator <%= strAsgVersion %></title>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-<meta name="copyright" content="Copyright (C) 2003-2007 Carletti Simone, All Rights Reserved" />
+<meta name="copyright" content="Copyright (C) 2003-2008 Carletti Simone, All Rights Reserved" />
 <link href="stile.css" rel="stylesheet" type="text/css" />
 <!--#include file="includes/inc_meta.asp" -->
 
@@ -292,7 +292,7 @@ Call BuildFooterBorderLine()
 ' ***** START WARNING - REMOVAL or MODIFICATION IN PART or ALL OF THIS CODE WILL VIOLATE THE LICENSE AGREEMENT	******
 ' ***** INIZIO AVVERTENZA - RIMOZIONE o MODIFICA PARZIALE/TOTALE DEL CODICE COMPORTA VIOLAZIONE DELLA LICENZA  	******
 Response.Write("<tr align=""center"" valign=""middle"">")
-Response.Write("<td align=""center"" background=""" & strAsgSknPathImage & strAsgSknTableBarBgImage & """ bgcolor=""" & strAsgSknTableBarBgColour & """ height=""20"" class=""footer""><a href=""http://www.asp-stats.com/"" class=""linkfooter"" title=""ASP Stats Generator Homepage"">ASP Stats Generator</a> [" & strAsgVersion & "] - &copy; 2003-2007 <a href=""http://www.weppos.com/"" class=""linkfooter"" title=""Weppos.com Homepage"">weppos</a>")
+Response.Write("<td align=""center"" background=""" & strAsgSknPathImage & strAsgSknTableBarBgImage & """ bgcolor=""" & strAsgSknTableBarBgColour & """ height=""20"" class=""footer""><a href=""http://www.asp-stats.com/"" class=""linkfooter"" title=""ASP Stats Generator Homepage"">ASP Stats Generator</a> [" & strAsgVersion & "] - &copy; 2003-2008 <a href=""http://www.weppos.com/"" class=""linkfooter"" title=""Weppos.com Homepage"">weppos</a>")
 If blnAsgElabTime Then Response.Write(" - " & strAsgTxtThisPageWasGeneratedIn & "&nbsp;" & FormatNumber(Timer() - startAsgElab, 4) & "&nbsp;" & strAsgTxtSeconds)
 Response.Write("</td>")
 Response.Write("</tr>")
