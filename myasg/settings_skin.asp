@@ -58,6 +58,64 @@ Set objAsgConn = Nothing
 
 Dim strAsgInput
 
+public function preg_match_all(pattern, text, ByRef matches)
+    
+    dim objRegexp, objMatches, aryResults()
+    dim ii
+    
+    ' new regular expression
+    set objRegexp = new RegExp
+    with objRegexp
+        .Pattern = pattern
+        .IgnoreCase = true
+        .Global = true
+    end with
+    
+    ' all matches
+    set objMatches  = objRegexp.Execute(text)
+    if objMatches.Count > 0 then
+        ii = 0
+        for each item in objMatches
+            redim preserve aryResults(ii + 1) 
+            Set aryResults(ii) = item.SubMatches
+            ii = ii + 1
+            Response.Write(item.value & "<br />")
+        next
+        preg_match_all = true 
+    else
+        preg_match_all = false 
+    end if
+    
+    set objRegexp = nothing
+    set objMatches = nothing
+    set objRegexp = nothing
+    
+    matches = aryResults
+    
+end function
+
+
+public function file_get_contents(path)
+    
+    dim objFso, objText
+    dim strContent
+    
+    Set objFso = Server.CreateObject("Scripting.FileSystemObject")
+    
+    if objFso.FileExists(path) then
+        set objText = objFso.OpenTextFile(path, 1, false, -2)
+        strContent = objText.ReadAll
+        objText.Close
+        set objText = nothing
+    else
+        ' error
+        strContent = false
+    end if
+
+    set objFso = nothing
+    file_get_contents = strContent
+
+end function
 
 
 'on error resume next
@@ -146,6 +204,15 @@ end if
 		  </tr>
 		<%
 		
+		'Dim matches, test, ii
+		'' Const[ ]+([\d\w_]*)[ ]*=[ ]*"(.*?)".*'(.*)
+		'test = preg_match_all("Const[ ]+([\d\w_]*)[ ]*=[ ]*""(.*?)"".*'(.*)", file_get_contents(pathFrom), matches)
+		'Response.Write ubound(matches)
+		'for ii = 0 to ubound(matches) - 1
+		'    Response.Write(matches(ii))
+		'next
+		'Response.End()
+		'
 		Set ts = objFso.OpenTextFile(pathFrom, 1)
 
 		Do While ts.AtEndOfStream <> True
