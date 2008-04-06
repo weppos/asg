@@ -32,7 +32,7 @@
 ' * @category        ASP Stats Generator
 ' * @package         ASP Stats Generator
 ' * @author          Simone Carletti <weppos@weppos.net>
-' * @copyright       2003-2007 Simone Carletti, All Rights Reserved
+' * @copyright       2003-2008 Simone Carletti
 ' * @license         http://www.weppos.com/asg/en/license.asp
 ' * @version         SVN: $Id: login.asp 13 2007-08-03 13:05:34Z weppos $
 ' */
