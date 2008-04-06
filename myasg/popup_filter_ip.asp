@@ -7,7 +7,7 @@
 ' * ASP Stats Generator - Powerful and reliable ASP website counter
 ' *
 ' * This file is part of the ASP Stats Generator package.
-' * (c) 2003-2007 Simone Carletti <weppos@weppos.net>, All Rights Reserved
+' * (c) 2003-2008 Simone Carletti <weppos@weppos.net>, All Rights Reserved
 ' *
 ' * 
 ' * COPYRIGHT AND LICENSE NOTICE
@@ -35,7 +35,7 @@
 ' * @category        ASP Stats Generator
 ' * @package         ASP Stats Generator
 ' * @author          Simone Carletti <weppos@weppos.net>
-' * @copyright       2003-2007 Simone Carletti, All Rights Reserved
+' * @copyright       2003-2008 Simone Carletti
 ' * @license         http://www.weppos.com/asg/en/license.asp
 ' * @version         SVN: $Id$
 ' */
@@ -146,7 +146,7 @@ Set objAsgConn = Nothing
 <head>
 <title><%= strAsgTxtFilterIPaddr & "&nbsp;" & strAsgTxtFor & "&nbsp;" & strAsgSelectedIP %> | ASP Stats Generator <%= strAsgVersion %></title>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-<meta name="copyright" content="Copyright (C) 2003-2007 Carletti Simone, All Rights Reserved" />
+<meta name="copyright" content="Copyright (C) 2003-2008 Carletti Simone, All Rights Reserved" />
 <link href="stile.css" rel="stylesheet" type="text/css" />
 <!--include virtual="/myasg/includes/inc_meta.asp" -->
 <!--#include file="includes/inc_meta.asp" -->

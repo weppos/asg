@@ -7,7 +7,7 @@
 ' * ASP Stats Generator - Powerful and reliable ASP website counter
 ' *
 ' * This file is part of the ASP Stats Generator package.
-' * (c) 2003-2007 Simone Carletti <weppos@weppos.net>, All Rights Reserved
+' * (c) 2003-2008 Simone Carletti <weppos@weppos.net>, All Rights Reserved
 ' *
 ' * 
 ' * COPYRIGHT AND LICENSE NOTICE
@@ -35,7 +35,7 @@
 ' * @category        ASP Stats Generator
 ' * @package         ASP Stats Generator
 ' * @author          Simone Carletti <weppos@weppos.net>
-' * @copyright       2003-2007 Simone Carletti, All Rights Reserved
+' * @copyright       2003-2008 Simone Carletti
 ' * @license         http://www.weppos.com/asg/en/license.asp
 ' * @version         SVN: $Id$
 ' */
