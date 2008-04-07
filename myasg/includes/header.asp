@@ -141,7 +141,7 @@ if intAsgLatestUpdate = 1 then
 newVersionNotification('<%= strAsgLatestVersion %>', '<%= dtmAsgLatestUpdate %>', '<%= urlAsgLatestUpdate %>');
 /* ]]> */
 </script><%
-end select
+end if
 
 
 Response.Write(vbCrLf & "<table width=""" & strAsgSknPageWidth & """ border=""0"" align=""center"" cellpadding=""1"" cellspacing=""0"" bgcolor=""" & strAsgSknTableLayoutBorderColour & """>")

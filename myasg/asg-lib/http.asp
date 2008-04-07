@@ -53,6 +53,7 @@
 ' 
 public function asgHttpRequest(method, url)
   Dim objXmlHttp
+  Dim intStatus, strResponse
   
   Set objXmlHttp = Server.CreateObject("Microsoft.XMLHTTP")
   'on error resume next 
@@ -61,16 +62,16 @@ public function asgHttpRequest(method, url)
   'objXmlHttp.setRequestHeader "User-Agent", "foo"
   objXmlHttp.send
   
-  status = objXmlHttp.status 
-  'if err.number <> 0 or status <> 200 then
-  if status <> 200 then
-    response = status
+  intStatus = objXmlHttp.status 
+  'if err.number <> 0 or intStatus <> 200 then
+  if intStatus <> 200 then
+    strResponse = intStatus
   else
-    response = CStr(objXmlHttp.ResponseText)
+    strResponse = CStr(objXmlHttp.ResponseText)
   end if  
   
   Set objXmlHttp = Nothing
-  asgHttpRequest = response
+  asgHttpRequest = strResponse
 end function
 
 ' 
