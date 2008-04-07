@@ -88,7 +88,7 @@ If Request.QueryString("Logout") = "True" Then Session.Contents.Remove("AsgLogin
 <html>
 <head>
 <title><%= strAsgSiteName %> | ASP Stats Generator <%= strAsgVersion %></title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <meta name="copyright" content="Copyright (C) 2003-2008 Carletti Simone, All Rights Reserved" />
 <%	If Session("AsgLogin") = "Logged" AND Len(Request.QueryString("backto")) > 0 Then %>
 <meta http-equiv="Refresh" content="3;url=<%= Request.QueryString("backto") %>">

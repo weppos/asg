@@ -63,7 +63,7 @@ strAsgSelectedIP = Trim(Request.QueryString("IP"))
 <html>
 <head>
 <title><%= strAsgTxtIPTracking & "&nbsp;" & strAsgTxtFor & "&nbsp;" & strAsgSelectedIP %> | ASP Stats Generator <%= strAsgVersion %></title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <meta name="copyright" content="Copyright (C) 2003-2008 Carletti Simone, All Rights Reserved" />
 
 <!--#include file="includes/html-head.asp" -->
