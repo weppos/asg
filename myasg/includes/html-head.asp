@@ -45,4 +45,4 @@
 
 %>
 <script type="text/javascript" src="asg-static/javascript/default.js"></script>
-<link rel="stylesheet" href="asg-static/css/stile.css" type="text/css" />
+<link rel="stylesheet" href="asg-static/css/style.css" type="text/css" />
