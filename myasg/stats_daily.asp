@@ -184,8 +184,8 @@ Set objAsgConn = Nothing
 <title><%= strAsgSiteName %> | ASP Stats Generator <%= strAsgVersion %></title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <meta name="copyright" content="Copyright (C) 2003-2008 Carletti Simone, All Rights Reserved" />
-<link href="stile.css" rel="stylesheet" type="text/css" />
-<!--#include file="includes/inc_meta.asp" -->
+
+<!--#include file="includes/html-head.asp" -->
 
 <!-- 	ASP Stats Generator <%= strAsgVersion %> è una applicazione gratuita 
 		per il monitoraggio degli accessi e dei visitatori ai siti web 
