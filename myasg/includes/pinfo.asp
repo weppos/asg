@@ -42,7 +42,6 @@
 ' * Licensor reserve the right to bring legal action in the event of a violation of this Agreement.
 ' */
 
-
 Response.Write("<pre>")
 Response.Write("ASP Stats Generator: $Id$")
 Response.Write("</pre>")
