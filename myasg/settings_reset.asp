@@ -103,16 +103,18 @@ Set objAsgConn = Nothing
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 <head>
-<title><%= strAsgSiteName %> | ASP Stats Generator <%= strAsgVersion %></title>
+<title><%= strAsgSiteName %> | powered by ASP Stats Generator <%= strAsgVersion %></title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <meta name="copyright" content="Copyright (C) 2003-2008 Carletti Simone, All Rights Reserved" />
+<meta name="generator" content="ASP Stats Generator <%= strAsgVersion %>" /> <!-- leave this for stats -->
 
+<!--#include file="includes/html-head.asp" -->
 
-<!-- 	ASP Stats Generator <%= strAsgVersion %> è una applicazione gratuita 
-		per il monitoraggio degli accessi e dei visitatori ai siti web 
-		creata e sviluppata da Simone Carletti.
-		
-		Puoi scaricarne una copia gratuita sul sito ufficiale http://www.weppos.com/ -->
+<!--
+  ASP Stats Generator (release <%= strAsgVersion %>) is a free software package
+  completely written in ASP programming language, for real time visitor tracking.
+  Get your own copy for free at http://www.asp-stats-com/ !
+-->
 
 </head>
 <!--#include file="includes/header.asp" -->
