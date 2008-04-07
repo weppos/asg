@@ -34,29 +34,25 @@
 ' * @author          Simone Carletti <weppos@weppos.net>
 ' * @copyright       2003-2008 Simone Carletti
 ' * @license         http://www.weppos.com/asg/en/license.asp
-' * @version         SVN: $Id$
+' * @version         SVN: $Id: functions_stats.asp 8 2007-08-03 12:51:40Z weppos $
 ' */
- 
+
 '/* 
 ' * Any disagreement of this license behaves the removal of rights to use this application.
 ' * Licensor reserve the right to bring legal action in the event of a violation of this Agreement.
 ' */
 
 
+'
+' Returns a "Datestamp" for given dtm.
+' The datestamp is simply a shorten representation for a date time
+' in the format %Y%m%d.
+'
+public function asgDatestamp(dtm)
+  asgDatestamp = Clng(Year(dtm) &_
+                      Right("0" & Month(dtm), 2) &_ 
+                      Right("0" & Day(dtm), 2) )
+end function
+
+
 %>
-<!--#include file="html-head.asp" -->
-<script language="JavaScript" type="text/javascript">
-
-/**
- * Opens a popup windows
- *
- * @param   winURL
- * @param   winName
- * @param   winFeatures
- * @return  void
- */
-function openWin(winURL, winName, winFeatures) {
-  	window.open(winURL, winName, winFeatures);
-}
-
-</script>

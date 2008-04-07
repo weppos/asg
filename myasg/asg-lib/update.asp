@@ -34,29 +34,40 @@
 ' * @author          Simone Carletti <weppos@weppos.net>
 ' * @copyright       2003-2008 Simone Carletti
 ' * @license         http://www.weppos.com/asg/en/license.asp
-' * @version         SVN: $Id$
+' * @version         SVN: $Id: functions_stats.asp 8 2007-08-03 12:51:40Z weppos $
 ' */
- 
+
 '/* 
 ' * Any disagreement of this license behaves the removal of rights to use this application.
 ' * Licensor reserve the right to bring legal action in the event of a violation of this Agreement.
 ' */
 
 
+'
+' Checks whether a newer release is available
+' and returns an array with latest release version, date and url.
+'
+public function asgVersionCheck(strCurrentVersion)
+  
+  Dim strHost, strVersion, strUrl, strResponse
+  Dim aryLastVersion
+  
+  strHost = Request.ServerVariables("HTTP_HOST")
+  strVersion = strCurrentVersion
+  strUrl = "http://www.weppos.com/asg/checkversion/check_update.asp?" &_
+           "host=" & Server.URLEncode(strHost) & "&" &_
+           "version=" & Server.URLEncode(strVersion)
+  
+  strResponse = asgHttpGetRequest(strUrl)
+  if varType(strResponse) = 8 then ' successful response
+    aryLastVersion = split(strResponse, "|")
+  else
+    aryLastVersion = array()
+  end if
+  
+  asgVersionCheck = aryLastVersion
+
+end function
+
+
 %>
-<!--#include file="html-head.asp" -->
-<script language="JavaScript" type="text/javascript">
-
-/**
- * Opens a popup windows
- *
- * @param   winURL
- * @param   winName
- * @param   winFeatures
- * @return  void
- */
-function openWin(winURL, winName, winFeatures) {
-  	window.open(winURL, winName, winFeatures);
-}
-
-</script>

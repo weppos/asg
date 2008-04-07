@@ -34,29 +34,64 @@
 ' * @author          Simone Carletti <weppos@weppos.net>
 ' * @copyright       2003-2008 Simone Carletti
 ' * @license         http://www.weppos.com/asg/en/license.asp
-' * @version         SVN: $Id$
+' * @version         SVN: $Id: functions_stats.asp 8 2007-08-03 12:51:40Z weppos $
 ' */
- 
+
 '/* 
 ' * Any disagreement of this license behaves the removal of rights to use this application.
 ' * Licensor reserve the right to bring legal action in the event of a violation of this Agreement.
 ' */
 
 
+' 
+' Sends an HTTP Request to given url.
+' method variable denotes the method used for the HTTP request.
+' 
+' Returns a string containing the HTTP response.
+'
+' TODO: validate err.number
+' 
+public function asgHttpRequest(method, url)
+  Dim objXmlHttp
+  
+  Set objXmlHttp = Server.CreateObject("Microsoft.XMLHTTP")
+  'on error resume next 
+  
+  objXmlHttp.open method, url, false
+  'objXmlHttp.setRequestHeader "User-Agent", "foo"
+  objXmlHttp.send
+  
+  status = objXmlHttp.status 
+  'if err.number <> 0 or status <> 200 then
+  if status <> 200 then
+    response = status
+  else
+    response = CStr(objXmlHttp.ResponseText)
+  end if  
+  
+  Set objXmlHttp = Nothing
+  asgHttpRequest = response
+end function
+
+' 
+' Sends an HTTP GET Request to given url.
+' method variable denotes the method used for the HTTP request.
+' 
+' Returns a string containing the HTTP response.
+'
+public function asgHttpGetRequest(url)
+  asgHttpGetRequest = asgHttpRequest("GET", url)
+end function
+
+' 
+' Sends an HTTP POST Request to given url.
+' method variable denotes the method used for the HTTP request.
+' 
+' Returns a string containing the HTTP response.
+'
+public function asgHttpPostRequest(url)
+  asgHttpPostRequest = asgHttpRequest("POST", url)
+end function
+
+
 %>
-<!--#include file="html-head.asp" -->
-<script language="JavaScript" type="text/javascript">
-
-/**
- * Opens a popup windows
- *
- * @param   winURL
- * @param   winName
- * @param   winFeatures
- * @return  void
- */
-function openWin(winURL, winName, winFeatures) {
-  	window.open(winURL, winName, winFeatures);
-}
-
-</script>

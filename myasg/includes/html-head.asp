@@ -34,7 +34,7 @@
 ' * @author          Simone Carletti <weppos@weppos.net>
 ' * @copyright       2003-2008 Simone Carletti
 ' * @license         http://www.weppos.com/asg/en/license.asp
-' * @version         SVN: $Id$
+' * @version         SVN: $Id: inc_meta.asp 68 2008-04-06 22:04:28Z weppos $
 ' */
  
 '/* 
@@ -44,19 +44,4 @@
 
 
 %>
-<!--#include file="html-head.asp" -->
-<script language="JavaScript" type="text/javascript">
-
-/**
- * Opens a popup windows
- *
- * @param   winURL
- * @param   winName
- * @param   winFeatures
- * @return  void
- */
-function openWin(winURL, winName, winFeatures) {
-  	window.open(winURL, winName, winFeatures);
-}
-
-</script>
+<script type="text/javascript" src="javascript/default.js"></script>

@@ -134,45 +134,14 @@
 
 <%
 
-'-----------------------------------------------------------------------------------------
-' Check version for update!
-'-----------------------------------------------------------------------------------------
-' Esecuzioni in base a controllo
-Select Case intAsgLastUpdate
-	
-	Case 0
-		'Non calcolato
-	Case 1
-		'Corrisponde
-	Case 2
-		'Display the alert
-		Response.Write("<script language=""JavaScript""><!-- ")
-		Response.Write(vbCrLf & vbCrLf & "//Show the popup")
-		Response.Write(vbCrLf & "checkUpdate = confirm('Available " & strAsgLastVersion & " version released on " & Right(dtmAsgLastUpdate, 2) & "/" & Mid(dtmAsgLastUpdate, 5, 2) & "/" & Left(dtmAsgLastUpdate, 4) & "! \nDownload the update?')")
-		Response.Write(vbCrLf & "if (checkUpdate == true) {")
-		If Len(urlAsgLastUpdate) > 0 Then
-		Response.Write(vbCrLf & "	window.location='" & urlAsgLastUpdate & "'")
-		Else
-		Response.Write(vbCrLf & "	window.location='http://www.weppos.com/asg/'")
-		End If
-		Response.Write(vbCrLf & "}")
-		Response.Write(vbCrLf & "// --></script>")
-	Case 3
-		'Display the alert
-		Response.Write("<script language=""JavaScript""><!-- ")
-		Response.Write(vbCrLf & vbCrLf & "//Show the popup")
-		Response.Write(vbCrLf & "checkUpdate = confirm('Available for your " & strAsgLastVersion & " version an update released on " & Right(dtmAsgLastUpdate, 2) & "/" & Mid(dtmAsgLastUpdate, 5, 2) & "/" & Left(dtmAsgLastUpdate, 4) & ". \nDownload the update?')")
-		Response.Write(vbCrLf & "if (checkUpdate == true) {")
-		If Len(urlAsgLastUpdate) > 0 Then
-		Response.Write(vbCrLf & "	window.location='" & urlAsgLastUpdate & "'")
-		Else
-		Response.Write(vbCrLf & "	window.location='http://www.weppos.com/asg/'")
-		End If
-		Response.Write(vbCrLf & "}")
-		Response.Write(vbCrLf & "// --></script>")
-
-End Select
-
+' display the result of the update checker
+if intAsgLatestUpdate = 1 then
+%><script type="text/javascript">
+/* <![CDATA[ */
+newVersionNotification('<%= strAsgLatestVersion %>', '<%= dtmAsgLatestUpdate %>', '<%= urlAsgLatestUpdate %>');
+/* ]]> */
+</script><%
+end select
 
 
 Response.Write(vbCrLf & "<table width=""" & strAsgSknPageWidth & """ border=""0"" align=""center"" cellpadding=""1"" cellspacing=""0"" bgcolor=""" & strAsgSknTableLayoutBorderColour & """>")
