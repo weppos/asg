@@ -12,3 +12,13 @@ function newVersionNotification(versionRelease, versionDate, versionUrl) {
         window.location = versionUrl;
     } 
 }
+
+/**
+ * Opens a new windows and points the location to winURL.
+ * The window frame is called winName.
+ *
+ * @todo remove in favor of some AJAX/Js effect.
+ */
+function openWin(winURL, winName, winFeatures) {
+    window.open(winURL, winName, winFeatures);
+}

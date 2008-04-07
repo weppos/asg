@@ -44,4 +44,5 @@
 
 
 %>
-<script type="text/javascript" src="javascript/default.js"></script>
+<script type="text/javascript" src="asg-assets/javascript/default.js"></script>
+<link rel="stylesheet" href="asg-assets/css/stile.css" type="text/css" />
