@@ -66,7 +66,6 @@ strAsgSelectedIP = Trim(Request.QueryString("IP"))
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 <meta name="copyright" content="Copyright (C) 2003-2008 Carletti Simone, All Rights Reserved" />
 
-<!--include virtual="/myasg/includes/inc_meta.asp" -->
 <!--#include file="includes/html-head.asp" -->
 
 <!-- 	ASP Stats Generator <%= strAsgVersion %> è una applicazione gratuita 

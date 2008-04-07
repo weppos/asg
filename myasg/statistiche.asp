@@ -162,7 +162,7 @@ objAsgRs.Close
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 <meta name="copyright" content="Copyright (C) 2003-2008 Carletti Simone, All Rights Reserved" />
 <link href="stile.css" rel="stylesheet" type="text/css">
-<!--include virtual="/myasg/includes/inc_meta.asp" -->
+
 <!--#include file="includes/html-head.asp" -->
 
 <!-- 	ASP Stats Generator <%= strAsgVersion %> è una applicazione gratuita 
@@ -173,7 +173,6 @@ objAsgRs.Close
 
 </head>
 
-<!--include virtual="/myasg/includes/header.asp" -->
 <!--#include file="includes/header.asp" -->
 		<table width="100%" border="0" align="center" cellpadding="0" cellspacing="1">
 		  <tr align="center" valign="middle">
