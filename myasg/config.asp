@@ -43,6 +43,28 @@
 ' */
 
 
+' Include HTTP functions
+%><!--#include file="asg-lib/http.asp" --><%
+
+' Include Update functions
+%><!--#include file="asg-lib/update.asp" --><%
+
+' Include Datetime functions
+%><!--#include file="asg-lib/datetime.asp" --><%
+
+
+
+' *** Update checker variables ***
+
+Dim strAsgLatestVersion
+Dim dtmAsgLatestUpdate
+Dim intAsgLatestUpdate
+Dim urlAsgLatestUpdate
+
+intAsgLatestUpdate = 0 ' by default disable any alert
+
+
+
 '-------------------------------------------------------------------------------'
 '																				'
 '	Questo file è stato creato per consentire l'aumento delle prestazioni in	'
@@ -119,14 +141,6 @@
 	'---------------------------------------------------
 	'	Controllo aggiornamenti
 	'---------------------------------------------------
-	Dim strAsgLastVersion		'
-	Dim dtmAsgLastUpdate		'
-	Dim intAsgLastUpdate		'Casiste possibili:
-		intAsgLastUpdate =	0 	'  - variabile non in calcolo
-								'1 - tutto combacia
-								'2 - differente versione e data
-								'3 - uguale versione ma differente data
-	Dim urlAsgLastUpdate		'
 	
 
 '-------------------------------------------------------------------------------'
@@ -160,23 +174,32 @@ End If
 ' Check version for update!
 '-----------------------------------------------------------------------------------------
 ' Controllo differenza data ed esecuzione solo se amministratore
-If Clng(Clng(Year(Now()) & Right("0" & Month(Now()), 2) & Right("0" & Day(Now()), 2)) - blnAsgCheckUpdate) > 7 AND Session("AsgLogin") = "Logged" Then
+if Clng(asgDatestamp(Now()) - blnAsgCheckUpdate) > 7 and Session("AsgLogin") = "Logged" then
 
-	'Esegui controllo versione
-	Call CheckUpdate(strAsgVersion, dtmAsgUpdate)
-	
-	'Aggiornamento informazioni sul controllo
-	strAsgSQL = "UPDATE "&strAsgTablePrefix&"Config SET Opt_Check_Update = " & Year(Now()) & Right("0" & Month(Now()), 2) & Right("0" & Day(Now()), 2) & ""
-	objAsgConn.Execute(strAsgSQL)
-	
-	'Se si utilizzano le variabili Application aggiornale
-	If blnApplicationConfig Then
-						
-		'Aggiorna Variabili Application
-		Application("blnAsgCheckUpdate") = Year(Now()) & Right("0" & Month(Now()), 2) & Right("0" & Day(Now()), 2)
+  Dim aryAsgLatestVersion
+  aryAsgLatestVersion = asgVersionCheck(strAsgVersion)
+  
+  if Ubound(aryAsgLatestVersion) > 0 then
+    strAsgLatestVersion = aryAsgLatestVersion(0)
+    dtmAsgLatestUpdate  = aryAsgLatestVersion(1)
+    urlAsgLatestUpdate  = aryAsgLatestVersion(2)
+    
+    ' compare versions and display alert in case of greather release
+    if strAsgLatestVersion > strAsgVersion then
+      intAsgLatestUpdate = 1
+    end if
+     
+  end if
 
-	End If
+  ' update database
+  strAsgSQL = "UPDATE "&strAsgTablePrefix&"Config SET Opt_Check_Update = " & asgDatestamp(Now())
+  objAsgConn.Execute(strAsgSQL)
+
+  ' update application config if enabled
+  if blnApplicationConfig then
+    Application("blnAsgCheckUpdate") = asgDatestamp(Now())
+  end if
 	
-End If
+end if
 
 %>

@@ -95,7 +95,7 @@ If Request.QueryString("Logout") = "True" Then Session.Contents.Remove("AsgLogin
 <%	ElseIf Session("AsgLogin") = "Logged" AND NOT Len(Request.QueryString("backto")) > 0 Then %>
 <meta http-equiv="Refresh" content="3;url=statistiche.asp">
 <%	End If %>
-<link href="stile.css" rel="stylesheet" type="text/css" />
+
 
 <!-- 	ASP Stats Generator <%= strAsgVersion %> è una applicazione gratuita 
 		per il monitoraggio degli accessi e dei visitatori ai siti web 

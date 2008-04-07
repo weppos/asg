@@ -42,20 +42,8 @@
 ' * Licensor reserve the right to bring legal action in the event of a violation of this Agreement.
 ' */
 
+Response.Write("<pre>")
+Response.Write("ASP Stats Generator: $Id$")
+Response.Write("</pre>")
 
 %>
-<script language="JavaScript" type="text/javascript">
-
-/**
- * Opens a popup windows
- *
- * @param   winURL
- * @param   winName
- * @param   winFeatures
- * @return  void
- */
-function openWin(winURL, winName, winFeatures) {
-  	window.open(winURL, winName, winFeatures);
-}
-
-</script>
