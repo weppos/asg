@@ -70,7 +70,7 @@
   <tr><td>
 	<table width="100%" border="0" align="center" cellpadding="1" cellspacing="1">
 	  <tr align="center" class="smalltext">
-		<td bgcolor="<%= strAsgSknTableContBgColour %>" width="16%" height="16"><a href="statistiche.asp" title="<%= strAsgTxtShow & "&nbsp;" & strAsgTxtIndexReport %>" class="linksmalltext"><%= strAsgTxtIndexReport %></a></td>
+		<td bgcolor="<%= strAsgSknTableContBgColour %>" width="16%" height="16"><a href="default.asp" title="<%= strAsgTxtShow & "&nbsp;" & strAsgTxtIndexReport %>" class="linksmalltext"><%= strAsgTxtIndexReport %></a></td>
 		<td bgcolor="<%= strAsgSknTableContBgColour %>" width="16%"><a href="os.asp" title="<%= strAsgTxtShow & "&nbsp;" & strAsgTxtOS %>" class="linksmalltext"><%= strAsgTxtOS %></a></td>
 		<td bgcolor="<%= strAsgSknTableContBgColour %>" width="16%"><a href="stats_hourly.asp" title="<%= strAsgTxtShow & "&nbsp;" & strAsgTxtVisitsPerHour %>" class="linksmalltext"><%= strAsgTxtVisitsPerHour %></a></td>
 		<td bgcolor="<%= strAsgSknTableContBgColour %>" width="16%"><a href="referer.asp" title="<%= strAsgTxtShow & "&nbsp;" & strAsgTxtReferer %>" class="linksmalltext"><%= strAsgTxtReferer %></a></td>
