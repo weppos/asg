@@ -1,6 +1,7 @@
 <%@ LANGUAGE="VBSCRIPT" %>
 <% Option Explicit %>
 <!--#include file="config.asp" -->
+<!--#include file="asg-lib/vbscript.asp" -->
 <!--#include file="includes/functions_images.asp" -->
 <%
 
@@ -53,22 +54,7 @@
 Call AllowEntry("True", "True", "False", intAsgSecurity)
 
 
-'-----------------------------------------------------------------------------------------
-' Script Engine Info	
-'-----------------------------------------------------------------------------------------
-' Funzione:	
-' Data: 	
-' Commenti:			
-'-----------------------------------------------------------------------------------------
-function GetScriptEngineInfo()
-   Dim info
-   info = ""   ' Crea la stringa contenente le informazioni necessarie.
-   info = ScriptEngine & " "
-   info = info & ScriptEngineMajorVersion & "."
-   info = info & ScriptEngineMinorVersion & "."
-   info = info & ScriptEngineBuildVersion
-   GetScriptEngineInfo = info ' Restituisce il risultato.
-end function 'Faccio prima a richiamare la stessa funzione in config
+'Faccio prima a richiamare la stessa funzione in config
 'e passargli i nuovi parametri!
 Call FormatInTimeZone(dtmAsgNow, aryAsgTimeZone(1))
 
@@ -460,7 +446,7 @@ Set objAsgConn = Nothing
             <td background="<%= strAsgSknPathImage & strAsgSknTableContBgImage %>"><span class="notetext"><%= strAsgTxtProtocolVersion %></span></td>
             <td background="<%= strAsgSknPathImage & strAsgSknTableContBgImage %>"><%= Request.ServerVariables("SERVER_PROTOCOL") %></td>
             <td background="<%= strAsgSknPathImage & strAsgSknTableContBgImage %>"><span class="notetext">VBScript Engine</span></td>
-            <td background="<%= strAsgSknPathImage & strAsgSknTableContBgImage %>"><%= GetScriptEngineInfo() %></td>
+            <td background="<%= strAsgSknPathImage & strAsgSknTableContBgImage %>"><%= getScriptEngineInfo() %></td>
           </tr>
 		  <%
 
