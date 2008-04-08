@@ -187,28 +187,10 @@ public function getSearchEngineIconHex(searchengine)
     elseif strValue = "dmoz" then
         strHex = "47494638396114001400C40000E9F0E3C4DBAFCFE1C1F4F8F4DBEBD77FAA58E0E4CBFCF3EAE2F8E2A9CA8BA3B769E3EDD8B3CBAE93C96D89AC63708A369BB483BFE9AD75B13A729C34909E6C558D1D77A4496396305990226D9E3D7AA64D62962DFCFDFBFEFEFE6D9E3C679A3421F90400000000002C00000000140014000005D7E0278E6469025CAAAE2C37781FE7585A6DD756966956D16531CB664824661802CCE6F38B6996A68DC600C07C3C1D18E769FA6C2C82EA050BE4582E1FF40653695BA856AC96EBF53402818422202607A10F0908087804046219594E4B1B14070605131A021D04714D5B4B150C070A15171505070B181789739A060B5C52619765671F150204051B17AD7D8A991F1801071015BD0E03A45798B118101C01221E091DA463BB5C17120203010A11080396C7B0B75E81DD060A0D0C437231051EEEEE24F040164D031DF7F8F9FAF71E63EFEF3A32FC13082F04003B"
 
-
-    '*
-    '* Debug
-    '* -----------------
-
-    elseif strValue = "debugicon" then
-
-        ' get debug URI
-        ' get list of icons per page
-        ' check whether list of icons per page has been sent
-        ' send list of icons per page
-        ' unset list of icons per page
-
-
-    '*
-    '* Invalid matching
-    '* -----------------
-
+    ' *** unknown icon ***
+    
     else
         strHex = ASG_STR_ICON_HEX_UNKNOWN_SEARCHENGINE
-        ' store values into a temporary cache for debug
-        Session("strAsgIconSearchEngine") = Session("strAsgIconSearchEngine") & strValue & "|"
 
     end if
 
@@ -216,21 +198,6 @@ public function getSearchEngineIconHex(searchengine)
 
 end function 
 
-
-'/**
-' * Prints a binary icon from its Hex representation
-' * 
-' * @param  string  strIconHex
-' * @return void
-' */
-public function printIconFromHex(strIconHex)
-    ' Requirements: only gif images are allowed 
-    Response.ContentType = "image/gif"
-    ' Convert
-    for ii = 1 to Len(strIconHex) step 2
-        Response.BinaryWrite(ChrB("&h" & Mid(strIconHex, ii, 2)))
-    next
-end function 
 
 ' Execute
 strHex = getSearchEngineIconHex(Request.QueryString("icon"))
