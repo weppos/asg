@@ -94,7 +94,7 @@ If Request.QueryString("Logout") = "True" Then Session.Contents.Remove("AsgLogin
 <%	If Session("AsgLogin") = "Logged" AND Len(Request.QueryString("backto")) > 0 Then %>
 <meta http-equiv="Refresh" content="3;url=<%= Request.QueryString("backto") %>">
 <%	ElseIf Session("AsgLogin") = "Logged" AND NOT Len(Request.QueryString("backto")) > 0 Then %>
-<meta http-equiv="Refresh" content="3;url=statistiche.asp">
+<meta http-equiv="Refresh" content="3;url=default.asp">
 <%	End If %>
 
 <!--#include file="includes/html-head.asp" -->
