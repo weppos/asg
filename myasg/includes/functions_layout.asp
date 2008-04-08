@@ -71,43 +71,7 @@ function BuildTableContNoRecord(ByVal colspanValue, ByVal message)
 	Response.Write(vbCrLf & "</tr>")
 
 end function
-			
 
-'-----------------------------------------------------------------------------------------
-' Costruisci Riga Tabella Contenuti - Debug automatico icone non riconosciute
-'-----------------------------------------------------------------------------------------
-' Funzione:	
-' Data: 	14.03.2004 | 
-' Commenti:	
-'-----------------------------------------------------------------------------------------
-function BuildTableContCheckIcon(ByVal colspanValue, ByVal iconType, ByVal pageNum)
-	
-	Dim strAsgTableContent
-	strAsgTableContent = ""
-	
-	strAsgTableContent = strAsgTableContent & vbCrLf & "<!-- Informazioni icone non riconosciute -->"
-	strAsgTableContent = strAsgTableContent & vbCrLf & "<tr class=""smalltext"" align=""center"" valign=""top"">"
-	strAsgTableContent = strAsgTableContent & vbCrLf & "  <td width=""100%"" colspan=""" & colspanValue & """><br /><img src=""" & strAsgSknPathImage & iconType & ".asp?icon=checkicon&page=" & pageNum & """ alt="""" /><br /></td>"
-	strAsgTableContent = strAsgTableContent & vbCrLf & "</tr>"
-	strAsgTableContent = strAsgTableContent & vbCrLf & "<!-- Informazioni icone non riconosciute -->"
-			  
-			
-	If iconType = "browser" AND Session("blnAsgIconBrowser" & pageNum) <> "notified" AND blnAsgCheckIcon Then
-	
-		Response.Write(strAsgTableContent)
-	
-	ElseIf iconType = "os" AND Session("blnAsgIconOs" & pageNum) <> "notified" AND blnAsgCheckIcon Then
-	
-		Response.Write(strAsgTableContent)
-	
-	ElseIf iconType = "engine" AND Session("blnAsgIconEngine" & pageNum) <> "notified" AND blnAsgCheckIcon Then
-	
-		Response.Write(strAsgTableContent)
-	
-	End If
-			
-end function
-			
 
 '-----------------------------------------------------------------------------------------
 ' Costruisci Riga Tabella Contenuti - Spaziatore finale
@@ -123,7 +87,7 @@ function BuildTableContEndSpacer(ByVal colspanValue)
 	Response.Write(vbCrLf & "</tr>")
 
 end function
-			
+
 
 '-----------------------------------------------------------------------------------------
 ' Costruisci Riga Footer - Linea Bordo
@@ -139,6 +103,6 @@ function BuildFooterBorderLine()
 	Response.Write(vbCrLf & "</tr>")
 
 end function
-			
+
 
 %>

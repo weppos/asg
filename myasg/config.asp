@@ -52,6 +52,10 @@
 ' Include Datetime functions
 %><!--#include file="asg-lib/datetime.asp" --><%
 
+' Include Binary functions
+' TODO: consider to include the file only when necessary
+%><!--#include file="asg-lib/binary.asp" --><%
+
 
 
 ' *** Update checker variables ***
