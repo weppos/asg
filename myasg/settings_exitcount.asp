@@ -1,4 +1,4 @@
-<%@LANGUAGE="VBSCRIPT"%>
+<%@ LANGUAGE="VBSCRIPT" %>
 <!--include virtual="/myasg/config.asp" -->
 <!--#include file="config.asp" -->
 <%

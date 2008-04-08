@@ -1,4 +1,4 @@
-<%@LANGUAGE="VBSCRIPT"%>
+<%@ LANGUAGE="VBSCRIPT" %>
 <!--#include file="config.asp" -->
 <%
 

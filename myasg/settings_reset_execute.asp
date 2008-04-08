@@ -1,4 +1,4 @@
-<%@LANGUAGE="VBSCRIPT"%>
+<%@ LANGUAGE="VBSCRIPT" %>
 <% Option Explicit %>
 <!--#include file="config.asp" -->
 <!--#include file="includes/inc_array_table.asp" -->

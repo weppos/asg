@@ -1,4 +1,4 @@
-<%@LANGUAGE="VBSCRIPT"%>
+<%@ LANGUAGE="VBSCRIPT" %>
 <% Option Explicit %>
 <!-- #include file="aspunit/ASPUnitRunner.asp"-->
 <%
