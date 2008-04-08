@@ -333,6 +333,22 @@ public function getOsIconHex(os)
 end function 
 
 
+'
+' Prints a binary icon from its Hex representation.
+' 
+' @param  string  strIconHex
+' @return void
+'
+public function printIconFromHex(strIconHex)
+    ' Requirements: only gif images are allowed 
+    Response.ContentType = "image/gif"
+    ' Convert
+    for ii = 1 to Len(strIconHex) step 2
+        Response.BinaryWrite(ChrB("&h" & Mid(strIconHex, ii, 2)))
+    next
+end function 
+
+
 ' Execute
 strHex = getOsIconHex(Request.QueryString("icon"))
 printIconFromHex(strHex)
