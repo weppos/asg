@@ -135,7 +135,7 @@ Set objAsgConn = Nothing
 <html>
 <head>
 <title>Installazione ASP Stats Generator | Versione <%= strAsgVersion %></title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <style type="text/css">
 <!--
 body, div, p, tr, td {
