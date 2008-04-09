@@ -53,12 +53,9 @@
 '
 public function asgElabtime()
   Dim strElabtime
-  Dim strMessage
   
-  strMessage  = "This page was generated in %{seconds} seconds"
   strElabtime = asgComputeElabtime(startAsgElab, Timer())
-  
-  asgElabtime = Replace(strMessage, "%{seconds}", strElabtime)
+  asgElabtime = Replace(ASG_TEXT_PAGE_GENERATED_IN, "%{seconds}", strElabtime)
 end function 
 
 

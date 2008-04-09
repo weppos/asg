@@ -332,8 +332,6 @@ Const strAsgTxtTimeZoneOffSet = "Time zone offset"
 Const strAsgTxtOffSetClientServer = "from Server time"
 Const strAsgTxtOffSetServerToGMT = "from Server to Greenwich meridian (GMT)"
 Const strAsgTxtOffSetGMTtoUser = "from Greenwich meridian (GMT) to your Time"
-Const strAsgTxtThisPageWasGeneratedIn = "This page was generated in"
-Const strAsgTxtSeconds = "seconds"
 Const strAsgTxtOn = "on"
 Const strAsgTxtAt = "at"
 Const strAsgTxtServerDateTimeAre = "Server date and time are"
@@ -370,5 +368,8 @@ Const strAsgTxtExcluded = "excluded"
 Const strAsgTxtIntoMonitoringProcess = "into monitoring process"
 Const strAsgTxtUsingApplication = "Using application"
 Const strAsgTxtPageMonitoringString = "Monitoring string to add in pages you'd like to track"
+
+
+Const ASG_TEXT_PAGE_GENERATED_IN = "This page was generated in %{seconds} seconds"
 
 %>
