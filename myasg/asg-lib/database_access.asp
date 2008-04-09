@@ -64,7 +64,7 @@ end function
 '
 ' Be aware that the compact function doesn't overwrite the original database
 ' but creates a copy with the compacted one.
-' Please use fileRename() function to replace the old database with the compacted one.
+' Please use asgFileRename() function to replace the old database with the compacted one.
 '
 ' @param  string  strSourcePath
 ' @param  string  strTargetPath

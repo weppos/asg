@@ -215,7 +215,7 @@ Set objAsgConn = Nothing
 ' compact and restore database
 Call asgDatabaseAccessCompact(strAsgMapPath, strAsgMapPathTo)
 ' overwrite original database with compacted one
-Call fileRename(strAsgMapPathTo, strAsgMapPath)
+Call asgFileRename(strAsgMapPathTo, strAsgMapPath)
 
 
 'Nel caso si siano verificati errori valorizza una variabile

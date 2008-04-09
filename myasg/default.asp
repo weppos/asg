@@ -446,7 +446,7 @@ Set objAsgConn = Nothing
             <td background="<%= strAsgSknPathImage & strAsgSknTableContBgImage %>"><span class="notetext"><%= strAsgTxtProtocolVersion %></span></td>
             <td background="<%= strAsgSknPathImage & strAsgSknTableContBgImage %>"><%= Request.ServerVariables("SERVER_PROTOCOL") %></td>
             <td background="<%= strAsgSknPathImage & strAsgSknTableContBgImage %>"><span class="notetext">VBScript Engine</span></td>
-            <td background="<%= strAsgSknPathImage & strAsgSknTableContBgImage %>"><%= getScriptEngineInfo() %></td>
+            <td background="<%= strAsgSknPathImage & strAsgSknTableContBgImage %>"><%= asgGetScriptEngineInfo() %></td>
           </tr>
 		  <%
 
