@@ -56,6 +56,9 @@
 ' TODO: consider to include the file only when necessary
 %><!--#include file="asg-lib/binary.asp" --><%
 
+' Include Layout functions
+%><!--#include file="asg-lib/layout.asp" --><%
+
 
 
 ' *** Update checker variables ***
