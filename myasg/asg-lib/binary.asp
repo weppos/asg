@@ -44,12 +44,12 @@
 
 
 '
-' Prints a binary icon from its Hex representation.
+' Prints a binary image from its Hex representation.
 ' 
 ' @param  string  strIconHex
 ' @return void
 '
-public function printIconFromHex(strIconHex)
+public function asgPrintImageFromHex(strIconHex)
     ' Requirements: only gif images are allowed 
     Response.ContentType = "image/gif"
     ' Convert

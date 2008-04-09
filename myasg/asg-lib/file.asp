@@ -44,18 +44,22 @@
 
 
 '
-' Returns vbScriptEngine information.
-' 
-' @return string
+' Renames a file from strSourcePath to strTargetPath.
 '
-public function asgGetScriptEngineInfo()
-  Dim strInfo
-  strInfo = ScriptEngine & " " &_ 
-            ScriptEngineMajorVersion & "." &_
-            ScriptEngineMinorVersion & "." &_
-            ScriptEngineBuildVersion
-  asgGetScriptEngineInfo = strInfo
-end function 
+' @param  strSourcePath
+' @param  strTargetPath
+'
+function asgFileRename(strSourcePath, strTargetPath)
+  Dim objFso, objFile
+
+  Set objFso = Server.CreateObject("Scripting.FileSystemObject")
+  Set objFile = objFso.getFile(strSourcePath)
+  objFile.copy strTargetPath, True
+  objFile.delete True
+
+  Set objFso = Nothing
+  Set objFile = Nothing
+end function
 
 
 %>

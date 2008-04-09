@@ -43,6 +43,10 @@
 ' */
 
 
+' Include Access Database functions
+%><!--#include file="asg-lib/database_access.asp" --><%
+
+
 Server.ScriptTimeout = 90
 Session.Timeout = 20
 Response.Buffer = True

@@ -44,18 +44,42 @@
 
 
 '
-' Returns vbScriptEngine information.
-' 
+' Creates and returns an Access Database connection string
+' for given strDataSource.
+' Microsoft.Jet.OLEDB.4.0 driver is used.
+'
+' @param  string  strDataSource
 ' @return string
 '
-public function asgGetScriptEngineInfo()
-  Dim strInfo
-  strInfo = ScriptEngine & " " &_ 
-            ScriptEngineMajorVersion & "." &_
-            ScriptEngineMinorVersion & "." &_
-            ScriptEngineBuildVersion
-  asgGetScriptEngineInfo = strInfo
-end function 
+function asgDatabaseAccessConnectionstring(strDataSource)
+  Dim strConnectionString
+  
+  strConnectionString = "Provider=Microsoft.Jet.OLEDB.4.0;" & "Data Source=" & strDataSource
+  asgDatabaseAccessConnectionstring = strConnectionString
+end function
+
+
+'
+' Compacts an Access MDB database.
+'
+' Be aware that the compact function doesn't overwrite the original database
+' but creates a copy with the compacted one.
+' Please use fileRename() function to replace the old database with the compacted one.
+'
+' @param  string  strSourcePath
+' @param  string  strTargetPath
+'
+function asgDatabaseAccessCompact(strOriginalPath, strCompactedPath)
+  Dim strSourceConnection, strTargetConnection
+  Dim objJro
+  
+  strSourceConnection = asgDatabaseAccessConnectionstring(strOriginalPath)
+  strTargetConnection = asgDatabaseAccessConnectionstring(strCompactedPath)
+  
+  set objJro = CreateObject("jro.JetEngine") 
+  objJro.compactDatabase strSourceConnection, strTargetConnection
+  Set objJro = Nothing 
+end function
 
 
 %>

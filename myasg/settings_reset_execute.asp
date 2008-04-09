@@ -2,6 +2,7 @@
 <% Option Explicit %>
 <!--#include file="config.asp" -->
 <!--#include file="includes/inc_array_table.asp" -->
+<!--#include file="asg-lib/file.asp" -->
 <%
 
 '/**
@@ -211,71 +212,10 @@ objAsgConn.Close
 Set objAsgConn = Nothing
 
 
-'-----------------------------------------------------------------------------------------
-' Rinomina File
-'-----------------------------------------------------------------------------------------
-' Funzione:	
-' Data: 	27.12.2003 |
-' Commenti:	
-'-----------------------------------------------------------------------------------------
-function RinominaFile(fileFrom, fileTo)
-
-	Dim objFso, objFile
-	
-	Set objFso = Server.CreateObject("Scripting.FileSystemObject")
-	Set objFile = objFso.GetFile(fileFrom)
-	objFile.Copy fileTo, True
-	objFile.Delete True
-		
-	Set objFso = Nothing
-	Set objFile = Nothing
-
-end function '-----------------------------------------------------------------------------------------
-' Ripristina File
-'-----------------------------------------------------------------------------------------
-' Funzione:	
-' Data: 	27.12.2003 | 27.12.2003
-' Commenti:	
-'-----------------------------------------------------------------------------------------
-function RipristinaFile(fileFrom, fileTo)
-
-	Dim objFso
-	
-	Set objFso = Server.CreateObject("Scripting.FileSystemObject")
-	objFso.CopyFile fileTo, fileTo & ".bak", true 
-	objFso.DeleteFile fileTo
-	objFso.MoveFile fileFrom, fileTo
-	objFso.DeleteFile fileTo & ".bak"
-
-	Set objFso = Nothing
-
-end function '-----------------------------------------------------------------------------------------
-' Compatta il Database
-'-----------------------------------------------------------------------------------------
-' Funzione:	
-' Data: 	|
-' Commenti:	
-'-----------------------------------------------------------------------------------------
-function CompactAccessDatabase()
-	
-	Dim strAsgDb, strAsgDbTo
-	Dim objAsgJro
-	
-	strAsgDb = "Provider=Microsoft.Jet.OLEDB.4.0;" & "Data Source=" & strAsgMapPath
-	strAsgDbTo = "Provider=Microsoft.Jet.OLEDB.4.0;" & "Data Source=" & strAsgMapPathTo
-	
-	set objAsgJro = CreateObject("jro.JetEngine") 
-	objAsgJro.CompactDatabase strAsgDb, strAsgDbTo
-	Set objAsgJro = Nothing 
-	
-end function 'Compatta il database dopo i reset	
-Call CompactAccessDatabase()
-
-'Dopo aver compattato il database
-'ripristina la versione precedente
-'con quella compattata
-Call RinominaFile(strAsgMapPathTo, strAsgMapPath)
-'Call RipristinaFile(strAsgMapPathTo, strAsgMapPath)
+' compact and restore database
+Call asgDatabaseAccessCompact(strAsgMapPath, strAsgMapPathTo)
+' overwrite original database with compacted one
+Call fileRename(strAsgMapPathTo, strAsgMapPath)
 
 
 'Nel caso si siano verificati errori valorizza una variabile
