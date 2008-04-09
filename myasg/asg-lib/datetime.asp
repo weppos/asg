@@ -63,7 +63,7 @@ end function
 ' @param  timer   timerEnd
 '
 public function asgComputeElabtime(timerStart, timerEnd)
-  asgComputeElabtime = FormatNumber(timerStart - timerEnd, 4)
+  asgComputeElabtime = FormatNumber(timerEnd - timerStart, 4)
 end function
 
 
