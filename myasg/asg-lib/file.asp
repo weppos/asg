@@ -44,21 +44,65 @@
 
 
 '
-' Renames a file from strSourcePath to strTargetPath.
+' Copies a file from strSourcePath to strTargetPath.
+'
+' @param  strSourcePath
+' @param  strTargetPath
+' @param  blnOverwrite
+'
+function asgFileCopy(strSourcePath, strTargetPath, blnOverwrite)
+  Dim objFso
+
+  Set objFso = Server.CreateObject("Scripting.FileSystemObject")
+  objFso.copyFile strSourcePath, strTargetPath, blnOverwrite
+  Set objFso = Nothing
+end function
+
+
+'
+' Deletes the file at strSourcePath.
 '
 ' @param  strSourcePath
 ' @param  strTargetPath
 '
-function asgFileRename(strSourcePath, strTargetPath)
-  Dim objFso, objFile
+function asgFileDelete(strSourcePath)
+  Dim objFso
 
   Set objFso = Server.CreateObject("Scripting.FileSystemObject")
-  Set objFile = objFso.getFile(strSourcePath)
-  objFile.copy strTargetPath, True
-  objFile.delete True
-
+  objFso.deleteFile strSourcePath
   Set objFso = Nothing
-  Set objFile = Nothing
+end function
+
+
+'
+' Moves a file from strSourcePath to strTargetPath.
+'
+' @param  strSourcePath
+' @param  strTargetPath
+'
+function asgFileMove(strSourcePath, strTargetPath)
+  Dim objFso
+
+  Set objFso = Server.CreateObject("Scripting.FileSystemObject")
+  objFso.moveFile strSourcePath, strTargetPath
+  Set objFso = Nothing
+end function
+
+
+'
+' Replace file strTargetPath with strSourcePath.
+' If strTargetPath doesn't exist, strSourcePath file is simply renamed.
+'
+' @param  strSourcePath
+' @param  strTargetPath
+'
+function asgFileReplace(strSourcePath, strTargetPath)
+  Dim objFso
+
+  Set objFso = Server.CreateObject("Scripting.FileSystemObject")
+  objFso.copyFile strSourcePath, strTargetPath, true
+  objFso.deleteFile strSourcePath
+  Set objFso = Nothing
 end function
 
 
