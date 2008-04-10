@@ -1,7 +1,7 @@
 <%@LANGUAGE="VBSCRIPT"%>
 <% Option Explicit %>
 <!--#include file="config.asp" -->
-<!--#include file="includes/inc_array_table.asp" -->
+<!--#include file="asg-lib/file.asp" -->
 <%
 
 '/**
@@ -63,51 +63,10 @@ objAsgConn.Close
 Set objAsgConn = Nothing
 
 
-'-----------------------------------------------------------------------------------------
-' Rinomina File
-'-----------------------------------------------------------------------------------------
-' Funzione:	
-' Data: 	27.12.2003 |
-' Commenti:	
-'-----------------------------------------------------------------------------------------
-function RinominaFile(fileFrom, fileTo)
-
-	Dim objFso, objFile
-	
-	Set objFso = Server.CreateObject("Scripting.FileSystemObject")
-	Set objFile = objFso.GetFile(fileFrom)
-	objFile.Copy fileTo, True
-	objFile.Delete True
-		
-	Set objFso = Nothing
-	Set objFile = Nothing
-
-end function '-----------------------------------------------------------------------------------------
-' Compatta il Database
-'-----------------------------------------------------------------------------------------
-' Funzione:	
-' Data: 	|
-' Commenti:	
-'-----------------------------------------------------------------------------------------
-function CompactAccessDatabase()
-	
-	Dim strAsgDb, strAsgDbTo
-	Dim objAsgJro
-	
-	strAsgDb = "Provider=Microsoft.Jet.OLEDB.4.0;" & "Data Source=" & strAsgMapPath
-	strAsgDbTo = "Provider=Microsoft.Jet.OLEDB.4.0;" & "Data Source=" & strAsgMapPathTo
-	
-	set objAsgJro = CreateObject("jro.JetEngine") 
-	objAsgJro.CompactDatabase strAsgDb, strAsgDbTo
-	Set objAsgJro = Nothing 
-	
-end function 'Compatta il database dopo i reset	
-Call CompactAccessDatabase()
-
-'Dopo aver compattato il database
-'ripristina la versione precedente
-'con quella compattata
-Call RinominaFile(strAsgMapPathTo, strAsgMapPath)
+' compact and restore database
+Call asgDatabaseAccessCompact(strAsgMapPath, strAsgMapPathTo)
+' replace original database with compacted one
+Call asgFileReplace(strAsgMapPathTo, strAsgMapPath)
 
 
 'Nel caso si siano verificati errori valorizza una variabile
@@ -174,7 +133,7 @@ Call BuildFooterBorderLine()
 ' ***** INIZIO AVVERTENZA - RIMOZIONE o MODIFICA PARZIALE/TOTALE DEL CODICE COMPORTA VIOLAZIONE DELLA LICENZA  	******
 Response.Write("<tr align=""center"" valign=""middle"">")
 Response.Write("<td align=""center"" background=""" & strAsgSknPathImage & strAsgSknTableBarBgImage & """ bgcolor=""" & strAsgSknTableBarBgColour & """ height=""20"" class=""footer""><a href=""http://www.asp-stats.com/"" class=""linkfooter"" title=""ASP Stats Generator Homepage"">ASP Stats Generator</a> [" & strAsgVersion & "] - &copy; 2003-2008 <a href=""http://www.weppos.com/"" class=""linkfooter"" title=""Weppos.com Homepage"">weppos</a>")
-If blnAsgElabTime Then Response.Write(" - " & strAsgTxtThisPageWasGeneratedIn & "&nbsp;" & FormatNumber(Timer() - startAsgElab, 4) & "&nbsp;" & strAsgTxtSeconds)
+if blnAsgElabTime then Response.Write(asgElabtime)
 Response.Write("</td>")
 Response.Write("</tr>")
 ' ***** END WARNING - REMOVAL or MODIFICATION IN PART or ALL OF THIS CODE WILL VIOLATE THE LICENSE AGREEMENT	******

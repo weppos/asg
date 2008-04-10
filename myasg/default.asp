@@ -1,6 +1,7 @@
 <%@LANGUAGE="VBSCRIPT"%>
 <% Option Explicit %>
 <!--#include file="config.asp" -->
+<!--#include file="asg-lib/vbscript.asp" -->
 <!--#include file="includes/functions_images.asp" -->
 <%
 
@@ -53,22 +54,7 @@
 Call AllowEntry("True", "True", "False", intAsgSecurity)
 
 
-'-----------------------------------------------------------------------------------------
-' Script Engine Info	
-'-----------------------------------------------------------------------------------------
-' Funzione:	
-' Data: 	
-' Commenti:			
-'-----------------------------------------------------------------------------------------
-function GetScriptEngineInfo()
-   Dim info
-   info = ""   ' Crea la stringa contenente le informazioni necessarie.
-   info = ScriptEngine & " "
-   info = info & ScriptEngineMajorVersion & "."
-   info = info & ScriptEngineMinorVersion & "."
-   info = info & ScriptEngineBuildVersion
-   GetScriptEngineInfo = info ' Restituisce il risultato.
-end function 'Faccio prima a richiamare la stessa funzione in config
+'Faccio prima a richiamare la stessa funzione in config
 'e passargli i nuovi parametri!
 Call FormatInTimeZone(dtmAsgNow, aryAsgTimeZone(1))
 
@@ -460,7 +446,7 @@ Set objAsgConn = Nothing
             <td background="<%= strAsgSknPathImage & strAsgSknTableContBgImage %>"><span class="notetext"><%= strAsgTxtProtocolVersion %></span></td>
             <td background="<%= strAsgSknPathImage & strAsgSknTableContBgImage %>"><%= Request.ServerVariables("SERVER_PROTOCOL") %></td>
             <td background="<%= strAsgSknPathImage & strAsgSknTableContBgImage %>"><span class="notetext">VBScript Engine</span></td>
-            <td background="<%= strAsgSknPathImage & strAsgSknTableContBgImage %>"><%= GetScriptEngineInfo() %></td>
+            <td background="<%= strAsgSknPathImage & strAsgSknTableContBgImage %>"><%= asgGetScriptEngineInfo() %></td>
           </tr>
 		  <%
 
@@ -511,7 +497,7 @@ Call BuildFooterBorderLine()
 ' ***** INIZIO AVVERTENZA - RIMOZIONE o MODIFICA PARZIALE/TOTALE DEL CODICE COMPORTA VIOLAZIONE DELLA LICENZA  	******
 Response.Write("<tr align=""center"" valign=""middle"">")
 Response.Write("<td align=""center"" background=""" & strAsgSknPathImage & strAsgSknTableBarBgImage & """ bgcolor=""" & strAsgSknTableBarBgColour & """ height=""20"" class=""footer""><a href=""http://www.asp-stats.com/"" class=""linkfooter"" title=""ASP Stats Generator Homepage"">ASP Stats Generator</a> [" & strAsgVersion & "] - &copy; 2003-2008 <a href=""http://www.weppos.com/"" class=""linkfooter"" title=""Weppos.com Homepage"">weppos</a>")
-If blnAsgElabTime Then Response.Write(" - " & strAsgTxtThisPageWasGeneratedIn & "&nbsp;" & FormatNumber(Timer() - startAsgElab, 4) & "&nbsp;" & strAsgTxtSeconds)
+if blnAsgElabTime then Response.Write(asgElabtime())
 Response.Write("</td>")
 Response.Write("</tr>")
 ' ***** END WARNING - REMOVAL or MODIFICATION IN PART or ALL OF THIS CODE WILL VIOLATE THE LICENSE AGREEMENT	******

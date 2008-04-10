@@ -332,8 +332,6 @@ Const strAsgTxtTimeZoneOffSet = "Differenza di fuso orario"
 Const strAsgTxtOffSetClientServer = "rispetto all'ora del Server"
 Const strAsgTxtOffSetServerToGMT = "tra Server ed il meridiano fondamentale di Greenwich (GMT)"
 Const strAsgTxtOffSetGMTtoUser = "tra il meridiano fondamentale di Greenwich (GMT) ed il tuo Orario"
-Const strAsgTxtThisPageWasGeneratedIn = "Pagina generata in"
-Const strAsgTxtSeconds = "secondi"
 Const strAsgTxtOn = "in"
 Const strAsgTxtAt = "alle"
 Const strAsgTxtServerDateTimeAre = "L'ora e la data del server sono"
@@ -370,5 +368,8 @@ Const strAsgTxtExcluded = "escluso"
 Const strAsgTxtIntoMonitoringProcess = "nel processo di conteggio"
 Const strAsgTxtUsingApplication = "Utilizzo del programma"
 Const strAsgTxtPageMonitoringString = "Stringa di monitoraggio da inserire nelle pagine da tracciare"
+
+
+Const ASG_TEXT_PAGE_GENERATED_IN = "This page was generated in %{seconds} seconds"
 
 %>

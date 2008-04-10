@@ -44,18 +44,18 @@
 
 
 '
-' Prints a binary image from its Hex representation.
-' 
-' @param  string  strIconHex
-' @return void
+' Returns the elaboration time message since elaboration started.
 '
-public function asgPrintImageFromHex(strIconHex)
-    ' Requirements: only gif images are allowed 
-    Response.ContentType = "image/gif"
-    ' Convert
-    for ii = 1 to Len(strIconHex) step 2
-        Response.BinaryWrite(ChrB("&h" & Mid(strIconHex, ii, 2)))
-    next
+' Note. This function uses the "global" startAsgElab variable.
+' Be aware of side effects!
+' 
+' @return string
+'
+public function asgElabtime()
+  Dim strElabtime
+  
+  strElabtime = asgComputeElabtime(startAsgElab, Timer())
+  asgElabtime = Replace(ASG_TEXT_PAGE_GENERATED_IN, "%{seconds}", strElabtime)
 end function 
 
 

@@ -44,19 +44,66 @@
 
 
 '
-' Prints a binary image from its Hex representation.
-' 
-' @param  string  strIconHex
-' @return void
+' Copies a file from strSourcePath to strTargetPath.
 '
-public function asgPrintImageFromHex(strIconHex)
-    ' Requirements: only gif images are allowed 
-    Response.ContentType = "image/gif"
-    ' Convert
-    for ii = 1 to Len(strIconHex) step 2
-        Response.BinaryWrite(ChrB("&h" & Mid(strIconHex, ii, 2)))
-    next
-end function 
+' @param  strSourcePath
+' @param  strTargetPath
+' @param  blnOverwrite
+'
+function asgFileCopy(strSourcePath, strTargetPath, blnOverwrite)
+  Dim objFso
+
+  Set objFso = Server.CreateObject("Scripting.FileSystemObject")
+  objFso.copyFile strSourcePath, strTargetPath, blnOverwrite
+  Set objFso = Nothing
+end function
+
+
+'
+' Deletes the file at strSourcePath.
+'
+' @param  strSourcePath
+' @param  strTargetPath
+'
+function asgFileDelete(strSourcePath)
+  Dim objFso
+
+  Set objFso = Server.CreateObject("Scripting.FileSystemObject")
+  objFso.deleteFile strSourcePath
+  Set objFso = Nothing
+end function
+
+
+'
+' Moves a file from strSourcePath to strTargetPath.
+'
+' @param  strSourcePath
+' @param  strTargetPath
+'
+function asgFileMove(strSourcePath, strTargetPath)
+  Dim objFso
+
+  Set objFso = Server.CreateObject("Scripting.FileSystemObject")
+  objFso.moveFile strSourcePath, strTargetPath
+  Set objFso = Nothing
+end function
+
+
+'
+' Replace file strTargetPath with strSourcePath.
+' If strTargetPath doesn't exist, strSourcePath file is simply renamed.
+'
+' @param  strSourcePath
+' @param  strTargetPath
+'
+function asgFileReplace(strSourcePath, strTargetPath)
+  Dim objFso
+
+  Set objFso = Server.CreateObject("Scripting.FileSystemObject")
+  objFso.copyFile strSourcePath, strTargetPath, true
+  objFso.deleteFile strSourcePath
+  Set objFso = Nothing
+end function
 
 
 %>

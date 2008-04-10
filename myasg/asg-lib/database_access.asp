@@ -44,19 +44,42 @@
 
 
 '
-' Prints a binary image from its Hex representation.
-' 
-' @param  string  strIconHex
-' @return void
+' Creates and returns an Access Database connection string
+' for given strDataSource.
+' Microsoft.Jet.OLEDB.4.0 driver is used.
 '
-public function asgPrintImageFromHex(strIconHex)
-    ' Requirements: only gif images are allowed 
-    Response.ContentType = "image/gif"
-    ' Convert
-    for ii = 1 to Len(strIconHex) step 2
-        Response.BinaryWrite(ChrB("&h" & Mid(strIconHex, ii, 2)))
-    next
-end function 
+' @param  string  strDataSource
+' @return string
+'
+function asgDatabaseAccessConnectionstring(strDataSource)
+  Dim strConnectionString
+  
+  strConnectionString = "Provider=Microsoft.Jet.OLEDB.4.0;" & "Data Source=" & strDataSource
+  asgDatabaseAccessConnectionstring = strConnectionString
+end function
+
+
+'
+' Compacts an Access MDB database.
+'
+' Be aware that the compact function doesn't overwrite the original database
+' but creates a copy with the compacted one.
+' Please use asgFileRename() function to replace the old database with the compacted one.
+'
+' @param  string  strSourcePath
+' @param  string  strTargetPath
+'
+function asgDatabaseAccessCompact(strOriginalPath, strCompactedPath)
+  Dim strSourceConnection, strTargetConnection
+  Dim objJro
+  
+  strSourceConnection = asgDatabaseAccessConnectionstring(strOriginalPath)
+  strTargetConnection = asgDatabaseAccessConnectionstring(strCompactedPath)
+  
+  set objJro = CreateObject("jro.JetEngine") 
+  objJro.compactDatabase strSourceConnection, strTargetConnection
+  Set objJro = Nothing 
+end function
 
 
 %>

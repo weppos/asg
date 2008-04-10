@@ -44,18 +44,17 @@
 
 
 '
-' Prints a binary image from its Hex representation.
+' Returns vbScriptEngine information.
 ' 
-' @param  string  strIconHex
-' @return void
+' @return string
 '
-public function asgPrintImageFromHex(strIconHex)
-    ' Requirements: only gif images are allowed 
-    Response.ContentType = "image/gif"
-    ' Convert
-    for ii = 1 to Len(strIconHex) step 2
-        Response.BinaryWrite(ChrB("&h" & Mid(strIconHex, ii, 2)))
-    next
+public function asgGetScriptEngineInfo()
+  Dim strInfo
+  strInfo = ScriptEngine & " " &_ 
+            ScriptEngineMajorVersion & "." &_
+            ScriptEngineMinorVersion & "." &_
+            ScriptEngineBuildVersion
+  asgGetScriptEngineInfo = strInfo
 end function 
 
 

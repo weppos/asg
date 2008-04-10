@@ -339,7 +339,7 @@ end function
 ' @param  string  strIconHex
 ' @return void
 '
-public function printIconFromHex(strIconHex)
+public function asgPrintImageFromHex(strIconHex)
     ' Requirements: only gif images are allowed 
     Response.ContentType = "image/gif"
     ' Convert
@@ -351,6 +351,6 @@ end function
 
 ' Execute
 strHex = getOsIconHex(Request.QueryString("icon"))
-printIconFromHex(strHex)
+asgPrintImageFromHex(strHex)
 
 %>

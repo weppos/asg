@@ -55,4 +55,18 @@ public function asgDatestamp(dtm)
 end function
 
 
+'
+' Computes and return the elaboration time
+' between timerStart and timerEnd.
+'
+' @param  timer   timerStart
+' @param  timer   timerEnd
+'
+public function asgComputeElabtime(timerStart, timerEnd)
+  asgComputeElabtime = FormatNumber(timerEnd - timerStart, 4)
+end function
+
+
+
+
 %>
