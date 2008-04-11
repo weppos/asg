@@ -189,7 +189,7 @@ Set objAsgConn = Nothing
 				</select>&nbsp;&nbsp;
 			</td>
 			<td background="<%= strAsgSknPathImage & strAsgSknTableContBgImage %>" width="40%">&nbsp;
-				<input type="image" src="images/delete.gif" name="delete" value="deletenormal" /></td>
+				<input type="image" src="images/delete.gif" name="delete" value="deletenormal" onclick="return confirm('Are you sure you want to delete selected records?');" /></td>
 		  </tr>
 		  <% If aryAsgTable(intAsgTableLoop, 1) = "Detail" Then %>
 		  <tr class="smalltext" bgcolor="<%= strAsgSknTableContBgColour %>">
@@ -205,7 +205,7 @@ Set objAsgConn = Nothing
 				</select>&nbsp;&nbsp;
 			</td>
 			<td background="<%= strAsgSknPathImage & strAsgSknTableContBgImage %>" width="40%">&nbsp;
-				<input type="image" src="images/delete.gif" name="delete" value="deleteweek" /></td>
+				<input type="image" src="images/delete.gif" name="delete" value="deleteweek" onclick="return confirm('Are you sure you want to delete selected records?');" /></td>
 		  </tr>
 		  <% End If 'Condizione tabella details	%>
 		  </form>
