@@ -63,7 +63,7 @@ Response.Write "if (v != 'Netscape') { c = screen.colorDepth; }"
 Response.Write "else { c = screen.pixelDepth; }"
 
 ' Tracking string
-Response.Write "info='w=' + w + '&h=' + h + '&c=' + c + '&r=' + f + '&u='+ u + ';"
+Response.Write "info='w=' + w + '&h=' + h + '&c=' + c + '&r=' + f + '&u=' + u;"
 
 ' Write image
 Response.Write "document.open();"
