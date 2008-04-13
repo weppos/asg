@@ -1,6 +1,3 @@
-<%@ LANGUAGE="VBSCRIPT" %>
-<% Option Explicit %>
-<!--#include file="asg-lib/track.asp" -->
 <%
 
 '/**
@@ -37,40 +34,82 @@
 ' * @author          Simone Carletti <weppos@weppos.net>
 ' * @copyright       2003-2008 Simone Carletti
 ' * @license         http://www.weppos.com/asg/en/license.asp
-' * @version         SVN: $Id$
+' * @version         SVN: $Id: functions_stats.asp 8 2007-08-03 12:51:40Z weppos $
 ' */
- 
+
 '/* 
 ' * Any disagreement of this license behaves the removal of rights to use this application.
 ' * Licensor reserve the right to bring legal action in the event of a violation of this Agreement.
 ' */
 
 
-' Tracking file
-Response.Write "var file = '" & asgTrackFilePath & "';"
+'
+' Returns absolute path to track file, 
+' build from request server variables.
+'
+function asgTrackFilePath()
+  Dim strScheme, strDomain, strPath
+  Dim strFilePath
 
-' Referer
-Response.Write "var f = escape(document.referrer);"
+  if Request.ServerVariables("HTTPS") = "on" then 
+    strScheme = "https"
+  else
+    strScheme = "http"
+  end if
+  strDomain = Request.ServerVariables("SERVER_NAME")
+  strPath   = Replace(Request.ServerVariables("SCRIPT_NAME"), "stats_js.asp", "count.asp")
 
-' Current page
-Response.Write "var u = escape(document.URL); "
+  strFilePath = strScheme & "://" & strDomain & strPath
+  asgTrackFilePath = strFilePath
+end function
 
-' Video resolution
-Response.Write "var w = screen.width; "
-Response.Write "var h = screen.height; "
 
-' Color depth according to browser type
-Response.Write "var v = navigator.appName; "
-Response.Write "var c = ''; "
-Response.Write "if (v != 'Netscape') { c = screen.colorDepth; }"
-Response.Write "else { c = screen.pixelDepth; }"
+'
+' Returns strUrl without the query string part.
+'
+' @param  string  strUrl
+'
+function asgUrlStripQuery(strUrl)
+  Dim intInstr, strValue
 
-' Tracking string
-Response.Write "info='w=' + w + '&h=' + h + '&c=' + c + '&r=' + f + '&u=' + u;"
+  intInstr = instr(strURL, "?")
+  if intInstr then strValue = left(strURL, intInstr - 1) else strValue = strURL
+  asgUrlStripQuery = strValue
 
-' Write image
-Response.Write "document.open();"
-Response.Write "document.write('<img src=""' + file + '?' + info + '"" border=""0"">');"
-Response.Write "document.close();"
+end function
+
+
+'
+' Returns strUrl without the scheme part.
+'
+' @param  string  strUrl
+'
+function asgUrlStripScheme(strUrl)
+  Dim intInstr, strValue
+
+  intInstr = instr(strURL, "://")
+  if intInstr then strValue = right(strURL, len(strURL) - (3 + intInstr - 1)) else strValue = strURL
+  asgUrlStripScheme = strValue
+
+end function
+
+
+'
+' Returns the domain part from strUrl.
+'
+' @param  string  strUrl
+' 
+' TODO: trim trailing slash and update all dependencies
+'
+function asgUrlGetDomain(strUrl)
+  Dim intInstr, strValue
+
+  strValue = asgUrlStripScheme(strUrl)
+  intInstr = instr(strValue, "/")
+  if intInstr > 0 then strValue = left(strValue, intInstr) else strValue = strValue & "/"
+  asgUrlGetDomain = strValue
+
+end function
+
 
 %>

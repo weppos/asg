@@ -1,6 +1,7 @@
 <!--#include file="config_common.asp" -->
 <!--#include file="wbstat/wbstat3_class.asp"-->
 <!--#include file="includes/functions_count.asp" -->
+<!--#include file="asg-lib/tracking.asp" -->
 <%
 
 '/**
@@ -131,8 +132,6 @@ Sub Log()
 	strAsgColor = Request("c")
 	strAsgPage = Request("u")
 	strAsgReferer = Request("r")	
-	strAsgFontSmoothing = Request("fs")
-	strAsgJavaEnabled = Request("j")
 
 	'// Da asp
 	strAsgIP = Request.ServerVariables("REMOTE_ADDR")
@@ -173,13 +172,6 @@ Sub Log()
 		strAsgResolution = "(unknown)"
 	End If
 		
-	'Anti-Aliasing Fonts
-	'If strAsgFontSmoothing = "true" then
-	'	strAsgFontSmoothing = "True"
-	'Else
-	'	strAsgFontSmoothing = "False"
-	'End if
-		
 	'Referer
 	If strAsgReferer = "" then strAsgReferer = Request.ServerVariables("HTTP_REFERER")
 	If strAsgReferer = "" then strAsgReferer = "(unknown)"
@@ -192,7 +184,7 @@ Sub Log()
 
 	'Calcola proprio server come referer
 	If blnRefererServer = False then
-		If InStr(StripURLquerystring(strAsgReferer), strAsgSiteURLremote) then
+		If InStr(asgUrlStripQuery(strAsgReferer), strAsgSiteURLremote) then
 			strAsgReferer = "(ownserver)"
 		End if
 	End if
@@ -200,11 +192,11 @@ Sub Log()
 	
 	'Taglia QueryString della Pagina
 	If blnStripPathQS then
-		strAsgPage = StripURLquerystring(strAsgPage)
+		strAsgPage = asgUrlStripQuery(strAsgPage)
 	End If
 		
 	'Calcola pagina nuda e cruda
-	strAsgPageStripped = StripURLquerystring(strAsgPage)
+	strAsgPageStripped = asgUrlStripQuery(strAsgPage)
 
 	'Imposta una pagina nulla se non esistente
 	If strAsgPage = "" then strAsgPage = "(unknown)"
@@ -220,7 +212,7 @@ Sub Log()
 			If strAsgReferer = "(unknown)" Then
 				strAsgRefererDom = "(unknown)"
 			Else
-				strAsgRefererDom = GetURLdomain(strAsgReferer)
+				strAsgRefererDom = asgUrlGetDomain(strAsgReferer)
 			End If
 			
 		End If

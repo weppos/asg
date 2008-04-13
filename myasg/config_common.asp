@@ -87,8 +87,6 @@ Dim strAsgColor             'Profondità di Colore (Bit)
 Dim strAsgPage              'Pagina attuale richiamata
 Dim strAsgPageStripped      'Pagina attuale richiamata senza querystring
 Dim strAsgReferer           'Referer
-Dim strAsgFontSmoothing     '                   -- NON IMPLEMENTATO ATTUALMENTE --
-Dim strAsgJavaEnabled       'Java Abilitati     -- NON IMPLEMENTATO ATTUALMENTE --
 
 ' from ASP
 Dim strAsgIP                'IP User

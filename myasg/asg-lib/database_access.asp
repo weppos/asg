@@ -51,11 +51,11 @@
 ' @param  string  strDataSource
 ' @return string
 '
-function asgDatabaseAccessConnectionstring(strDataSource)
+function asgDatabaseAccessConnectionString(strDataSource)
   Dim strConnectionString
   
   strConnectionString = "Provider=Microsoft.Jet.OLEDB.4.0;" & "Data Source=" & strDataSource
-  asgDatabaseAccessConnectionstring = strConnectionString
+  asgDatabaseAccessConnectionString = strConnectionString
 end function
 
 
@@ -73,10 +73,10 @@ function asgDatabaseAccessCompact(strOriginalPath, strCompactedPath)
   Dim strSourceConnection, strTargetConnection
   Dim objJro
   
-  strSourceConnection = asgDatabaseAccessConnectionstring(strOriginalPath)
-  strTargetConnection = asgDatabaseAccessConnectionstring(strCompactedPath)
+  strSourceConnection = asgDatabaseAccessConnectionString(strOriginalPath)
+  strTargetConnection = asgDatabaseAccessConnectionString(strCompactedPath)
   
-  set objJro = CreateObject("jro.JetEngine") 
+  set objJro = Server.CreateObject("jro.JetEngine") 
   objJro.compactDatabase strSourceConnection, strTargetConnection
   Set objJro = Nothing 
 end function

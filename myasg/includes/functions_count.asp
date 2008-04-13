@@ -52,63 +52,6 @@
 ' FUNZIONI DI CONTEGGIO
 '-----------------------------------------------------------------------------------------
 
-'-----------------------------------------------------------------------------------------
-' Taglia QueryString	
-'-----------------------------------------------------------------------------------------
-' Funzione:	Taglia i caratteri della QueryString URL
-' Data: 	01.09.03 | 01.09.03
-' Commenti:	Tratto dal sito di Mems (www.oscarjsweb.com) forum HTML.it		
-'-----------------------------------------------------------------------------------------
-function StripURLquerystring(strURL)
-
-	strToStrip = instr(strURL, "?")
-	if strToStrip then strBuffer = left(strURL, strToStrip-1) else strBuffer = strURL
-	StripURLquerystring = strBuffer
-	
-end function
-
-
-'-----------------------------------------------------------------------------------------
-' Taglia Protocollo	
-'-----------------------------------------------------------------------------------------
-' Funzione:	Taglia il protocollo completo dell'URL restituendo dominio di I, II e III liv.
-' Data: 	01.09.03 | 01.09.03
-' Commenti:	Taglia http:// | http://www. mantenendo però le path successive
-'			http://www.weppos.com | http://weppos.com --> weppos.com		
-'			http://www.weppos.sonoio.com | http://weppos.sonoio.com --> weppos.sonoio.com		
-'-----------------------------------------------------------------------------------------
-function StripURLprotocol(strURL)
-
-	strToStrip = instr(strURL, "://")
-	if strToStrip then strBuffer = right(strURL, len(strURL) - (3 + strToStrip - 1)) else strBuffer = strURL
-	if left(strBuffer, 4) = "www." then strBuffer = right(strBuffer, len(strBuffer) - 4)
-	StripURLprotocol = strBuffer
-	
-end function
-
-
-'-----------------------------------------------------------------------------------------
-' Ricava dominio	
-'-----------------------------------------------------------------------------------------
-' Funzione:	Ricava l'esclusivo dominio da un URL di partenza
-' Data: 	01.09.03 | 01.09.03
-' Commenti:	Funziona anche se non è presente lo slash finale!
-'			http://www.weppos.com | http://www.weppos.com/ | http://www.weppos.com/.../ --> www.weppos.com		
-'			http://weppos.com | http://weppos.com/ | http://weppos.com/.../ --> weppos.com		
-'-----------------------------------------------------------------------------------------
-function GetURLdomain(strURL)
-	
-	strToStrip = instr(strURL, "://")
-	If strToStrip then strBuffer = right(strURL, len(strURL) - (3 + strToStrip - 1)) else strBuffer = strURL
-	strToStrip = instr(strBuffer, "/")
-	If strToStrip > 0 Then
-		GetURLdomain = Left(strBuffer, strToStrip)
-	Else
-		GetURLdomain = strBuffer & "/"
-	End If
-	
-end function
-
 
 '-----------------------------------------------------------------------------------------
 ' Escludi By IP	
