@@ -75,6 +75,29 @@ end function
 
 
 '
+' Deletes the file at strSourcePath
+' only if the file exists.
+'
+' The main difference between this method
+' and asgFileDelete is that the latter
+' doesn't check whether strSourcePath exists
+' and crashes on failure.
+'
+' @param  strSourcePath
+' @param  strTargetPath
+'
+function asgFileDeleteIfExists(strSourcePath)
+  Dim objFso
+
+  Set objFso = Server.CreateObject("Scripting.FileSystemObject")
+  if objFso.fileExists(strSourcePath) then
+    objFso.deleteFile strSourcePath
+  end if
+  Set objFso = Nothing
+end function
+
+
+'
 ' Moves a file from strSourcePath to strTargetPath.
 '
 ' @param  strSourcePath
