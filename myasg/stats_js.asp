@@ -44,35 +44,30 @@
 
 
 ' Tracking file
-Response.Write "var file='/myasg/count.asp';"
+Response.Write "var file = '/myasg/count.asp';"
 
 ' Referer
-Response.Write "f='' + escape(document.referrer);"
+Response.Write "var f = escape(document.referrer);"
 
 ' Current page
-Response.Write "u='' + escape(document.URL); "
+Response.Write "var u = escape(document.URL); "
 
 ' Video resolution
-Response.Write "var w=screen.width; "
-Response.Write "var h=screen.height; "
+Response.Write "var w = screen.width; "
+Response.Write "var h = screen.height; "
 
 ' Color depth according to browser type
-Response.Write "v=navigator.appName; "
-Response.Write "if (v != 'Netscape') {c=screen.colorDepth;}"
-Response.Write "else {c=screen.pixelDepth;}"
-
-' Font Anti-Aliasing  property
-Response.Write "var fs = window.screen.fontSmoothingEnabled;"
-
-' Java Support
-Response.Write "j=navigator.javaEnabled();"
+Response.Write "var v = navigator.appName; "
+Response.Write "var c = ''; "
+Response.Write "if (v != 'Netscape') { c = screen.colorDepth; }"
+Response.Write "else { c = screen.pixelDepth; }"
 
 ' Tracking string
-Response.Write "info='w=' + w + '&h=' + h + '&c=' + c + '&r=' + f + '&u='+ u + '&fs=' + fs + '&j=' + j;"
+Response.Write "info='w=' + w + '&h=' + h + '&c=' + c + '&r=' + f + '&u='+ u + ';"
 
 ' Write image
 Response.Write "document.open();"
-Response.Write "document.write('<img src=' + file + '?'+info+ ' border=0>');"
+Response.Write "document.write('<img src=""' + file + '?' + info + '"" border=""0"">');"
 Response.Write "document.close();"
 
 %>
