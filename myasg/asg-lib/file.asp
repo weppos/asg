@@ -98,6 +98,23 @@ end function
 
 
 '
+' Checks and returns whether strSourcePath file exists.
+'
+' @param  string  strSourcePath
+' @return bool
+'
+function asgFileExists(strSourcePath)
+  Dim objFso, blnResponse
+
+  Set objFso = Server.CreateObject("Scripting.FileSystemObject")
+  blnResponse = objFso.fileExists(strSourcePath)
+  Set objFso = Nothing
+  
+  asgFileExists = blnResponse
+end function
+
+
+'
 ' Moves a file from strSourcePath to strTargetPath.
 '
 ' @param  strSourcePath

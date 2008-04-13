@@ -1,8 +1,8 @@
-<%@LANGUAGE="VBSCRIPT"%>
+<%@ LANGUAGE="VBSCRIPT" %>
 <% Option Explicit %>
 <!--#include file="config.asp" -->
 <!--#include file="includes/functions_count.asp" -->
-<!--#include file="includes/functions_images.asp" -->
+<!--#include file="asg-lib/file.asp" -->
 <%
 
 '/**

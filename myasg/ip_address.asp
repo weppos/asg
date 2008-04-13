@@ -1,7 +1,6 @@
-<%@LANGUAGE="VBSCRIPT"%>
+<%@ LANGUAGE="VBSCRIPT" %>
 <% Option Explicit %>
 <!--#include file="config.asp" -->
-<!--#include file="includes/functions_images.asp" -->
 <%
 
 '/**
@@ -100,7 +99,7 @@ Call DimPaginazioneAvanzata()
 <html>
 <head>
 <title><%= strAsgSiteName %> | powered by ASP Stats Generator <%= strAsgVersion %></title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <meta name="copyright" content="Copyright (C) 2003-2008 Carletti Simone, All Rights Reserved" />
 <meta name="generator" content="ASP Stats Generator <%= strAsgVersion %>" /> <!-- leave this for stats -->
 
@@ -165,7 +164,7 @@ Call DimPaginazioneAvanzata()
 		'Apri il Rs
 		objAsgRs.Open strAsgSQL, objAsgConn
 			
-			'Il Rs è vuoto
+			'Il Rs  vuoto
 			If objAsgRs.EOF Then
 				
 				'If it is a search query then show no results advise

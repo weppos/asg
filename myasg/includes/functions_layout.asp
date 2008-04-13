@@ -104,5 +104,37 @@ function BuildFooterBorderLine()
 
 end function
 
+'-----------------------------------------------------------------------------------------
+' Icona Filtro indirizzo
+'-----------------------------------------------------------------------------------------
+' Funzione:	
+' Data: 	06.04.2004
+' Commenti:	
+'-----------------------------------------------------------------------------------------
+function ShowIconFilterIp(ByVal ipaddress)
+					
+	'Filter IP
+	'// Link PopUp
+	Response.Write(vbCrLf & "<a href=""JavaScript:openWin('popup_filter_ip.asp?IP=" & ipaddress & "','Filter','toolbar=0,location=0,status=0,menubar=0,scrollbars=1,resizable=1,width=550,height=200')"" title=""" & strAsgTxtFilterIPaddr & """>")
+								
+	'// L'IP è escluso
+	If InStr(1, strAsgFilterIP, ipaddress, 1) > 0 Then
+										
+		'// Icona esclusione
+		Response.Write(vbCrLf & "<img src=""" & strAsgSknPathImage & "locked_icon.gif"" alt=""" &  strAsgTxtFilterIPaddr & """ border=""0"" align=""absmiddle"" />")
+									
+	'// L'IP è escluso
+	Else
+									
+		'// Icona esclusione
+		Response.Write(vbCrLf & "<img src=""" & strAsgSknPathImage & "unlocked_icon.gif"" alt=""" &  strAsgTxtFilterIPaddr & """ border=""0"" align=""absmiddle"" />")
+								
+	End If
+								
+	'// Chiudi Link PopUp
+	Response.Write("</a>")
+	
+end function
+
 
 %>
