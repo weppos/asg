@@ -1,7 +1,7 @@
 <!--#include file="config_common.asp" -->
 <!--#include file="wbstat/wbstat3_class.asp"-->
 <!--#include file="includes/functions_count.asp" -->
-<!--#include file="asg-lib/tracking.asp" -->
+<!--#include file="asg-lib/track.asp" -->
 <%
 
 '/**
