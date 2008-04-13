@@ -57,7 +57,7 @@ function asgTrackFilePath()
     strScheme = "http"
   end if
   strDomain = Request.ServerVariables("SERVER_NAME")
-  strPath   = Replace(Request.ServerVariables("SCRIPT_NAME"), "stats_js.asp", "count.asp")
+  strPath   = Replace(Request.ServerVariables("SCRIPT_NAME"), "asg-track.js.asp", "asg-track.asp")
 
   strFilePath = strScheme & "://" & strDomain & strPath
   asgTrackFilePath = strFilePath
