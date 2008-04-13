@@ -43,6 +43,10 @@
 ' */
 
 
+' Dependencies:
+' - /asg-lib/file.asp.
+
+
 '
 ' Creates and returns an Access Database connection string
 ' for given strDataSource.
@@ -76,9 +80,13 @@ function asgDatabaseAccessCompact(strOriginalPath, strCompactedPath)
   strSourceConnection = asgDatabaseAccessConnectionString(strOriginalPath)
   strTargetConnection = asgDatabaseAccessConnectionString(strCompactedPath)
   
-  set objJro = Server.CreateObject("jro.JetEngine") 
+  ' delete target file, if it already exists,
+  ' to prevent compactDatabase to crash
+  asgFileDeleteIfExists(strCompactedPath)
+
+  set objJro = Server.CreateObject("jro.JetEngine")
   objJro.compactDatabase strSourceConnection, strTargetConnection
-  Set objJro = Nothing 
+  Set objJro = Nothing
 end function
 
 
