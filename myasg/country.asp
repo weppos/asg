@@ -1,6 +1,7 @@
 <%@ LANGUAGE="VBSCRIPT" %>
 <% Option Explicit %>
 <!--#include file="config.asp" -->
+<!--#include file="asg-lib/file.asp" -->
 <%
 
 '/**
@@ -128,7 +129,7 @@ Else
 End If
 objAsgRs.Close
 
-'Calcola unità singola
+'Calcola unit singola
 If intAsgMax = 0 OR "[]" & intAsgMax = "[]" Then intAsgMax = 1
 intAsgParte = intAsgLarColMax/intAsgMax
 
@@ -220,7 +221,7 @@ Call DimPaginazioneAvanzata()
 		'Apri il Rs
 		objAsgRs.Open strAsgSQL, objAsgConn
 			
-			'Il Rs è vuoto
+			'Il Rs  vuoto
 			If objAsgRs.EOF Then
 				
 				'If it is a search query then show no results advise
@@ -248,7 +249,7 @@ Call DimPaginazioneAvanzata()
 					
 		%>		  
 		  <tr class="smalltext" bgcolor="<%= strAsgSknTableContBgColour %>">
-			<td background="<%= strAsgSknPathImage & strAsgSknTableContBgImage %>" align="center"><img src="images/flags/<%= LCase(objAsgRs("SCountry")) %>.png" alt="<%= objAsgRs("Country") %>" /></td>
+			<td background="<%= strAsgSknPathImage & strAsgSknTableContBgImage %>" align="center"><img src="<%= asgFlagIcon("asg-includes/images/icons/flags/", objAsgRs("SCountry")) %>" alt="<%= objAsgRs("Country") %>" /></td>
 			<td background="<%= strAsgSknPathImage & strAsgSknTableContBgImage %>" align="left"><%= HighlightSearchKey(objAsgRs("Country"), "Country") %></td>
 			<td background="<%= strAsgSknPathImage & strAsgSknTableContBgImage %>" align="right"><%= objAsgRs("SumHits") & "<br />" & objAsgRs("SumVisits") %></td>
 			<td background="<%= strAsgSknPathImage & strAsgSknTableContBgImage %>">

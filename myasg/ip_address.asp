@@ -1,7 +1,6 @@
 <%@ LANGUAGE="VBSCRIPT" %>
 <% Option Explicit %>
 <!--#include file="config.asp" -->
-<!--#include file="includes/functions_images.asp" -->
 <%
 
 '/**
@@ -165,7 +164,7 @@ Call DimPaginazioneAvanzata()
 		'Apri il Rs
 		objAsgRs.Open strAsgSQL, objAsgConn
 			
-			'Il Rs è vuoto
+			'Il Rs  vuoto
 			If objAsgRs.EOF Then
 				
 				'If it is a search query then show no results advise
