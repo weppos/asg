@@ -86,13 +86,12 @@ Dim strAsgSQLtmp
 		'If there is a valid IP address
 		If strDottedIp <> "noIp" Then
 			
-			strIP2SQL = "SELECT * FROM Country WHERE IP_From <= " & strDottedIp & " and IP_To >= " & strDottedIp & ""
-			strIP2Conn = "Provider=Microsoft.Jet.OLEDB.4.0; Data Source=" & strAsgMapPathIP
+			strIP2SQL = "SELECT * FROM Country WHERE IP_From <= " & strDottedIp & " and IP_To >= " & strDottedIp
 				
 			Set objIP2Conn = Server.CreateObject("ADODB.Connection")
 			Set objIP2Rs = Server.CreateObject("ADODB.Recordset")
 				
-			objIP2Conn.Open strIP2Conn
+			objIP2Conn.Open asgDatabaseAccessConnectionString(strAsgMapPathIP)
 				
 			objIP2Rs.Open strIP2SQL, objIP2Conn
 				If objIP2Rs.EOF Then
@@ -115,7 +114,7 @@ Dim strAsgSQLtmp
 					
 		End If
 	
-	end function '-----------------------------------------------------------------------------------------
+	end function 
 	
 	
 Sub Log()	
