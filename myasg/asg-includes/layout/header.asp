@@ -107,14 +107,6 @@
 		<td>&nbsp;</td>
 		<td>&nbsp;</td>
 		<td>&nbsp;</td>
-		<td>&nbsp;</td>
-	  </tr>
-	  <tr align="center" class="smalltext">
-		<td height="16">&nbsp;</td>
-		<td>&nbsp;</td>
-		<td>&nbsp;</td>
-		<td>&nbsp;</td>
-		<td>&nbsp;</td>
 		<td bgcolor="<%= strAsgSknTableContBgColour %>"><a href="check_server.asp" title="<%= strAsgTxtShow & "&nbsp;" & strAsgTxtServerInformations %>" class="linksmalltext"><%= strAsgTxtServerInformations %></a></td>
 	  </tr>
 	  <tr align="center" class="smalltext">
