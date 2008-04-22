@@ -34,7 +34,7 @@
 ' * @author          Simone Carletti <weppos@weppos.net>
 ' * @copyright       2003-2008 Simone Carletti
 ' * @license         http://www.weppos.com/asg/en/license.asp
-' * @version         SVN: $Id: login.asp 13 2007-08-03 13:05:34Z weppos $
+' * @version         SVN: $Id$
 ' */
  
 '/* 
