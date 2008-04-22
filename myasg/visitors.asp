@@ -222,7 +222,7 @@ blnDatabaseIsEmpty = True
 				  <tr><td><table border="0" cellpadding="0" cellspacing="1" width="100%">
 				  <tr>
 					<td width="25%" align="center" bgcolor="<%= strAsgSknTableTitleBgColour %>" background="<%= strAsgSknPathImage & strAsgSknTableTitleBgImage %>" height="16" class="normaltitle"><%= UCase(strAsgTxtCountry) %></td>
-					<td width="75%" align="left" bgcolor="<%= strAsgSknTableContBgColour %>" background="<%= strAsgSknPathImage & strAsgSknTableContBgImage %>" class="smalltext"><img src="images/flags/<%= objAsgRs2("Country2") %>.png" border="0" align="absmiddle" />&nbsp;<%= HighlightSearchKey(objAsgRs2("Country"), "Country") %></td>
+					<td width="75%" align="left" bgcolor="<%= strAsgSknTableContBgColour %>" background="<%= strAsgSknPathImage & strAsgSknTableContBgImage %>" class="smalltext"><img src="<%= asgFlagIcon("asg-includes/images/icons/flags/", objAsgRs2("Country2")) %>" border="0" align="absmiddle" />&nbsp;<%= HighlightSearchKey(objAsgRs2("Country"), "Country") %></td>
 				  </tr>
 				<% If objAsgRs2("Referer") <> "(unknown)" AND objAsgRs2("Engine") <> "" Then %>
 				  <tr>
