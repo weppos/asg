@@ -49,7 +49,7 @@
 '// ATTENZIONE! Protezione statistiche.
 ' Modificare solo se necessario e se sicuri.
 ' Impostazioni errate possono compromettere la privacy.
-Call AllowEntry("False", "False", "False", intAsgProtezione)
+Call AllowEntry("False", "False", "False", intAsgSecurity)
 
 
 'Reset Server Objects
