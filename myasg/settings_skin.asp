@@ -102,7 +102,7 @@ if request.querystring = "update" then
   ts2.Close
   Set ts2 = Nothing
 
-  asgFileReplace(pathFrom2, pathFrom)
+  asgFileReplace pathFrom2, pathFrom
 
 end if
 
@@ -145,7 +145,7 @@ end if
 
     Do While ts.AtEndOfStream <> True
       
-      riga = ts.ReadLine
+      riga = trim(ts.ReadLine)
     
     if not left(riga, 1) = "'" AND mid(riga, 2, 1) <> "%" AND mid(riga, 1, 1) <> "%" then
     temp = right(riga, (len(riga) - instr(riga, "=")))
