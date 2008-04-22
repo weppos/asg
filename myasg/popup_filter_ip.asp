@@ -149,7 +149,7 @@ Set objAsgConn = Nothing
 <meta name="copyright" content="Copyright (C) 2003-2008 Carletti Simone, All Rights Reserved" />
 <meta name="generator" content="ASP Stats Generator <%= strAsgVersion %>" /> <!-- leave this for stats -->
 
-<!--#include file="includes/html-head.asp" -->
+<!--#include file="asg-includes/layout/head.asp" -->
 
 <!--
   ASP Stats Generator (release <%= strAsgVersion %>) is a free software package

@@ -94,10 +94,10 @@ If Request.QueryString("Logout") = "True" Then Session.Contents.Remove("AsgLogin
 <%	If Session("AsgLogin") = "Logged" AND Len(Request.QueryString("backto")) > 0 Then %>
 <meta http-equiv="Refresh" content="3;url=<%= Request.QueryString("backto") %>">
 <%	ElseIf Session("AsgLogin") = "Logged" AND NOT Len(Request.QueryString("backto")) > 0 Then %>
-<meta http-equiv="Refresh" content="3;url=default.asp">
+<meta http-equiv="Refresh" content="3;url=asg-default.asp">
 <%	End If %>
 
-<!--#include file="includes/html-head.asp" -->
+<!--#include file="asg-includes/layout/head.asp" -->
 
 <!--
   ASP Stats Generator (release <%= strAsgVersion %>) is a free software package
@@ -106,8 +106,8 @@ If Request.QueryString("Logout") = "True" Then Session.Contents.Remove("AsgLogin
 -->
 
 </head>
-<!--include virtual="/myasg/includes/header.asp" -->
-<!--#include file="includes/header.asp" -->
+
+<!--#include file="asg-includes/layout/header.asp" -->
 		<form action="login.asp?backto=<%= Server.URLEncode(Request.QueryString("backto")) %>" name="frmLogin" method="post">
 		<table width="100%" border="0" align="center" cellpadding="0" cellspacing="1">
 		  <tr bgcolor="<%= strAsgSknTableBarBgColour %>" valign="middle">
@@ -178,12 +178,8 @@ Response.Write("</tr>")
 ' ***** FINE AVVERTENZA - RIMOZIONE o MODIFICA PARZIALE/TOTALE DEL CODICE COMPORTA VIOLAZIONE DELLA LICENZA  ******
 
 Response.Write("</table>")
-Response.Write("</td></tr>")
-Response.Write("</table>")
-Response.Write("</td></tr>")
-Response.Write("</table>")
 
 %>
-<!-- footer -->
-<!--#include file="includes/footer.asp" -->
+<!--#include file="asg-includes/layout/footer.asp" -->
+
 </body></html>

@@ -154,11 +154,10 @@ For intAsgCiclo = 1 to (intAsgNumCol - 1)
 	
 Next
 
-
-		'Reset Server Objects
-		Set objAsgRs = Nothing
-		objAsgConn.Close
-		Set objAsgConn = Nothing
+'Reset Server Objects
+Set objAsgRs = Nothing
+objAsgConn.Close
+Set objAsgConn = Nothing
 
 
 %>
@@ -170,7 +169,7 @@ Next
 <meta name="copyright" content="Copyright (C) 2003-2008 Carletti Simone, All Rights Reserved" />
 <meta name="generator" content="ASP Stats Generator <%= strAsgVersion %>" /> <!-- leave this for stats -->
 
-<!--#include file="includes/html-head.asp" -->
+<!--#include file="asg-includes/layout/head.asp" -->
 
 <!--
   ASP Stats Generator (release <%= strAsgVersion %>) is a free software package
@@ -179,7 +178,8 @@ Next
 -->
 
 </head>
-<!--#include file="includes/header.asp" -->
+
+<!--#include file="asg-includes/layout/header.asp" -->
 		<table width="100%" border="0" align="center" cellpadding="0" cellspacing="1">
 		  <tr align="center" valign="middle">
 			<td align="center" background="<%= strAsgSknPathImage & strAsgSknTableBarBgImage %>" bgcolor="<%= strAsgSknTableBarBgColour %>" height="20" class="bartitle">ACCESSI per MESE</td>
@@ -269,12 +269,8 @@ Response.Write("</tr>")
 ' ***** FINE AVVERTENZA - RIMOZIONE o MODIFICA PARZIALE/TOTALE DEL CODICE COMPORTA VIOLAZIONE DELLA LICENZA  ******
 
 Response.Write("</table>")
-Response.Write("</td></tr>")
-Response.Write("</table>")
-Response.Write("</td></tr>")
-Response.Write("</table>")
 
 %>
-<!-- footer -->
-<!--#include file="includes/footer.asp" -->
+<!--#include file="asg-includes/layout/footer.asp" -->
+
 </body></html>
