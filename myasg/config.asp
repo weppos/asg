@@ -49,6 +49,9 @@
 ' Include Layout functions
 %><!--#include file="asg-lib/layout.asp" --><%
 
+' This file is required to keep compatibility with releases < 2.2
+' TODO: remove as soon as skin support is completely dropped
+%><!--#include file="asg-config/oldskin.asp" --><%
 
 
 ' *** Update checker variables ***
@@ -78,12 +81,6 @@ intAsgLatestUpdate = 0 ' by default disable any alert
 '-------------------------------------------------------------------------------'
 
 
-
-'-------------------------------------------------------------------------------'
-' Includi il file di skin!
-'-------------------------------------------------------------------------------'
-%><!--#include file="includes/inc_skin_file.asp" --><%
-'-------------------------------------------------------------------------------'
 
 '-------------------------------------------------------------------------------'
 ' Includi le informazioni generiche di configurazione

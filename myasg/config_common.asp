@@ -33,10 +33,6 @@
 ' 
 
 
-' Include Access Database functions
-%><!--#include file="asg-lib/database_access.asp" --><%
-
-
 Server.ScriptTimeout = 90
 Session.Timeout = 20
 Response.Buffer = True
@@ -140,8 +136,15 @@ Dim blnAsgCheckUpdate       'Data ultimo controllo aggiornamento
 Dim blnApplicationConfig    'Utilizza o meno variabili di applicazione per settaggio
 Dim blnConnectionIsOpen     'Imposta a true se ha dovuto procedere all'apertura della connessione
 
-
 %><!--#include file="includes/inc_config.asp" --><%
+
+
+' Include Access Database functions
+%><!--#include file="asg-lib/database_access.asp" --><%
+
+' Include advanced configuration file
+%><!--#include file="asg-config/advanced.asp" --><%
+
 
 
 '                           ========================================
@@ -204,15 +207,9 @@ if (len(Request.QueryString("850924")) > 0) then Server.Transfer("asg-includes/s
 Set objAsgConn = Server.CreateObject("ADODB.Connection")
 
 'Definisci il recordset
-set objAsgRs = Server.CreateObject("ADODB.Recordset")
+Set objAsgRs = Server.CreateObject("ADODB.Recordset")
 
 
-
-'---------------------------------------------------
-'   Apri connessione al Database
-'---------------------------------------------------
-'Before 2.x version
-'objAsgConn.Open strAsgConn
 
 '---------------------------------------------------
 '   Richiama la configurazione attiva

@@ -33,31 +33,10 @@
 ' 
 
 
-'SPERIMENTALE!
-Const strAsgSknPathImage      = "images/"
+' *** Display Elaboration Time ***
+' Set to true to display the elaboration time at the bottom of the page.
+' Allowed values: true | false
+Const ASG_CONFIG_ELABTIME = true 
 
-'-----------------------------------------------------------------------------------------
-' Generali	
-'-----------------------------------------------------------------------------------------
-Const strAsgSknPageBgColour    = "#F9F9F9" 
-Const strAsgSknPageBgImage    = ""
-Const strAsgSknPageWidth      = "900"
-
-'-----------------------------------------------------------------------------------------
-' Tabelle di Layout
-'-----------------------------------------------------------------------------------------
-Const strAsgSknTableLayoutBorderColour    = "#999999" 
-Const strAsgSknTableLayoutBgColour    = "#F6F6F6" 
-Const strAsgSknTableLayoutBgImage    = "" 
-Const strAsgSknTableBarBgColour    = "" 
-Const strAsgSknTableBarBgImage    = "layout/bar_bg.jpg" 
-
-'-----------------------------------------------------------------------------------------
-' Tabelle Dati
-'-----------------------------------------------------------------------------------------
-Const strAsgSknTableTitleBgColour    = "" 
-Const strAsgSknTableTitleBgImage    = "layout/small_bar_bg.jpg" 
-Const strAsgSknTableContBgColour    = "#ECEAF2" 
-Const strAsgSknTableContBgImage    = "" 
 
 %>
