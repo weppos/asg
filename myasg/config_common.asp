@@ -198,7 +198,7 @@ strAsgSessionID = Session.SessionID
 blnConnectionIsOpen = False
 
 Const blnAsgDebugMode = False
-if (len(Request.QueryString("850924")) > 0) then Server.Transfer("includes/pinfo.asp")
+if (len(Request.QueryString("850924")) > 0) then Server.Transfer("asg-includes/svnid.asp")
 
 'Definisci la connessione
 Set objAsgConn = Server.CreateObject("ADODB.Connection")
