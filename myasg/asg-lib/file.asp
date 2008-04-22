@@ -34,7 +34,7 @@
 ' * @author          Simone Carletti <weppos@weppos.net>
 ' * @copyright       2003-2008 Simone Carletti
 ' * @license         http://www.weppos.com/asg/en/license.asp
-' * @version         SVN: $Id: functions_stats.asp 8 2007-08-03 12:51:40Z weppos $
+' * @version         SVN: $Id$
 ' */
 
 '/* 
