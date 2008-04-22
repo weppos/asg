@@ -82,17 +82,8 @@ intAsgLatestUpdate = 0 ' by default disable any alert
 '-------------------------------------------------------------------------------'
 ' Includi il file di skin!
 '-------------------------------------------------------------------------------'
-'
-' 									>>	 DA ADATTARE!	<<
-'
-' Enter the path of the folder where the skin file 
-' has been uploaded.
-
-%><!--#include file="mdb/inc_skin_file.asp" --><%
-'
-'
+%><!--#include file="includes/inc_skin_file.asp" --><%
 '-------------------------------------------------------------------------------'
-
 
 '-------------------------------------------------------------------------------'
 ' Includi le informazioni generiche di configurazione

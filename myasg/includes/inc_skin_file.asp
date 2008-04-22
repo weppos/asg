@@ -34,32 +34,33 @@
 
 
 'SPERIMENTALE!
-Const strAsgSknPathImage      = "images/" 'Percorso della cartella immagini
+Const strAsgSknPathImage      = "images/"
 '-----------------------------------------------------------------------------------------
 ' Generali	
 '-----------------------------------------------------------------------------------------
-Const strAsgSknPageBgColour    = "#F9F9F9" 'Colore di sfondo delle pagine
-Const strAsgSknPageBgImage    = "" 'Immagine di sfondo delle pagine
-Const strAsgSknPageWidth      = "900" 'Larghezza delle pagine <br />&nbsp;ATTENZIONE! Variare solo se necessario! Una bassa risoluzione causerà problemi nella visualizzazione
+Const strAsgSknPageBgColour    = "#F9F9F9" 
+Const strAsgSknPageBgImage    = ""
+Const strAsgSknPageWidth      = "900"
+
 '-----------------------------------------------------------------------------------------
 ' Tabelle di Layout
 '-----------------------------------------------------------------------------------------
-Const strAsgSknTableLayoutBorderColour    = "#999999" 'Colore del bordo della tabella Layout
-Const strAsgSknTableLayoutBgColour    = "#F6F6F6" 'Colore di sfondo della tabella Layout
-Const strAsgSknTableLayoutBgImage    = "" 'Immagine di sfondo della tabella Layout
-Const strAsgSknTableBarBgColour    = "" 'Colore di sfondo della Barra Header e Footer
-Const strAsgSknTableBarBgImage    = "layout/bar_bg.jpg" 'Immagine di sfondo della Barra Header e Footer
+Const strAsgSknTableLayoutBorderColour    = "#999999" 
+Const strAsgSknTableLayoutBgColour    = "#F6F6F6" 
+Const strAsgSknTableLayoutBgImage    = "" 
+Const strAsgSknTableBarBgColour    = "" 
+Const strAsgSknTableBarBgImage    = "layout/bar_bg.jpg" 
 '-----------------------------------------------------------------------------------------
 ' Tabelle Dati
 '-----------------------------------------------------------------------------------------
-Const strAsgSknTableTitleBgColour    = "" 'Colore di sfondo del titolo della tabella contenuti
-Const strAsgSknTableTitleBgImage    = "layout/small_bar_bg.jpg" 'Immagine di sfondo del titolo della tabella contenuti
-Const strAsgSknTableContBgColour    = "#ECEAF2" 'Colore di sfondo della tabella contenuti
-Const strAsgSknTableContBgImage    = "" 'Immagine di sfondo della tabella contenuti
+Const strAsgSknTableTitleBgColour    = "" 
+Const strAsgSknTableTitleBgImage    = "layout/small_bar_bg.jpg" 
+Const strAsgSknTableContBgColour    = "#ECEAF2" 
+Const strAsgSknTableContBgImage    = "" 
 '-----------------------------------------------------------------------------------------
 ' Configurazioni opzionali
 '-----------------------------------------------------------------------------------------
 'Mostra il tempo di elaborazione
-Const blnAsgElabTime = True 'Mostra il tempo di elaborazione.<br />&nbsp;Accetta valori <strong>True</strong> o <strong>False</strong>
+Const blnAsgElabTime = True 
 
 %>
