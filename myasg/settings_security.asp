@@ -52,6 +52,8 @@
 Call AllowEntry("False", "False", "False", intAsgSecurity)
 
 
+Dim blnErrore
+
 'Inserimento record
 If Request.Form("Impostazioni") = strAsgTxtUpdate AND Request.QueryString("Exc") = "Upd" Then
 
