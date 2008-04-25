@@ -14,6 +14,7 @@
   * CHANGED: Renamed stats_js.asp and count.asp to asg-track.js.asp and asg-track.asp (Closes #40).
   * CHANGED: Massive code refactoring and improvements.
   * REMOVED: Support for custom skins. The layout is going to be changed and, for now, it's better to drop it the buggy version (Closes #38).
+  * REMOVED: strAsgPathFolderWr configuration variable (it was only used by skin file).
   * REMOVED: Unused #GetContinent function from functions_common.asp and all related strings.
 
 == 2.1.x ==

@@ -59,18 +59,13 @@ Dim strAsgMapPathIP
 ' If your folder is a parent directory then use '../' to go back to parent folder
 ' or use an absolute path from your web root, for example '/absolute/path/to/folder/'
 ' means the folder available at http://example.com/absolute/path/to/folder/.
-Const strAsgPathFolderDb = "mdb/" 
-
-' ***** WRITE PERMISSION FOLDER *****
-' This is the path to a folder with write permission enabled
-' Write permission are required by inc_skin_file.asp skin file
-' It could be the same as database folder
-Const strAsgPathFolderWr = "mdb/"
+Const strAsgPathFolderDb = "mdb/"
 
 
 ' ***** DATABASE NAME *****
 ' Main application database name
 Const strAsgDatabaseSt = "dbstats" 
+
 
 ' ***** IP2COUNTRY DATABASE NAME *****
 ' This is the name of the ip-to-country database
