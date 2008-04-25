@@ -1,4 +1,4 @@
-= CHANGELOG =
+= Changelog =
 
 == Trunk ==
 
@@ -27,7 +27,7 @@
   * REMOVED: default.asp filed from all directories (Closes #23).
   * REMOVED: icon debug system that notified to ASG all unknown icons (closes #28).
 
-== Release 2.1.4
+== Release 2.1.4 ==
 
 Released on 2007-08-14. Tagged at r54.
 
@@ -42,54 +42,54 @@ Released on 2007-08-14. Tagged at r54.
   * REMOVED: robots.txt file no longer useful since the application is usually installed in a subfolder.
   * REMOVED: European codepage from source code. It prevents ASG to be installed and translated in extra-European languages. 
 
-== Release 2.1.3
+== Release 2.1.3 ==
 
 n/a
 
-== Release 2.1.2
+== Release 2.1.2 ==
 
 n/a
 
-== Release 2.1.1 
+== Release 2.1.1 ==
 
 n/a
 
-== Release 2.1.0
+== Release 2.1.0 ==
 
 n/a
 
-== Release 2.0.1
+== Release 2.0.1 ==
 
 n/a
 
-== Release 2.0.0
+== Release 2.0.0 ==
 
 n/a
 
-== Release 1.4.0
+== Release 1.4.0 ==
 
 n/a
 
-== Release 1.3.0
+== Release 1.3.0 ==
 
 n/a
 
-== Release 1.2.0
+== Release 1.2.0 ==
 
 n/a
 
-== Release 1.1.0
+== Release 1.1.0 ==
 
 n/a
 
-== Release 1.0.0
+== Release 1.0.0 ==
 
 n/a
 
-== Release 0.9.1
+== Release 0.9.1 ==
 
 n/a
 
-== Release 0.9.0
+== Release 0.9.0 ==
 
 n/a
