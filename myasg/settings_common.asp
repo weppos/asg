@@ -76,8 +76,6 @@ If Request.Form("Settings") = strAsgTxtUpdate AND Request.QueryString("act") = "
 	blnMonitEngine = CInt(CBool(Request.Form("MonitEngine")))
 	blnMonitCountry = CInt(CBool(Request.Form("MonitCountry")))
 
-	blnAsgCheckIcon = CInt(CBool(Request.Form("CheckIcon")))
-	
 
 	'Initialise SQL string to update values
 	strAsgSQL = "UPDATE "&strAsgTablePrefix&"config SET " &_
@@ -98,8 +96,7 @@ If Request.Form("Settings") = strAsgTxtUpdate AND Request.QueryString("act") = "
 	"Opt_Monit_Languages = " & blnMonitLanguages & ", " &_
 	"Opt_Monit_Pages = " & blnMonitPages & ", " &_
 	"Opt_Monit_Engine = " & blnMonitEngine & ", " &_
-	"Opt_Monit_Country = " & blnMonitCountry & ", " &_
-	"Opt_Check_Icon = " & blnAsgCheckIcon & " "
+	"Opt_Monit_Country = " & blnMonitCountry & " "
 
 	'Execute the update
 	objAsgConn.Execute(strAsgSQL)
@@ -129,8 +126,6 @@ If Request.Form("Settings") = strAsgTxtUpdate AND Request.QueryString("act") = "
 		Application("blnMonitPages") = CBool(blnMonitPages)
 		Application("blnMonitEngine") = CBool(blnMonitEngine)
 		Application("blnMonitCountry") = CBool(blnMonitCountry)
-
-		Application("blnAsgCheckIcon") = CBool(blnAsgCheckIcon)
 
 		'Forza il ricalcolo delle Application
 		Application("blnConfig") = False
@@ -271,12 +266,6 @@ Set objAsgConn = Nothing
 		  </tr>
 		  <tr bgcolor="<%= strAsgSknTableTitleBgColour %>" align="center" class="normaltitle">
 			<td background="<%= strAsgSknPathImage & strAsgSknTableTitleBgImage %>" colspan="2" align="center" height="16"><%= UCase(strAsgTxtProgramTools) %></td>
-		  </tr>
-		  <tr class="smalltext" bgcolor="<%= strAsgSknTableContBgColour %>">
-			<td background="<%= strAsgSknPathImage & strAsgSknTableContBgImage %>" align="right"></td>
-			<td background="<%= strAsgSknPathImage & strAsgSknTableContBgImage %>" align="left">
-				&nbsp;<input type="checkbox" name="CheckIcon" value="True" <% If blnAsgCheckIcon Then Response.Write "checked" %> /> <%= strAsgTxtReportUnknownIcons %>
-			</td>
 		  </tr>
 		  <%
 					
