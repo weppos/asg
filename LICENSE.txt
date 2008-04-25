@@ -1,4 +1,4 @@
-ASP Stats Generator is released under the following license:
+= ASP Stats Generator is released under the following license:
 
 ----- begin license block -----
 
