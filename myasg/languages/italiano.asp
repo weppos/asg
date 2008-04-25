@@ -193,7 +193,7 @@ Const strAsgTxtStartHits = "Pagine Visitate di partenza"
 Const strAsgTxtFilterIPaddr = "Filtro Indirizzi IP"
 Const strAsgTxtEnableMonit = "Abilita monitoraggio"
 Const strAsgTxtCountServerAsReferer = "Conteggia il server come un referer"
-Const strAsgTxtstrAsgIPPathQS = "Elimina il contenuto della QueryString delle pagine"
+Const strAsgTxtStripPathQS = "Elimina il contenuto della QueryString delle pagine"
 Const strAsgTxtDailyMonit = "Suddivisione giornaliera"
 Const strAsgTxtHourlyMonit = "Suddivisione oraria"
 

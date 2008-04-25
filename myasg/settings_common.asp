@@ -256,7 +256,7 @@ Set objAsgConn = Nothing
 			<td background="<%= strAsgSknPathImage & strAsgSknTableContBgImage %>" align="right"><%= strAsgTxtMonitOptions %>: &nbsp;&nbsp;</td>
 			<td background="<%= strAsgSknPathImage & strAsgSknTableContBgImage %>" align="left">
 				&nbsp;<input type="checkbox" name="RefererServer" value="True" <% If blnRefererServer Then Response.Write "checked" %> /> <%= strAsgTxtCountServerAsReferer %><br />
-				&nbsp;<input type="checkbox" name="strAsgIPPathQS" value="True" <% If blnStripPathQS Then Response.Write "checked" %> /> <%= strAsgTxtstrAsgIPPathQS %>
+				&nbsp;<input type="checkbox" name="strAsgIPPathQS" value="True" <% If blnStripPathQS Then Response.Write "checked" %> /> <%= strAsgTxtStripPathQS %>
 			</td>
 		  </tr>
 		  <tr class="smalltext" bgcolor="<%= strAsgSknTableContBgColour %>">

@@ -351,9 +351,9 @@ function controlla(form) {
 	<td align="left">&nbsp;&nbsp;&nbsp;<input type="checkbox" name="RefererServer" value="True" checked /> <%= strAsgTxtCountServerAsReferer %></td>
   </tr>
   <tr>
-	<td align="right"><span class="smalltext"><%= strAsgTxtstrAsgIPPathQS %>.<br />
+	<td align="right"><span class="smalltext"><%= strAsgTxtStripPathQS %>.<br />
 	www.mysite.com/page.asp?id=3 --&gt; www.mysite.com/page.asp</span></td>
-	<td align="left">&nbsp;&nbsp;&nbsp;<input type="checkbox" name="strAsgIPPathQS" value="True" /> <%= strAsgTxtstrAsgIPPathQS %></td>
+	<td align="left">&nbsp;&nbsp;&nbsp;<input type="checkbox" name="strAsgIPPathQS" value="True" /> <%= strAsgTxtStripPathQS %></td>
   </tr>
   <tr>
 	<td align="right"><span class="smalltext"><%= strAsgTxtEnableMonit & "&nbsp;" & strAsgTxtReferer %></span></td>
@@ -469,9 +469,9 @@ function controlla(form) {
 	<td align="left">&nbsp;&nbsp;&nbsp;<input type="checkbox" name="RefererServer" value="True" checked /> <%= strAsgTxtCountServerAsReferer %></td>
   </tr>
   <tr>
-	<td align="right"><span class="smalltext"><%= strAsgTxtstrAsgIPPathQS %>.<br />
+	<td align="right"><span class="smalltext"><%= strAsgTxtStripPathQS %>.<br />
 	www.mysite.com/page.asp?id=3 --&gt; www.mysite.com/page.asp</span></td>
-	<td align="left">&nbsp;&nbsp;&nbsp;<input type="checkbox" name="strAsgIPPathQS" value="True" /> <%= strAsgTxtstrAsgIPPathQS %></td>
+	<td align="left">&nbsp;&nbsp;&nbsp;<input type="checkbox" name="strAsgIPPathQS" value="True" /> <%= strAsgTxtStripPathQS %></td>
   </tr>
   <tr>
 	<td align="right"><span class="smalltext"><%= strAsgTxtEnableMonit & "&nbsp;" & strAsgTxtReferer %></span></td>
