@@ -145,7 +145,6 @@ Dim blnMonitLanguages       'Monitoraggio Lingue Browser
 Dim blnMonitPages           'Monitoraggio Pagine Visitate
 Dim blnMonitEngine          'Monitoraggio Motori di Ricerca
 Dim blnMonitCountry         'Monitoraggio Nazioni di Provenienza
-Dim blnAsgCheckIcon         'Notifica icone non riconosciute
 Dim blnAsgCheckUpdate       'Data ultimo controllo aggiornamento
 Dim blnApplicationConfig    'Utilizza o meno variabili di applicazione per settaggio
 Dim blnConnectionIsOpen     'Imposta a true se ha dovuto procedere all'apertura della connessione
@@ -280,7 +279,6 @@ If isEmpty(Application("blnConfig")) OR isNull(Application("blnConfig")) OR Appl
         blnMonitPages   = CBool(objAsgRs("Opt_Monit_Pages"))
         blnMonitEngine  = CBool(objAsgRs("Opt_Monit_Engine"))
         blnMonitCountry = CBool(objAsgRs("Opt_Monit_Country"))
-        blnAsgCheckIcon = CBool(objAsgRs("Opt_Check_Icon"))
         blnAsgCheckUpdate = CLng(objAsgRs("Opt_Check_Update"))
         
         'Se si utilizzano le variabili (ma sono vuote) allora creale
@@ -313,7 +311,6 @@ If isEmpty(Application("blnConfig")) OR isNull(Application("blnConfig")) OR Appl
             Application("blnMonitPages") = CBool(blnMonitPages)
             Application("blnMonitEngine") = CBool(blnMonitEngine)
             Application("blnMonitCountry") = CBool(blnMonitCountry)
-            Application("blnAsgCheckIcon") = CBool(blnAsgCheckIcon)
             Application("blnAsgCheckUpdate") = CLng(blnAsgCheckUpdate)
         
             'Imposta la variabile di config a vera
@@ -354,7 +351,6 @@ ElseIf blnApplicationConfig Then
         blnMonitPages = CBool(Application("blnMonitPages"))
         blnMonitEngine = CBool(Application("blnMonitEngine"))
         blnMonitCountry = CBool(Application("blnMonitCountry"))
-        blnAsgCheckIcon = CBool(Application("blnAsgCheckIcon"))
         blnAsgCheckUpdate = CLng(Application("blnAsgCheckUpdate"))
 
 'Fine condizioni variabili Application
