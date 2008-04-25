@@ -49,6 +49,9 @@
 ' Include Layout functions
 %><!--#include file="asg-lib/layout.asp" --><%
 
+' Include Collections
+%><!--#include file="asg-includes/collections.asp" --><%
+
 ' This file is required to keep compatibility with releases < 2.2
 ' TODO: remove as soon as skin support is completely dropped
 %><!--#include file="asg-config/oldskin.asp" --><%

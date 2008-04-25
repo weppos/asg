@@ -54,6 +54,8 @@ public function asgArrayMonths()
   aryMonths(10) = ASG_LABEL_OCTOBER
   aryMonths(11) = ASG_LABEL_NOVEMBER
   aryMonths(12) = ASG_LABEL_DECEMBER
+  
+  asgArrayMonths = aryMonths
 end function 
 
 
