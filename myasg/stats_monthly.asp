@@ -150,6 +150,9 @@ objAsgConn.Close
 Set objAsgConn = Nothing
 
 
+Dim aryAsgMonths    ' Array of translated month names
+aryAsgMonths = asgArrayMonths()
+
 %>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
@@ -204,7 +207,7 @@ Set objAsgConn = Nothing
 			  <tr class="smalltext" align="center">
 				<td width="<%= intAsgLarCol %>"></td>
 				<% For intAsgCiclo = 1 to (intAsgNumCol - 1) %>
-				<td width="<%= intAsgLarCol %>"><a href="stats_daily.asp?mese=<%= Right("0" & intAsgCiclo, 2) & "-" & anno %>" title="<%= strAsgTxtShow & "&nbsp;" & aryAsgMonth(intAsgCiclo,2) %>" class="linksmalltext"><%= Left(aryAsgMonth(intAsgCiclo,2), 3) %></a></td>
+				<td width="<%= intAsgLarCol %>"><a href="stats_daily.asp?mese=<%= Right("0" & intAsgCiclo, 2) & "-" & anno %>" title="<%= strAsgTxtShow & "&nbsp;" & aryAsgMonths(intAsgCiclo) %>" class="linksmalltext"><%= Left(aryAsgMonths(intAsgCiclo), 3) %></a></td>
 			  	<% Next %>
 			  </tr>
 <!--#include file="templates/_graph_legend.asp" -->

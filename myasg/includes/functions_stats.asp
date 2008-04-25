@@ -391,11 +391,13 @@ end function
 ' Data:   19.11.2003 | 11.05.2004
 ' Commenti: 
 '-----------------------------------------------------------------------------------------
-%><!--#include file="inc_array_month.asp" --><%
 
 function GoToPeriod(ByVal linkto, ByVal linktoQS)
-
+    Dim ii
+    Dim aryMonths
     Dim QueryStringItem
+    
+    aryMonths = asgArrayMonths
 
     Response.Write vbCrLf & "<!-- date period panel -->"
     Response.Write vbCrLf & "<table width=""300"" border=""0"" cellspacing=""0"" cellpadding=""0"" height=""30"">"
@@ -405,10 +407,10 @@ function GoToPeriod(ByVal linkto, ByVal linktoQS)
     Response.Write vbCrLf & " <td width=""65%"">"
 
     Response.Write vbCrLf & " <select name=""periodmm"" class=""smallform"">"
-    For intAsgMonthLoop = 1 to Ubound(aryAsgMonth)
-    Response.Write vbCrLf & "   <option value=""" & Right("0" & intAsgMonthLoop, 2) & """" 
-      If Cint(Left(mese, 2)) = aryAsgMonth(intAsgMonthLoop, 1) Then Response.Write " selected"
-    Response.Write " >" & aryAsgMonth(intAsgMonthLoop, 2) & "</option>"
+    For ii = 1 to Ubound(aryMonths)
+    Response.Write vbCrLf & "   <option value=""" & Right("0" & ii, 2) & """" 
+      If Cint(Left(mese, 2)) = ii Then Response.Write " selected"
+    Response.Write " >" & aryMonths(ii) & "</option>"
     Next
     Response.Write vbCrLf & " </select>"
 

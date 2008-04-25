@@ -16,6 +16,7 @@
   * REMOVED: Support for custom skins. The layout is going to be changed and, for now, it's better to drop it the buggy version (Closes #38).
   * REMOVED: strAsgPathFolderWr configuration variable (it was only used by skin file).
   * REMOVED: Unused #GetContinent function from functions_common.asp and all related strings.
+  * REMOVED: /includes/inc_array_month.asp file and replaced by a couple of functions in /asg-lib/collections.asp and /asg-lib/layout.asp.
 
 == 2.1.x ==
 
@@ -27,6 +28,7 @@
   * FIXED: Undefined intAsgProtezione variable in settings_skin.asp (Closes #45).
   * FIXED: Missing flag icons are displayed as broken images (Closes #6).
   * FIXED: Broken skin file (Closes #17). 
+  * FIXED: Various English typo
   * REMOVED: default.asp filed from all directories (Closes #23).
   * REMOVED: icon debug system that notified to ASG all unknown icons (closes #28).
 

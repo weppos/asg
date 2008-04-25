@@ -219,7 +219,7 @@ Set objAsgConn = Nothing
 			  	<% Next %>
 			  </tr>
 			  <tr class="smalltext" align="center">
-				<td width="<%= intAsgLarCol * 2 %>" colspan="2" align="right"><a href="stats_monthly.asp?showperiod=<%= strAsgTxtShow %>&anno=<%= Right(mese , 4) %>" title="<%= strAsgTxtShow & "&nbsp;" & aryAsgMonth(Left(mese , 2),2) %>" class="linksmalltext"><%= Left(aryAsgMonth(Left(mese , 2),2), 3) %></a></td>
+				<td width="<%= intAsgLarCol * 2 %>" colspan="2" align="right"><a href="stats_monthly.asp?showperiod=<%= strAsgTxtShow %>&anno=<%= Right(mese , 4) %>" title="<%= strAsgTxtShow & "&nbsp;" & asgMonthName(Left(mese, 2)) %>" class="linksmalltext"><%= Left(asgMonthName(Left(mese, 2)), 3) %></a></td>
 				<% 
 					For intAsgCiclo = 1 to (intAsgNumCol - 2)
 						

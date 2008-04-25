@@ -35,6 +35,7 @@
 
 ' Dependencies:
 ' - /asg-lib/file.asp.
+' - /asg-includes/collections.asp.
 
 
 '
@@ -185,6 +186,20 @@ public function asgFlagIcon(strPath, strCountryCode)
   
   asgFlagIcon = p
 end function 
+
+
+'
+' Returns the month name for the month at given index.
+'
+' @param  integer index
+' @return string
+'
+public function asgMonthName(index)
+  Dim aryMonths
+
+  aryMonths = asgArrayMonths()
+  asgMonthName = aryMonths(index)
+end function
 
 
 %>

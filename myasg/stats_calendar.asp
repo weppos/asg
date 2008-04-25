@@ -238,7 +238,7 @@ Set objAsgConn = Nothing
 						If blnIsSunday Then Response.Write("</font>")
 					End If
 					
-					Response.Write(vbCrLf & "<a href="""" title=""" & strAsgTxtShow & """ class=""linksmalltext"">" & Left(aryAsgMonth(Month(ilgiorno), 2), 3) & "</a>")
+					Response.Write(vbCrLf & "<a href="""" title=""" & strAsgTxtShow & """ class=""linksmalltext"">" & Left(asgMonthName(Month(ilgiorno)), 3) & "</a>")
 					
 					Response.Write("</div>")
 					
