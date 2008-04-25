@@ -142,6 +142,9 @@ Dim blnConnectionIsOpen     'Imposta a true se ha dovuto procedere all'apertura 
 ' Include Access Database functions
 %><!--#include file="asg-lib/database_access.asp" --><%
 
+' Include URL functions
+%><!--#include file="asg-lib/url.asp" --><%
+
 ' Include advanced configuration file
 %><!--#include file="asg-config/advanced.asp" --><%
 

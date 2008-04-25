@@ -8,6 +8,7 @@
     * asg-included: various included files, assets and libraries 
     * asg-lib: contains all pure ASP libraries used by the application
     * asg-static: contains static assets such as JavaScript or CSS files
+  * ADDED: Bundled Unit Test framework with te application in the /test folder
   * CHANGED: Default charset to UTF-8 (Closes #24).
   * CHANGED: License from custom to Open Source MIT LICENSE (Closes #34).
   * CHANGED: Renamed stats_js.asp and count.asp to asg-track.js.asp and asg-track.asp (Closes #40).

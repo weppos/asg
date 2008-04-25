@@ -43,30 +43,6 @@ Dim looptmp
 
 
 '-----------------------------------------------------------------------------------------
-' Decodifica URLEncode()	
-'-----------------------------------------------------------------------------------------
-' Funzione:	Decodifica in caratteri classici la codifica URLEncode()
-' Data: 	16.11.2003 | 07.04.2004
-' Commenti:	Tratto dal sito di Mems (www.oscarjsweb.com) - forum HTML.it	
-'			07.04.2004 Aggiunto filtro di adattamento potenziato
-'-----------------------------------------------------------------------------------------
-function DecodeURL(url, filterplus)
-	
-	If filterplus = True Then
-		url = Replace(url, "+", " ")
-		url = Replace(url, "%20", " ")
-	End If
-
-	For looptmp = 1 to 255
-		url = Replace(url, Server.URLEncode(chr(looptmp)), chr(looptmp))
-	Next
-	
-	DecodeURL = url
-
-end function
-
-
-'-----------------------------------------------------------------------------------------
 ' Pulisci Input	
 '-----------------------------------------------------------------------------------------
 ' Funzione:	

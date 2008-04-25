@@ -227,7 +227,7 @@ Sub Log()
             Else
             '
             End If
-            strAsgEngineQS = DecodeURL(strAsgEngineQS, True)
+            strAsgEngineQS = asgUrlDecode(strAsgEngineQS, True)
             'Pulisci da caratteri conflittuali tipo '
             strAsgEngineQS = FilterSQLInput(strAsgEngineQS)
             
@@ -243,7 +243,7 @@ Sub Log()
               Else
               '
               End If
-              strAsgEnginePG = DecodeURL(strAsgEnginePG, True)
+              strAsgEnginePG = asgUrlDecode(strAsgEnginePG, True)
               'Pulisci da caratteri conflittuali tipo '
               strAsgEnginePG = FilterSQLInput(strAsgEnginePG)
               blnExitEnginePage = True
