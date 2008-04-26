@@ -134,7 +134,7 @@ Set objAsgConn = Nothing
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 <head>
-<title>Installazione ASP Stats Generator | Versione <%= strAsgVersion %></title>
+<title>Installazione ASP Stats Generator | Versione <%= ASG_VERSION %></title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <style type="text/css">
 <!--
@@ -228,7 +228,7 @@ function controlla(form) {
 <table width="95%" border="0" cellspacing="0" cellpadding="0" align="center">
   <tr><td height="50" valign="middle"><img src="images/asg_setupfile.gif" width="276" height="28" border="0" alt="ASP Stats Generator" /></td></tr>
   <tr><td height="2" bgcolor="#FDD353"></td></tr>
-  <tr><td height="15" valign="middle" align="right" class="x-smalltext">Installazione ASP Stats Generator - v. <%= strAsgVersion %></td></tr>
+  <tr><td height="15" valign="middle" align="right" class="x-smalltext">Installazione ASP Stats Generator - v. <%= ASG_VERSION %></td></tr>
 </table>
 <% If Request.Form("imposta") = strAsgTxtUpdate AND strAsgConfigOk Then %>
 <table width="95%" border="0" cellspacing="0" cellpadding="0" align="center">

@@ -41,16 +41,16 @@
 '
 ' Returns the elaboration time message since elaboration started.
 '
-' Note. This function uses the "global" startAsgElab variable.
+' Note. This function uses the "global" asgTimerElabStart variable.
 ' Be aware of side effects!
 ' 
 ' @return string
 '
 public function asgElabtime()
-  Dim strElabtime
+  Dim fltElabtime
   
-  strElabtime = asgComputeElabtime(startAsgElab, Timer())
-  asgElabtime = Replace(ASG_TEXT_PAGE_GENERATED_IN, "%{seconds}", strElabtime)
+  fltElabtime = asgComputeElabtime(asgTimerElabStart, Timer())
+  asgElabtime = Replace(ASG_TEXT_PAGE_GENERATED_IN, "%{seconds}", fltElabtime)
 end function 
 
 

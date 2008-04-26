@@ -145,7 +145,7 @@ end function '							========================================
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 <head>
-<title>Update ASP Stats Generator | Version <%= strAsgVersion %></title>
+<title>Update ASP Stats Generator | Version <%= ASG_VERSION %></title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 
 <style type="text/css">
@@ -210,7 +210,7 @@ h3 {
 <table width="95%" border="0" cellspacing="0" cellpadding="0" align="center">
   <tr><td height="50" valign="middle"><img src="images/asg_setupfile.gif" width="276" height="28" border="0" alt="ASP Stats Generator" /></td></tr>
   <tr><td height="2" bgcolor="#FDD353"></td></tr>
-  <tr><td height="15" valign="middle" align="right" class="x-smalltext">Update ASP Stats Generator - v. <%= strAsgVersion %></td></tr>
+  <tr><td height="15" valign="middle" align="right" class="x-smalltext">Update ASP Stats Generator - v. <%= ASG_VERSION %></td></tr>
 </table>
 
 <table width="95%" border="0" cellspacing="0" cellpadding="0" align="center">

@@ -281,7 +281,6 @@ Sub Log()
     strAsgBrowser = objClassI("Browser")
     strAsgBrowserLang = objClassI("Browser.Language")
     strAsgOS = objClassI("OS")
-    strAsgBrowserActCookie = objClassI("Browser.Act.Cookie")
 
     ' Release Object
     Set objClassI = Nothing
@@ -678,7 +677,7 @@ Log()
 'Mostra l'immagine
 Response.Redirect strAsgImage
   
-'Response.Write(FormatNumber(Timer() - startAsgElab, 4))
+'Response.Write(FormatNumber(Timer() - asgTimerElabStart, 4))
   
 %>
 

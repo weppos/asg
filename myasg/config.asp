@@ -102,12 +102,6 @@ intAsgLatestUpdate = 0 ' by default disable any alert
 
 	
 	'---------------------------------------------------
-	'	Dimension variables : show icons
-	'---------------------------------------------------
-	Dim strAsgIconaTemp
-	Dim Index
-	
-	'---------------------------------------------------
 	'	Dimension variables : sorting records
 	'---------------------------------------------------
 	Dim strAsgSortBy
@@ -120,16 +114,7 @@ intAsgLatestUpdate = 0 ' by default disable any alert
 	Dim strAsgSQLsearchstring			'Holds the search string to query database
 	Dim asgSearchfor					'Holds the keywords to search for
 	Dim asgSearchIn						'Holds the name of the table to search in
-	
-	'---------------------------------------------------
-	'	Dimension variables : other elaborations
-	'---------------------------------------------------
-	Dim strAsgUnknownIcon				'Holds unknown icons information
-	
-	'---------------------------------------------------
-	'	Controllo aggiornamenti
-	'---------------------------------------------------
-	
+
 
 '-------------------------------------------------------------------------------'
 ' Includi le informazioni sulla traduzione in uso
@@ -140,9 +125,6 @@ intAsgLatestUpdate = 0 ' by default disable any alert
 
 '//	English %>
 <!--#include file="languages/english.asp" --><%
-
-'//	Espanol %>
-<!--include file="languages/espanol.asp" --><%
 
 
 '---------------------------------------------------
@@ -165,7 +147,7 @@ End If
 if Clng(asgDatestamp(Now()) - blnAsgCheckUpdate) > 7 and Session("AsgLogin") = "Logged" then
 
   Dim aryAsgLatestVersion
-  aryAsgLatestVersion = asgVersionCheck(strAsgVersion)
+  aryAsgLatestVersion = asgVersionCheck(ASG_VERSION)
   
   if Ubound(aryAsgLatestVersion) > 0 then
     strAsgLatestVersion = aryAsgLatestVersion(0)
@@ -173,7 +155,7 @@ if Clng(asgDatestamp(Now()) - blnAsgCheckUpdate) > 7 and Session("AsgLogin") = "
     urlAsgLatestUpdate  = aryAsgLatestVersion(2)
     
     ' compare versions and display alert in case of greather release
-    if strAsgLatestVersion > strAsgVersion then
+    if strAsgLatestVersion > ASG_VERSION then
       intAsgLatestUpdate = 1
     end if
      

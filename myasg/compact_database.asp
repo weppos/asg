@@ -73,15 +73,15 @@ End if
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 <head>
-<title><%= strAsgSiteName %> | powered by ASP Stats Generator <%= strAsgVersion %></title>
+<title><%= strAsgSiteName %> | powered by ASP Stats Generator <%= ASG_VERSION %></title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <meta name="copyright" content="Copyright (C) 2003-2008 Carletti Simone, All Rights Reserved" />
-<meta name="generator" content="ASP Stats Generator <%= strAsgVersion %>" /> <!-- leave this for stats -->
+<meta name="generator" content="ASP Stats Generator <%= ASG_VERSION %>" /> <!-- leave this for stats -->
 
 <!--#include file="asg-includes/layout/head.asp" -->
 
 <!--
-  ASP Stats Generator (release <%= strAsgVersion %>) is a free software package
+  ASP Stats Generator (release <%= ASG_VERSION %>) is a free software package
   completely written in ASP programming language, for real time visitor tracking.
   Get your own copy for free at http://www.asp-stats-com/ !
 -->
@@ -123,7 +123,7 @@ Call BuildFooterBorderLine()
 ' ***** START WARNING - REMOVAL or MODIFICATION IN PART or ALL OF THIS CODE WILL VIOLATE THE LICENSE AGREEMENT	******
 ' ***** INIZIO AVVERTENZA - RIMOZIONE o MODIFICA PARZIALE/TOTALE DEL CODICE COMPORTA VIOLAZIONE DELLA LICENZA  	******
 Response.Write("<tr align=""center"" valign=""middle"">")
-Response.Write("<td align=""center"" background=""" & strAsgSknPathImage & strAsgSknTableBarBgImage & """ bgcolor=""" & strAsgSknTableBarBgColour & """ height=""20"" class=""footer""><a href=""http://www.asp-stats.com/"" class=""linkfooter"" title=""ASP Stats Generator Homepage"">ASP Stats Generator</a> [" & strAsgVersion & "] - &copy; 2003-2008 <a href=""http://www.weppos.com/"" class=""linkfooter"" title=""Weppos.com Homepage"">weppos</a>")
+Response.Write("<td align=""center"" background=""" & strAsgSknPathImage & strAsgSknTableBarBgImage & """ bgcolor=""" & strAsgSknTableBarBgColour & """ height=""20"" class=""footer""><a href=""http://www.asp-stats.com/"" class=""linkfooter"" title=""ASP Stats Generator Homepage"">ASP Stats Generator</a> [" & ASG_VERSION & "] - &copy; 2003-2008 <a href=""http://www.weppos.com/"" class=""linkfooter"" title=""Weppos.com Homepage"">weppos</a>")
 if ASG_CONFIG_ELABTIME then Response.Write(asgElabtime)
 Response.Write("</td>")
 Response.Write("</tr>")

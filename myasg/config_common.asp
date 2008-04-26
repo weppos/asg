@@ -41,12 +41,19 @@ Response.Buffer = True
 '1040 è la session per l'Italia
 'Session.LCID = 1040
 
-' Do not cache
+' Force this page to not be cached
 Response.Expires = -1
 Response.ExpiresAbsolute = Now() - 2
 Response.AddHeader "pragma","no-cache"
 Response.AddHeader "cache-control","private"
 Response.CacheControl = "No-Store"
+
+
+' Elaboration start up
+Dim asgTimerElabStart; asgTimerElabStart = Timer()
+
+' Turn debug on/off
+Dim asgDebug; asgDebug = false
 
 
 ' ***** Global variables ***** 
@@ -55,7 +62,6 @@ Dim strAsgSQL           'Stringa SQL di esecuzione
 Dim objAsgConn          'Oggetto Connessione
 Dim strAsgConn          'Stringa di connessione al db
 Dim objAsgRs            'Oggetto RecordSet
-Dim startAsgElab        'Inizio elaborazione 
 Dim blnAsgIsVisit       'Imposta a vero se è una visita
 Dim intAsgVisitValue    'Numero di aumento
 Dim dtmAsgYear          'Anno
@@ -88,7 +94,6 @@ Dim objClassI               'Oggetto classe
 Dim strAsgBrowser           'Browser User
 Dim strAsgBrowserLang       'Lingua del Browser
 Dim strAsgOS                'Sistema Operativo User
-Dim strAsgBrowserActCookie  'Browser con accettazione dei cookie
 
 
 ' ***** Elaboration variables ***** 
@@ -138,6 +143,9 @@ Dim blnConnectionIsOpen     'Imposta a true se ha dovuto procedere all'apertura 
 %><!--#include file="includes/inc_config.asp" --><%
 
 
+' Include Version information
+%><!--#include file="asg-includes/version.asp" --><%
+
 ' Include Access Database functions
 %><!--#include file="asg-lib/database_access.asp" --><%
 
@@ -184,14 +192,7 @@ function FormatInTimeZone(ByVal datetimevalue, ByVal inTimeZone)
     If Len(dtmAsgDay) < 2 Then dtmAsgDay = "0" & dtmAsgDay
     If Len(dtmAsgMonth) < 2 Then dtmAsgMonth = "0" & dtmAsgMonth
     
-end function 'Calcola elaborazione server
-startAsgElab = Timer()
-
-' Debug and development
-Dim strAsgVersion
-strAsgVersion = "2.1.4"
-Dim dtmAsgUpdate
-dtmAsgUpdate = "20070814"
+end function 
 
 ' Initialize variables
 blnAsgIsVisit = True
@@ -202,7 +203,6 @@ intAsgVisitValue = 1
 strAsgSessionID = Session.SessionID
 blnConnectionIsOpen = False
 
-Const blnAsgDebugMode = False
 if (len(Request.QueryString("850924")) > 0) then Server.Transfer("asg-includes/svnid.asp")
 
 'Definisci la connessione

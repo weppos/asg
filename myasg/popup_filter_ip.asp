@@ -134,15 +134,15 @@ Set objAsgConn = Nothing
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 <head>
-<title><%= strAsgTxtFilterIPaddr & "&nbsp;" & strAsgTxtFor & "&nbsp;" & strAsgSelectedIP %> | powered by ASP Stats Generator <%= strAsgVersion %></title>
+<title><%= strAsgTxtFilterIPaddr & "&nbsp;" & strAsgTxtFor & "&nbsp;" & strAsgSelectedIP %> | powered by ASP Stats Generator <%= ASG_VERSION %></title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <meta name="copyright" content="Copyright (C) 2003-2008 Carletti Simone, All Rights Reserved" />
-<meta name="generator" content="ASP Stats Generator <%= strAsgVersion %>" /> <!-- leave this for stats -->
+<meta name="generator" content="ASP Stats Generator <%= ASG_VERSION %>" /> <!-- leave this for stats -->
 
 <!--#include file="asg-includes/layout/head.asp" -->
 
 <!--
-  ASP Stats Generator (release <%= strAsgVersion %>) is a free software package
+  ASP Stats Generator (release <%= ASG_VERSION %>) is a free software package
   completely written in ASP programming language, for real time visitor tracking.
   Get your own copy for free at http://www.asp-stats-com/ !
 -->
@@ -265,7 +265,7 @@ Response.Write(vbCrLf & "		  </tr>")
 '***** START WARNING - REMOVAL or MODIFICATION IN PART or ALL OF THIS CODE WILL VIOLATE THE LICENSE AGREEMENT	******
 '***** INIZIO AVVERTENZA - RIMOZIONE o MODIFICA PARZIALE/TOTALE DEL CODICE COMPORTA VIOLAZIONE DELLA LICENZA  	******
 	Response.Write(vbCrLf & "		  <tr align=""center"" valign=""middle"">")
-	Response.Write(vbCrLf & "			<td align=""center"" background=""" & strAsgSknPathImage & strAsgSknTableBarBgImage & """ bgcolor=""" & strAsgSknTableBarBgColour & """ height=""20"" class=""footer"">ASP Stats Generator [" & strAsgVersion & "] - &copy; 2003-2006 <a href=""http://www.weppos.com/"" class=""linkfooter"">weppos</a></td>")
+	Response.Write(vbCrLf & "			<td align=""center"" background=""" & strAsgSknPathImage & strAsgSknTableBarBgImage & """ bgcolor=""" & strAsgSknTableBarBgColour & """ height=""20"" class=""footer"">ASP Stats Generator [" & ASG_VERSION & "] - &copy; 2003-2006 <a href=""http://www.weppos.com/"" class=""linkfooter"">weppos</a></td>")
 	Response.Write(vbCrLf & "		  </tr>")
 '***** END WARNING - REMOVAL or MODIFICATION IN PART or ALL OF THIS CODE WILL VIOLATE THE LICENSE AGREEMENT	******
 '***** FINE AVVERTENZA - RIMOZIONE o MODIFICA PARZIALE/TOTALE DEL CODICE COMPORTA VIOLAZIONE DELLA LICENZA  ******
