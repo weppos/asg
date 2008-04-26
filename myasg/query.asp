@@ -300,7 +300,7 @@ Call DimPaginazioneAvanzata()
 			<td background="<%= strAsgSknPathImage & strAsgSknTableContBgImage %>" align="center"><%= intAsgCount %></td>
 			<% If gruppo = "motori" Then %>
 			<td background="<%= strAsgSknPathImage & strAsgSknTableContBgImage %>" align="left"><% If objAsgRs("SERP_Page") > 0 Then Response.Write("&nbsp;<a href=""serp.asp?serp=" & objAsgRs("SERP_Page") & "&mese=" & mese &"&elenca=" & elenca & """ title=""" & strAsgTxtQuery & "&nbsp;" & objAsgRs("SERP_Page") & "&deg;&nbsp;" & strAsgTxtPage & """><span class=""notetext"">[" & objAsgRs("SERP_Page") & "]</span></a>") %>&nbsp;<%= ShareWords(HighlightSearchKey(objAsgRs("Query"), "Query"), 40) %></td>
-			<td background="<%= strAsgSknPathImage & strAsgSknTableContBgImage %>" align="left">&nbsp;<img src="images/engine.asp?icon=<%= objAsgRs("Engine") %>" alt="<%= objAsgRs("Engine") %>" class="def-icon def-icon-searchengine" /> <%= HighlightSearchKey(objAsgRs("Engine"), "Engine") %></td>
+			<td background="<%= strAsgSknPathImage & strAsgSknTableContBgImage %>" align="left">&nbsp;<img src="asg-includes/images/icons/engine.asp?icon=<%= objAsgRs("Engine") %>" alt="<%= objAsgRs("Engine") %>" class="def-icon def-icon-searchengine" /> <%= HighlightSearchKey(objAsgRs("Engine"), "Engine") %></td>
 			<% ElseIf gruppo = "query" Then %>
 			<td background="<%= strAsgSknPathImage & strAsgSknTableContBgImage %>" align="left"><% If objAsgRs("AvgSERP") > 0 Then Response.Write("&nbsp;<span class=""notetext"">[" & objAsgRs("AvgSERP") & "]</span>") %>&nbsp;<%= ShareWords(HighlightSearchKey(objAsgRs("Query"), "Query"), 40) %></td>
 			<% End If %>

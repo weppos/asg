@@ -239,7 +239,7 @@ Call DimPaginazioneAvanzata()
 					
 		%>		  
 		  <tr class="smalltext" bgcolor="<%= strAsgSknTableContBgColour %>">
-			<td background="<%= strAsgSknPathImage & strAsgSknTableContBgImage %>" align="center"><img src="<%= strAsgSknPathImage%>/browser.asp?icon=<%= objAsgRs("Browser") %>" alt="<%= objAsgRs("Browser") %>" class="def-icon def-icon-browser" /></td>
+			<td background="<%= strAsgSknPathImage & strAsgSknTableContBgImage %>" align="center"><img src="asg-includes/images/icons/browser.asp?icon=<%= objAsgRs("Browser") %>" alt="<%= objAsgRs("Browser") %>" class="def-icon def-icon-browser" /></td>
 			<td background="<%= strAsgSknPathImage & strAsgSknTableContBgImage %>" align="left"><%= HighlightSearchKey(objAsgRs("Browser"), "Browser") %></td>
 			<td background="<%= strAsgSknPathImage & strAsgSknTableContBgImage %>" align="right"><%= objAsgRs("SumHits") & "<br />" & objAsgRs("SumVisits") %></td>
 			<td background="<%= strAsgSknPathImage & strAsgSknTableContBgImage %>">

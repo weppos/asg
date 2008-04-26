@@ -238,7 +238,7 @@ If Not blnNoData Then
 		  <tr class="smalltext" bgcolor="<%= strAsgSknTableContBgColour %>">
 			<td background="<%= strAsgSknPathImage & strAsgSknTableContBgImage %>" align="center"><%= intAsgCount %></td>
 			<td background="<%= strAsgSknPathImage & strAsgSknTableContBgImage %>" align="left"><% If Len(objAsgRs("SERP_Page")) > 0 Then Response.Write("&nbsp;<span class=""notetext"">[" & objAsgRs("SERP_Page") & "]</span>") %>&nbsp;<%= ShareWords(HighlightSearchKey(objAsgRs("Query"), "Query"), 40) %></td>
-			<td background="<%= strAsgSknPathImage & strAsgSknTableContBgImage %>" align="left">&nbsp;<img src="images/engine.asp?icon=<%= objAsgRs("Engine") %>" alt="<%= objAsgRs("Engine") %>" align="absmiddle" /> <%= HighlightSearchKey(objAsgRs("Engine"), "Engine") %></td>
+			<td background="<%= strAsgSknPathImage & strAsgSknTableContBgImage %>" align="left">&nbsp;<img src="asg-includes/images/icons/engine.asp?icon=<%= objAsgRs("Engine") %>" alt="<%= objAsgRs("Engine") %>" align="absmiddle" /> <%= HighlightSearchKey(objAsgRs("Engine"), "Engine") %></td>
 			<td background="<%= strAsgSknPathImage & strAsgSknTableContBgImage %>" align="right">&nbsp;<%= objAsgRs("Visits") %></td>
 		  </tr>
 		<%

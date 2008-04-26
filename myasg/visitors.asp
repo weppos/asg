@@ -218,7 +218,7 @@ blnDatabaseIsEmpty = True
 				<% If objAsgRs2("Referer") <> "(unknown)" AND objAsgRs2("Engine") <> "" Then %>
 				  <tr>
 					<td align="center" bgcolor="<%= strAsgSknTableTitleBgColour %>" background="<%= strAsgSknPathImage & strAsgSknTableTitleBgImage %>" height="16" class="normaltitle"><%= UCase(strAsgTxtSearchEngine) %></td>
-					<td align="left" bgcolor="<%= strAsgSknTableContBgColour %>" background="<%= strAsgSknPathImage & strAsgSknTableContBgImage %>" class="smalltext"><img src="images/engine.asp?icon=<%= objAsgRs2("Engine") %>" alt="<%= objAsgRs2("Engine") %>" align="absmiddle" height="14" width="14" /> <%= objAsgRs2("Engine") %></td>
+					<td align="left" bgcolor="<%= strAsgSknTableContBgColour %>" background="<%= strAsgSknPathImage & strAsgSknTableContBgImage %>" class="smalltext"><img src="asg-includes/images/icons/engine.asp?icon=<%= objAsgRs2("Engine") %>" alt="<%= objAsgRs2("Engine") %>" align="absmiddle" height="14" width="14" /> <%= objAsgRs2("Engine") %></td>
 				  </tr>
 				  <tr>
 					<td align="center" bgcolor="<%= strAsgSknTableTitleBgColour %>" background="<%= strAsgSknPathImage & strAsgSknTableTitleBgImage %>" height="16" class="normaltitle"><%= UCase(strAsgTxtSearchQuery) %></td>

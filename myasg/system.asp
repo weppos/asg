@@ -266,8 +266,8 @@ Call DimPaginazioneAvanzata()
 		%>		  
 		  <tr class="smalltext" bgcolor="<%= strAsgSknTableContBgColour %>">
 			<td background="<%= strAsgSknPathImage & strAsgSknTableContBgImage %>" align="center"><%= intAsgCount %></td>
-			<td background="<%= strAsgSknPathImage & strAsgSknTableContBgImage %>" align="left"><img src="images/os.asp?icon=<%= objAsgRs("OS") %>" alt="<%= objAsgRs("OS") %>" class="def-icon def-icon-os" /> <%= HighlightSearchKey(objAsgRs("OS"), "OS") %></td>
-			<td background="<%= strAsgSknPathImage & strAsgSknTableContBgImage %>" align="left"><img src="images/browser.asp?icon=<%= objAsgRs("Browser") %>" alt="<%= objAsgRs("Browser") %>" class="def-icon def-icon-browser" /> <%= HighlightSearchKey(objAsgRs("Browser"), "Browser") %></td>
+			<td background="<%= strAsgSknPathImage & strAsgSknTableContBgImage %>" align="left"><img src="asg-includes/images/icons/os.asp?icon=<%= objAsgRs("OS") %>" alt="<%= objAsgRs("OS") %>" class="def-icon def-icon-os" /> <%= HighlightSearchKey(objAsgRs("OS"), "OS") %></td>
+			<td background="<%= strAsgSknPathImage & strAsgSknTableContBgImage %>" align="left"><img src="asg-includes/images/icons/browser.asp?icon=<%= objAsgRs("Browser") %>" alt="<%= objAsgRs("Browser") %>" class="def-icon def-icon-browser" /> <%= HighlightSearchKey(objAsgRs("Browser"), "Browser") %></td>
 			<td background="<%= strAsgSknPathImage & strAsgSknTableContBgImage %>" align="center"><%= HighlightSearchKey(objAsgRs("Reso"), "Reso") %></td>
 			<td background="<%= strAsgSknPathImage & strAsgSknTableContBgImage %>" align="center"><%= HighlightSearchKey(objAsgRs("Color"), "Color") %> bit</td>
 			<td background="<%= strAsgSknPathImage & strAsgSknTableContBgImage %>" align="right"><%= objAsgRs("SumHits") & "<br />" & objAsgRs("SumVisits") %></td>
