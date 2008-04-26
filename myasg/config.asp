@@ -47,7 +47,7 @@
 %><!--#include file="asg-lib/binary.asp" --><%
 
 ' Include Layout functions
-%><!--#include file="asg-lib/layout.asp" --><%
+%><!--#include file="asg-includes/layout.asp" --><%
 
 ' Include Collections
 %><!--#include file="asg-includes/collections.asp" --><%
