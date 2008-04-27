@@ -35,7 +35,8 @@
 
 ' 
 ' Performs a regular expression test.
-' Searches +subject+ for a match to the regular expression given in +pattern+.
+' Searches +subject+ for a match to the regular expression given in +pattern+
+' and returns true if +subject+ contains at least one match, false otherwise.
 '
 ' @param    string  subject
 ' @param    string  pattern
@@ -84,8 +85,46 @@ public function asgRegExpReplace(subject, pattern, replacement, ignorecase, glob
   asgRegExpReplace = strResult
 end function
 
-
-' TODO: asgRegExpExecute
+' 
+' Executes a regular expression match.
+' Searches +subject+ for a match to the regular expression given in +pattern+
+' and returns true if +subject+ contains at least one match, false otherwise.
+' 
+' The param +matches+ is filled with the results of the search.
+' If at least one match exists, +matches+ becomes a 
+' Regular Expression matches instance, else is set to null.
+'
+' If you simply need to perform a regular expression test
+' you should use asgRegExpTest that uses the most appropriate #test method.
+'
+' @param    string  subject
+' @param    string  pattern
+' @param    string  replacement
+' @param    bool    ignorecase
+' @param    bool    global
+' 
+public function asgRegExpExecute(subject, pattern, ByRef matches, ignorecase, global)
+  Dim objRE
+  Dim blnMatches
+  
+  Set objRE = New RegExp
+  with RegularExpressionObject
+    .pattern = pattern
+    .ignoreCase = ignorecase
+    .global = global
+  end with
+  Set matches = objRE.execute(subject)
+  Set objRE = Nothing
+  
+  if matches.count > 0 then
+    blnMatches = true
+  else
+    blnMatches = false
+    matches = null
+  end if
+  
+  asgRegExpExecute = blnMatches
+end function
 
 
 %>
