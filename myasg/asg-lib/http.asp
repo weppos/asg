@@ -39,6 +39,10 @@
 ' 
 ' Returns a string containing the HTTP response.
 '
+' @param    string  method
+' @param    string  url
+' @return   string
+'
 ' TODO: validate err.number
 ' 
 public function asgHttpRequest(method, url)
@@ -70,6 +74,9 @@ end function
 ' 
 ' Returns a string containing the HTTP response.
 '
+' @param    string  url
+' @return   string
+'
 public function asgHttpGetRequest(url)
   asgHttpGetRequest = asgHttpRequest("GET", url)
 end function
@@ -79,6 +86,9 @@ end function
 ' method variable denotes the method used for the HTTP request.
 ' 
 ' Returns a string containing the HTTP response.
+'
+' @param    string  url
+' @return   string
 '
 public function asgHttpPostRequest(url)
   asgHttpPostRequest = asgHttpRequest("POST", url)

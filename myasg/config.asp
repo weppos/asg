@@ -36,15 +36,15 @@
 ' Include HTTP functions
 %><!--#include file="asg-lib/http.asp" --><%
 
-' Include Update functions
-%><!--#include file="asg-lib/update.asp" --><%
-
 ' Include Datetime functions
 %><!--#include file="asg-lib/datetime.asp" --><%
 
 ' Include Binary functions
 ' TODO: consider to include the file only when necessary
 %><!--#include file="asg-lib/binary.asp" --><%
+
+' Include Update functions
+%><!--#include file="asg-includes/update.asp" --><%
 
 ' Include Layout functions
 %><!--#include file="asg-includes/layout.asp" --><%

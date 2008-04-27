@@ -38,6 +38,8 @@
 ' The datestamp is simply a shorten representation for a date time
 ' in the format %Y%m%d.
 '
+' @param  datetime  dtm
+'
 public function asgDatestamp(dtm)
   asgDatestamp = Clng(Year(dtm) &_
                       Right("0" & Month(dtm), 2) &_ 
