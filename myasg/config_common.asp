@@ -50,10 +50,10 @@ Response.CacheControl = "No-Store"
 
 
 ' Elaboration start up
-Dim asgTimerElabStart; asgTimerElabStart = Timer()
+Dim asgTimerElabStart: asgTimerElabStart = Timer()
 
 ' Turn debug on/off
-Dim asgDebug; asgDebug = false
+Dim asgDebug: asgDebug = false
 
 
 ' ***** Global variables ***** 
