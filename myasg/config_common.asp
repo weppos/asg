@@ -193,9 +193,9 @@ startAsgElab = Timer()
 
 ' Debug and development
 Dim strAsgVersion
-strAsgVersion = "2.1.4"
+strAsgVersion = "2.1.5"
 Dim dtmAsgUpdate
-dtmAsgUpdate = "20070814"
+dtmAsgUpdate = "20080601"
 
 ' Initialize variables
 blnAsgIsVisit = True
