@@ -44,7 +44,7 @@ public function asgVersionCheck(strCurrentVersion)
   
   strHost = Request.ServerVariables("HTTP_HOST")
   strVersion = strCurrentVersion
-  strUrl = "http://www.weppos.com/asg/checkversion/check_update.asp?" &_
+  strUrl = "http://www.asp-stats.com/api/v1/version_check?" &_
            "host=" & Server.URLEncode(strHost) & "&" &_
            "version=" & Server.URLEncode(strVersion)
   

@@ -1,6 +1,6 @@
 = Changelog =
 
-== Trunk ==
+== development ==
 
   * ADDED: New folder structure:
     * asg-config: configuration files
@@ -18,13 +18,16 @@
   * REMOVED: Unused #GetContinent function from functions_common.asp and all related strings.
   * REMOVED: /includes/inc_array_month.asp file and replaced by a couple of functions in /asg-lib/collections.asp and /asg-lib/layout.asp.
 
-== 2.1.x ==
+== Release 2.1.5 ==
+
+Released on 2008-06-01.
 
   * ADDED: Confirmation message on delete data button in settings_reset.asp (Closes #12).
   * CHANGED: The path to count.asp file now includes the full path to the file to prevent the script to not work when you are tracking an external website (Closes 22).
   * CHANGED: The main file is now called default.asp instead of statistiche.asp to prevent users to be disoriented by an untranslated error message when trying to access /myasg root folder (Closes #32).
   * CHANGED: Flag icon package replaced by the wonderful flag set provided by Fam Fam Fam at http://www.famfamfam.com/lab/icons/flags/
   * CHANGED: Various source code improvements and refactoring.
+  * CHANGED: URL for update check function (closes #29).
   * FIXED: Undefined intAsgProtezione variable in settings_skin.asp (Closes #45).
   * FIXED: Missing flag icons are displayed as broken images (Closes #6).
   * FIXED: Broken skin file (Closes #17). 
@@ -34,7 +37,7 @@
 
 == Release 2.1.4 ==
 
-Released on 2007-08-14. Tagged at r54.
+Released on 2007-08-14.
 
   * CHANGED: Updated ip-to-country database to July 30, 2007
   * CHANGED: Translated inc_config.asp and a few other files into English
