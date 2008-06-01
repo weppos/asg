@@ -151,17 +151,14 @@ intAsgLatestUpdate = 0 ' by default disable any alert
 	
 
 '-------------------------------------------------------------------------------'
-' Includi le informazioni sulla traduzione in uso
+' Change to include your custom language file
 '-------------------------------------------------------------------------------'
 
-'//	Italiano %>
-<!--include file="languages/italiano.asp" --><%
+' Italiano
+%><!--include file="languages/italiano.asp" --><%
 
-'//	English %>
-<!--#include file="languages/english.asp" --><%
-
-'//	Espanol %>
-<!--include file="languages/espanol.asp" --><%
+' English (default) 
+%><!--#include file="languages/english.asp" --><%
 
 
 '---------------------------------------------------
