@@ -1,41 +1,15 @@
 = Changelog =
 
-== Trunk ==
-
-  * ADDED: New folder structure:
-    * asg-config: configuration files
-    * asg-content: user content such as custom plugins or files
-    * asg-included: various included files, assets and libraries 
-    * asg-lib: contains all pure ASP libraries used by the application
-    * asg-static: contains static assets such as JavaScript or CSS files
-  * CHANGED: Default charset to UTF-8 (Closes #24).
-  * CHANGED: License from custom to Open Source MIT LICENSE (Closes #34).
-  * CHANGED: Renamed stats_js.asp and count.asp to asg-track.js.asp and asg-track.asp (Closes #40).
-  * CHANGED: Massive code refactoring and improvements.
-  * REMOVED: Support for custom skins. The layout is going to be changed and, for now, it's better to drop it the buggy version (Closes #38).
-
-== 2.1.x ==
-
-  * ADDED: Confirmation message on delete data button in settings_reset.asp (Closes #12).
-  * CHANGED: The path to count.asp file now includes the full path to the file to prevent the script to not work when you are tracking an external website (Closes 22).
-  * CHANGED: The main file is now called default.asp instead of statistiche.asp to prevent users to be disoriented by an untranslated error message when trying to access /myasg root folder (Closes #32).
-  * CHANGED: Flag icon package replaced by the wonderful flag set provided by Fam Fam Fam at http://www.famfamfam.com/lab/icons/flags/
-  * CHANGED: Various source code improvements and refactoring.
-  * FIXED: Undefined intAsgProtezione variable in settings_skin.asp (Closes #45).
-  * FIXED: Missing flag icons are displayed as broken images (Closes #6).
-  * FIXED: Broken skin file (Closes #17). 
-  * REMOVED: default.asp filed from all directories (Closes #23).
-  * REMOVED: icon debug system that notified to ASG all unknown icons (closes #28).
-
 == Release 2.1.4 ==
 
-Released on 2007-08-14. Tagged at r54.
+Released on 2007-08-14.
 
   * CHANGED: Updated ip-to-country database to July 30, 2007
   * CHANGED: Translated inc_config.asp and a few other files into English
   * CHANGED: All browser/os/searchengine icons have been completely redesigned
   * CHANGED: simplified documentation
   * CHANGED: moved setup.asp and update.asp files outside main program folder to be sure the user doesn't forget to remove them
+  * CHANGED: URL for update check function (closes #29).
   * FIXED: OS Vista displayed as Microsoft Windows NT 4 (#4)
   * FIXED: Database pruning tool returns a Microsoft VBScript compilation error (#1)
   * FIXED: Flag icons missing Montenegro (ME) and Serbia (RS) (#5)
